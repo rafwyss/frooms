@@ -34,7 +34,7 @@ import type { Reading } from "./spaces";
 import {
   deleteMenuDay,
   putDay,
-  putFetch,
+  putFetches,
   putMenuDay,
   putUzhMenuState,
   putOccupancy,
@@ -159,9 +159,9 @@ export async function runUzhPrefetch(
     const at = Date.now();
     for (const d of splitPacked(packed, today, to)) statements.push(putDay(env.DB, { path, at, ...d }));
     fetches[path] = { fullFrom: full ? today : fetches[path].fullFrom, at };
-    statements.push(putFetch(env.DB, path, fetches[path]));
     fetched++;
   }
+  if (fetched) statements.push(putFetches(env.DB, "uzh", fetches, targets));
 
   // The library's server (not counted against the calendar's budget): its location list once a day, and every seat
   // sensor every few minutes.
