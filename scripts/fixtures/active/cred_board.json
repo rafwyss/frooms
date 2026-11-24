@@ -1,0 +1,104 @@
+{
+  "recent": {
+    "range": "recent",
+    "rows": [
+      {
+        "rank": 1,
+        "username": "anna.m",
+        "name": "Anna M.",
+        "bubble": {
+          "initials": "AM",
+          "bg": "#1b5e20",
+          "fg": "#ffffff"
+        },
+        "points": 164,
+        "me": false
+      },
+      {
+        "rank": 2,
+        "username": "raffi",
+        "name": "Raffaele W.",
+        "bubble": {
+          "initials": "RW",
+          "bg": "#010057",
+          "fg": "#ffffff"
+        },
+        "points": 138,
+        "me": true
+      },
+      {
+        "rank": 3,
+        "username": "goldie",
+        "name": "Gina O.",
+        "bubble": {
+          "initials": "GO",
+          "bg": "#9a7400",
+          "fg": "#ffffff"
+        },
+        "points": 95,
+        "me": false
+      },
+      {
+        "rank": 4,
+        "username": "jonas_k",
+        "name": "Jonas K.",
+        "bubble": {
+          "initials": "JK",
+          "bg": "#ffd27a",
+          "fg": "#1c1f23"
+        },
+        "points": 41,
+        "me": false
+      }
+    ],
+    "you": {
+      "rank": 2,
+      "points": 138
+    }
+  },
+  "all": {
+    "range": "all",
+    "rows": [
+      {
+        "rank": 1,
+        "username": "goldie",
+        "name": "Gina O.",
+        "bubble": {
+          "initials": "GO",
+          "bg": "#9a7400",
+          "fg": "#ffffff"
+        },
+        "points": 1180,
+        "me": false
+      },
+      {
+        "rank": 2,
+        "username": "raffi",
+        "name": "Raffaele W.",
+        "bubble": {
+          "initials": "RW",
+          "bg": "#010057",
+          "fg": "#ffffff"
+        },
+        "points": 520,
+        "me": true
+      },
+      {
+        "rank": 3,
+        "username": "anna.m",
+        "name": "Anna M.",
+        "bubble": {
+          "initials": "AM",
+          "bg": "#1b5e20",
+          "fg": "#ffffff"
+        },
+        "points": 310,
+        "me": false
+      }
+    ],
+    "you": {
+      "rank": 2,
+      "points": 520
+    }
+  }
+}

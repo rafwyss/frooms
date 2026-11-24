@@ -1,0 +1,41 @@
+{
+  "_about": "For every building with floor plans: ground, the level at street level (where its main entrance is), and order, its levels from the lowest (as in data/floors/<b>.json's levels). scripts/make_floors.py copies both into static/map/floors/index.json (order cut down to the levels it built); the floor view uses them to switch buildings on the matching level (lib.js matchLevel). Only HG's ground is confirmed by entrances marked main in the floor data; the rest follow ETH's convention (E is the ground floor), MM's is the plan's. The campus is on a slope, so a building's street level can be another's first floor (CLA D is LEE F): the links in data/floors/<b>.json with an explicit level win over this. Check the uncertain ones on site (plans/REVAMP_2_DECISIONS.md).",
+  "ground": {
+    "CAB": "E",
+    "CHN": "E",
+    "CLA": "E",
+    "ETA": "E",
+    "ETF": "E",
+    "ETZ": "E",
+    "GLC": "E",
+    "HCI": "E",
+    "HCP": "E",
+    "HG": "E",
+    "HIL": "E",
+    "HIT": "E",
+    "IFW": "E",
+    "LEE": "E",
+    "LFW": "E",
+    "ML": "E",
+    "MM": "C"
+  },
+  "order": {
+    "CAB": ["F", "G", "H"],
+    "CHN": ["C", "D", "E", "F", "G", "H"],
+    "CLA": ["D", "E"],
+    "ETA": ["E", "F"],
+    "ETF": ["B", "C", "D", "E"],
+    "ETZ": ["D", "E", "F", "G", "H", "J", "K"],
+    "GLC": ["E"],
+    "HCI": ["D", "E", "F", "G", "H", "J", "K"],
+    "HCP": ["E"],
+    "HG": ["B", "C", "D", "E", "F", "G", "H", "J", "K"],
+    "HIL": ["B", "C", "D", "E", "F", "G", "H"],
+    "HIT": ["E", "F", "G", "H", "J", "K"],
+    "IFW": ["A", "B", "C", "D", "E"],
+    "LEE": ["C", "D", "E", "F"],
+    "LFW": ["B", "C", "D", "E"],
+    "ML": ["D", "E", "F", "G", "H", "J"],
+    "MM": ["B", "C"]
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "username": null,
+  "first_name": "Lena",
+  "last_name": "Graf",
+  "name": "Lena G.",
+  "initials": "LG",
+  "bg": "#c62828",
+  "fg": "#ffffff",
+  "uni": "eth",
+  "profile_needed": true,
+  "checkin": null,
+  "requests": 0,
+  "stars": [],
+  "cred": {
+    "total": 0,
+    "level": 1,
+    "trusted": false
+  }
+}

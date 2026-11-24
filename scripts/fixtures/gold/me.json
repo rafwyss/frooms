@@ -1,0 +1,30 @@
+{
+  "username": "goldie",
+  "first_name": "Gina",
+  "last_name": "Oswald",
+  "name": "Gina O.",
+  "initials": "GO",
+  "bg": "#9a7400",
+  "fg": "#ffffff",
+  "bg2": null,
+  "fg2": null,
+  "metal": "gold",
+  "uni": "uzh",
+  "profile_needed": false,
+  "checkin": {
+    "kind": "room",
+    "place": "HG E 33.1",
+    "area": "Z",
+    "building": "HG",
+    "name": "HG E 33.1",
+    "since": "@now-30m",
+    "until": "@now+90m"
+  },
+  "requests": 0,
+  "stars": [],
+  "cred": {
+    "total": 1180,
+    "level": 6,
+    "trusted": true
+  }
+}

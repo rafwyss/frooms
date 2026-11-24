@@ -1,0 +1,18 @@
+{
+  "total": 520,
+  "recent": 138,
+  "level": 4,
+  "levelStart": 450,
+  "nextLevelAt": 700,
+  "nextUnlock": { "level": 5, "key": "silver", "label": "Silver bubble" },
+  "board": true,
+  "likes": 12,
+  "trusted": false,
+  "latest": [
+    { "id": 212, "at": "@now-40m", "action": "checkin", "points": 5, "label": "Checked in at HG E 41" },
+    { "id": 211, "at": "@now-2h", "action": "report", "points": 3, "label": "Reported occupancy at HG E 41" },
+    { "id": 210, "at": "@now-3h", "action": "report_liked", "points": 1, "label": "Your report at Polymensa got a 👍" },
+    { "id": 209, "at": "@now-26h", "action": "meal_rating", "points": 3, "label": "Rated Älplermagronen" },
+    { "id": 208, "at": "@now-28h", "action": "friend", "points": 25, "label": "Friends with @anna.m" }
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "friends": [
+    {
+      "username": "anna.m",
+      "name": "Anna M.",
+      "initials": "AM",
+      "bg": "#1b5e20",
+      "fg": "#ffffff",
+      "since": "@now-900h",
+      "bg2": "#2e7d32",
+      "fg2": "#fff4d6",
+      "metal": null
+    },
+    {
+      "username": "noah",
+      "name": "Noah F.",
+      "initials": "NF",
+      "bg": "#e3f2fd",
+      "fg": "#0d47a1",
+      "since": "@now-500h",
+      "bg2": null,
+      "fg2": null,
+      "metal": "silver"
+    }
+  ],
+  "incoming": [],
+  "outgoing": []
+}

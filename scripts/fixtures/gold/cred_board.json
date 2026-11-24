@@ -1,0 +1,785 @@
+{
+  "recent": {
+    "range": "recent",
+    "rows": [
+      {
+        "rank": 1,
+        "username": "anna.m",
+        "name": "Ann A.",
+        "bubble": {
+          "initials": "AN",
+          "bg": "#1b5e20",
+          "fg": "#ffffff",
+          "bg2": "#2e7d32",
+          "fg2": "#fff4d6",
+          "metal": null
+        },
+        "points": 600,
+        "me": false
+      },
+      {
+        "rank": 2,
+        "username": "jonas_k",
+        "name": "Jon B.",
+        "bubble": {
+          "initials": "JO",
+          "bg": "#ffd27a",
+          "fg": "#1c1f23",
+          "bg2": null,
+          "fg2": "#5b3fa8",
+          "metal": null
+        },
+        "points": 595,
+        "me": false
+      },
+      {
+        "rank": 3,
+        "username": "lea",
+        "name": "Lea C.",
+        "bubble": {
+          "initials": "LE",
+          "bg": "#8b1a1a",
+          "fg": "#ffffff",
+          "bg2": null,
+          "fg2": null,
+          "metal": "bronze"
+        },
+        "points": 590,
+        "me": false
+      },
+      {
+        "rank": 4,
+        "username": "marco.b",
+        "name": "Mar D.",
+        "bubble": {
+          "initials": "MA",
+          "bg": "#2458c8",
+          "fg": "#ffffff",
+          "bg2": "#5b3fa8",
+          "fg2": null,
+          "metal": null
+        },
+        "points": 585,
+        "me": false
+      },
+      {
+        "rank": 5,
+        "username": "sara_z",
+        "name": "Sar E.",
+        "bubble": {
+          "initials": "SA",
+          "bg": "#e6e9ec",
+          "fg": "#1c1f23",
+          "bg2": null,
+          "fg2": null,
+          "metal": "silver"
+        },
+        "points": 580,
+        "me": false
+      },
+      {
+        "rank": 6,
+        "username": "tim",
+        "name": "Tim F.",
+        "bubble": {
+          "initials": "TI",
+          "bg": "#1b5e20",
+          "fg": "#ffffff",
+          "bg2": null,
+          "fg2": null,
+          "metal": null
+        },
+        "points": 575,
+        "me": false
+      },
+      {
+        "rank": 7,
+        "username": "nina.r",
+        "name": "Nin G.",
+        "bubble": {
+          "initials": "NI",
+          "bg": "#ffd27a",
+          "fg": "#1c1f23",
+          "bg2": null,
+          "fg2": null,
+          "metal": null
+        },
+        "points": 570,
+        "me": false
+      },
+      {
+        "rank": 8,
+        "username": "luca",
+        "name": "Luc H.",
+        "bubble": {
+          "initials": "LU",
+          "bg": "#8b1a1a",
+          "fg": "#ffffff",
+          "bg2": null,
+          "fg2": null,
+          "metal": null
+        },
+        "points": 565,
+        "me": false
+      },
+      {
+        "rank": 9,
+        "username": "eva",
+        "name": "Eva I.",
+        "bubble": {
+          "initials": "EV",
+          "bg": "#2458c8",
+          "fg": "#ffffff",
+          "bg2": null,
+          "fg2": null,
+          "metal": null
+        },
+        "points": 560,
+        "me": false
+      },
+      {
+        "rank": 10,
+        "username": "paul",
+        "name": "Pau J.",
+        "bubble": {
+          "initials": "PA",
+          "bg": "#e6e9ec",
+          "fg": "#1c1f23",
+          "bg2": null,
+          "fg2": null,
+          "metal": null
+        },
+        "points": 555,
+        "me": false
+      },
+      {
+        "rank": 11,
+        "username": "anna.m1",
+        "name": "Ann K.",
+        "bubble": {
+          "initials": "AN",
+          "bg": "#1b5e20",
+          "fg": "#ffffff",
+          "bg2": null,
+          "fg2": null,
+          "metal": null
+        },
+        "points": 550,
+        "me": false
+      },
+      {
+        "rank": 12,
+        "username": "jonas_k1",
+        "name": "Jon L.",
+        "bubble": {
+          "initials": "JO",
+          "bg": "#ffd27a",
+          "fg": "#1c1f23",
+          "bg2": null,
+          "fg2": null,
+          "metal": null
+        },
+        "points": 545,
+        "me": false
+      },
+      {
+        "rank": 13,
+        "username": "lea1",
+        "name": "Lea M.",
+        "bubble": {
+          "initials": "LE",
+          "bg": "#8b1a1a",
+          "fg": "#ffffff",
+          "bg2": null,
+          "fg2": null,
+          "metal": null
+        },
+        "points": 540,
+        "me": false
+      },
+      {
+        "rank": 14,
+        "username": "marco.b1",
+        "name": "Mar N.",
+        "bubble": {
+          "initials": "MA",
+          "bg": "#2458c8",
+          "fg": "#ffffff",
+          "bg2": null,
+          "fg2": null,
+          "metal": null
+        },
+        "points": 535,
+        "me": false
+      },
+      {
+        "rank": 15,
+        "username": "sara_z1",
+        "name": "Sar O.",
+        "bubble": {
+          "initials": "SA",
+          "bg": "#e6e9ec",
+          "fg": "#1c1f23",
+          "bg2": null,
+          "fg2": null,
+          "metal": null
+        },
+        "points": 530,
+        "me": false
+      },
+      {
+        "rank": 16,
+        "username": "tim1",
+        "name": "Tim P.",
+        "bubble": {
+          "initials": "TI",
+          "bg": "#1b5e20",
+          "fg": "#ffffff",
+          "bg2": null,
+          "fg2": null,
+          "metal": null
+        },
+        "points": 525,
+        "me": false
+      },
+      {
+        "rank": 17,
+        "username": "nina.r1",
+        "name": "Nin Q.",
+        "bubble": {
+          "initials": "NI",
+          "bg": "#ffd27a",
+          "fg": "#1c1f23",
+          "bg2": null,
+          "fg2": null,
+          "metal": null
+        },
+        "points": 520,
+        "me": false
+      },
+      {
+        "rank": 18,
+        "username": "luca1",
+        "name": "Luc R.",
+        "bubble": {
+          "initials": "LU",
+          "bg": "#8b1a1a",
+          "fg": "#ffffff",
+          "bg2": null,
+          "fg2": null,
+          "metal": null
+        },
+        "points": 515,
+        "me": false
+      },
+      {
+        "rank": 19,
+        "username": "eva1",
+        "name": "Eva S.",
+        "bubble": {
+          "initials": "EV",
+          "bg": "#2458c8",
+          "fg": "#ffffff",
+          "bg2": null,
+          "fg2": null,
+          "metal": null
+        },
+        "points": 510,
+        "me": false
+      },
+      {
+        "rank": 20,
+        "username": "paul1",
+        "name": "Pau T.",
+        "bubble": {
+          "initials": "PA",
+          "bg": "#e6e9ec",
+          "fg": "#1c1f23",
+          "bg2": null,
+          "fg2": null,
+          "metal": null
+        },
+        "points": 505,
+        "me": false
+      },
+      {
+        "rank": 21,
+        "username": "anna.m2",
+        "name": "Ann U.",
+        "bubble": {
+          "initials": "AN",
+          "bg": "#1b5e20",
+          "fg": "#ffffff",
+          "bg2": null,
+          "fg2": null,
+          "metal": null
+        },
+        "points": 500,
+        "me": false
+      },
+      {
+        "rank": 22,
+        "username": "jonas_k2",
+        "name": "Jon V.",
+        "bubble": {
+          "initials": "JO",
+          "bg": "#ffd27a",
+          "fg": "#1c1f23",
+          "bg2": null,
+          "fg2": null,
+          "metal": null
+        },
+        "points": 495,
+        "me": false
+      },
+      {
+        "rank": 23,
+        "username": "lea2",
+        "name": "Lea W.",
+        "bubble": {
+          "initials": "LE",
+          "bg": "#8b1a1a",
+          "fg": "#ffffff",
+          "bg2": null,
+          "fg2": null,
+          "metal": null
+        },
+        "points": 490,
+        "me": false
+      },
+      {
+        "rank": 24,
+        "username": "marco.b2",
+        "name": "Mar X.",
+        "bubble": {
+          "initials": "MA",
+          "bg": "#2458c8",
+          "fg": "#ffffff",
+          "bg2": null,
+          "fg2": null,
+          "metal": null
+        },
+        "points": 485,
+        "me": false
+      },
+      {
+        "rank": 25,
+        "username": "sara_z2",
+        "name": "Sar Y.",
+        "bubble": {
+          "initials": "SA",
+          "bg": "#e6e9ec",
+          "fg": "#1c1f23",
+          "bg2": null,
+          "fg2": null,
+          "metal": null
+        },
+        "points": 480,
+        "me": false
+      },
+      {
+        "rank": 26,
+        "username": "tim2",
+        "name": "Tim Z.",
+        "bubble": {
+          "initials": "TI",
+          "bg": "#1b5e20",
+          "fg": "#ffffff",
+          "bg2": null,
+          "fg2": null,
+          "metal": null
+        },
+        "points": 475,
+        "me": false
+      },
+      {
+        "rank": 27,
+        "username": "nina.r2",
+        "name": "Nin A.",
+        "bubble": {
+          "initials": "NI",
+          "bg": "#ffd27a",
+          "fg": "#1c1f23",
+          "bg2": null,
+          "fg2": null,
+          "metal": null
+        },
+        "points": 470,
+        "me": false
+      },
+      {
+        "rank": 28,
+        "username": "luca2",
+        "name": "Luc B.",
+        "bubble": {
+          "initials": "LU",
+          "bg": "#8b1a1a",
+          "fg": "#ffffff",
+          "bg2": null,
+          "fg2": null,
+          "metal": null
+        },
+        "points": 465,
+        "me": false
+      },
+      {
+        "rank": 29,
+        "username": "eva2",
+        "name": "Eva C.",
+        "bubble": {
+          "initials": "EV",
+          "bg": "#2458c8",
+          "fg": "#ffffff",
+          "bg2": null,
+          "fg2": null,
+          "metal": null
+        },
+        "points": 460,
+        "me": false
+      },
+      {
+        "rank": 30,
+        "username": "paul2",
+        "name": "Pau D.",
+        "bubble": {
+          "initials": "PA",
+          "bg": "#e6e9ec",
+          "fg": "#1c1f23",
+          "bg2": null,
+          "fg2": null,
+          "metal": null
+        },
+        "points": 455,
+        "me": false
+      },
+      {
+        "rank": 31,
+        "username": "anna.m3",
+        "name": "Ann E.",
+        "bubble": {
+          "initials": "AN",
+          "bg": "#1b5e20",
+          "fg": "#ffffff",
+          "bg2": null,
+          "fg2": null,
+          "metal": null
+        },
+        "points": 450,
+        "me": false
+      },
+      {
+        "rank": 32,
+        "username": "jonas_k3",
+        "name": "Jon F.",
+        "bubble": {
+          "initials": "JO",
+          "bg": "#ffd27a",
+          "fg": "#1c1f23",
+          "bg2": null,
+          "fg2": null,
+          "metal": null
+        },
+        "points": 445,
+        "me": false
+      },
+      {
+        "rank": 33,
+        "username": "lea3",
+        "name": "Lea G.",
+        "bubble": {
+          "initials": "LE",
+          "bg": "#8b1a1a",
+          "fg": "#ffffff",
+          "bg2": null,
+          "fg2": null,
+          "metal": null
+        },
+        "points": 440,
+        "me": false
+      },
+      {
+        "rank": 34,
+        "username": "marco.b3",
+        "name": "Mar H.",
+        "bubble": {
+          "initials": "MA",
+          "bg": "#2458c8",
+          "fg": "#ffffff",
+          "bg2": null,
+          "fg2": null,
+          "metal": null
+        },
+        "points": 435,
+        "me": false
+      },
+      {
+        "rank": 35,
+        "username": "sara_z3",
+        "name": "Sar I.",
+        "bubble": {
+          "initials": "SA",
+          "bg": "#e6e9ec",
+          "fg": "#1c1f23",
+          "bg2": null,
+          "fg2": null,
+          "metal": null
+        },
+        "points": 430,
+        "me": false
+      },
+      {
+        "rank": 36,
+        "username": "tim3",
+        "name": "Tim J.",
+        "bubble": {
+          "initials": "TI",
+          "bg": "#1b5e20",
+          "fg": "#ffffff",
+          "bg2": null,
+          "fg2": null,
+          "metal": null
+        },
+        "points": 425,
+        "me": false
+      },
+      {
+        "rank": 37,
+        "username": "nina.r3",
+        "name": "Nin K.",
+        "bubble": {
+          "initials": "NI",
+          "bg": "#ffd27a",
+          "fg": "#1c1f23",
+          "bg2": null,
+          "fg2": null,
+          "metal": null
+        },
+        "points": 420,
+        "me": false
+      },
+      {
+        "rank": 38,
+        "username": "luca3",
+        "name": "Luc L.",
+        "bubble": {
+          "initials": "LU",
+          "bg": "#8b1a1a",
+          "fg": "#ffffff",
+          "bg2": null,
+          "fg2": null,
+          "metal": null
+        },
+        "points": 415,
+        "me": false
+      },
+      {
+        "rank": 39,
+        "username": "eva3",
+        "name": "Eva M.",
+        "bubble": {
+          "initials": "EV",
+          "bg": "#2458c8",
+          "fg": "#ffffff",
+          "bg2": null,
+          "fg2": null,
+          "metal": null
+        },
+        "points": 410,
+        "me": false
+      },
+      {
+        "rank": 40,
+        "username": "paul3",
+        "name": "Pau N.",
+        "bubble": {
+          "initials": "PA",
+          "bg": "#e6e9ec",
+          "fg": "#1c1f23",
+          "bg2": null,
+          "fg2": null,
+          "metal": null
+        },
+        "points": 405,
+        "me": false
+      },
+      {
+        "rank": 41,
+        "username": "anna.m4",
+        "name": "Ann O.",
+        "bubble": {
+          "initials": "AN",
+          "bg": "#1b5e20",
+          "fg": "#ffffff",
+          "bg2": null,
+          "fg2": null,
+          "metal": null
+        },
+        "points": 400,
+        "me": false
+      },
+      {
+        "rank": 42,
+        "username": "jonas_k4",
+        "name": "Jon P.",
+        "bubble": {
+          "initials": "JO",
+          "bg": "#ffd27a",
+          "fg": "#1c1f23",
+          "bg2": null,
+          "fg2": null,
+          "metal": null
+        },
+        "points": 395,
+        "me": false
+      },
+      {
+        "rank": 43,
+        "username": "lea4",
+        "name": "Lea Q.",
+        "bubble": {
+          "initials": "LE",
+          "bg": "#8b1a1a",
+          "fg": "#ffffff",
+          "bg2": null,
+          "fg2": null,
+          "metal": null
+        },
+        "points": 390,
+        "me": false
+      },
+      {
+        "rank": 44,
+        "username": "marco.b4",
+        "name": "Mar R.",
+        "bubble": {
+          "initials": "MA",
+          "bg": "#2458c8",
+          "fg": "#ffffff",
+          "bg2": null,
+          "fg2": null,
+          "metal": null
+        },
+        "points": 385,
+        "me": false
+      },
+      {
+        "rank": 45,
+        "username": "sara_z4",
+        "name": "Sar S.",
+        "bubble": {
+          "initials": "SA",
+          "bg": "#e6e9ec",
+          "fg": "#1c1f23",
+          "bg2": null,
+          "fg2": null,
+          "metal": null
+        },
+        "points": 380,
+        "me": false
+      },
+      {
+        "rank": 46,
+        "username": "tim4",
+        "name": "Tim T.",
+        "bubble": {
+          "initials": "TI",
+          "bg": "#1b5e20",
+          "fg": "#ffffff",
+          "bg2": null,
+          "fg2": null,
+          "metal": null
+        },
+        "points": 375,
+        "me": false
+      },
+      {
+        "rank": 47,
+        "username": "nina.r4",
+        "name": "Nin U.",
+        "bubble": {
+          "initials": "NI",
+          "bg": "#ffd27a",
+          "fg": "#1c1f23",
+          "bg2": null,
+          "fg2": null,
+          "metal": null
+        },
+        "points": 370,
+        "me": false
+      },
+      {
+        "rank": 48,
+        "username": "luca4",
+        "name": "Luc V.",
+        "bubble": {
+          "initials": "LU",
+          "bg": "#8b1a1a",
+          "fg": "#ffffff",
+          "bg2": null,
+          "fg2": null,
+          "metal": null
+        },
+        "points": 365,
+        "me": false
+      },
+      {
+        "rank": 49,
+        "username": "eva4",
+        "name": "Eva W.",
+        "bubble": {
+          "initials": "EV",
+          "bg": "#2458c8",
+          "fg": "#ffffff",
+          "bg2": null,
+          "fg2": null,
+          "metal": null
+        },
+        "points": 360,
+        "me": false
+      },
+      {
+        "rank": 50,
+        "username": "paul4",
+        "name": "Pau X.",
+        "bubble": {
+          "initials": "PA",
+          "bg": "#e6e9ec",
+          "fg": "#1c1f23",
+          "bg2": null,
+          "fg2": null,
+          "metal": null
+        },
+        "points": 355,
+        "me": false
+      }
+    ],
+    "you": {
+      "rank": 63,
+      "points": 240
+    }
+  },
+  "all": {
+    "range": "all",
+    "rows": [
+      {
+        "rank": 1,
+        "username": "goldie",
+        "name": "Gina O.",
+        "bubble": {
+          "initials": "GO",
+          "bg": "#9a7400",
+          "fg": "#ffffff",
+          "bg2": null,
+          "fg2": null,
+          "metal": null
+        },
+        "points": 1180,
+        "me": true
+      }
+    ],
+    "you": {
+      "rank": 1,
+      "points": 1180
+    }
+  }
+}

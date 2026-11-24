@@ -1,0 +1,26 @@
+/* Styles for experiment.html, on top of style.css. */
+
+.wordmark a { color: inherit; text-decoration: none; }
+.intro p { margin: 0 0 8px; }
+.intro p:last-child { margin: 0; }
+#state { margin: 12px 2px; }
+
+.kpis { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 10px; margin-bottom: 20px; }
+.kpi { background: var(--card); border: 1px solid var(--line); border-radius: 12px; padding: 12px 14px; }
+.kpi .value { font-size: 1.6rem; font-weight: 700; font-variant-numeric: tabular-nums; }
+.kpi .label { display: block; margin-top: 2px; text-transform: none; letter-spacing: 0; font-size: 0.85rem; }
+.kpi.alert .value { color: var(--busy); }
+
+.block { margin-bottom: 24px; }
+.block h2 { display: block; margin: 0 0 8px; }
+.scroll { overflow-x: auto; background: var(--card); border: 1px solid var(--line); border-radius: 12px; }
+
+table { border-collapse: collapse; width: 100%; font-size: 0.9rem; }
+th, td { padding: 6px 10px; text-align: left; border-bottom: 1px solid var(--line); white-space: nowrap; }
+tr:last-child td { border-bottom: none; }
+th { font-weight: 600; color: var(--muted); font-size: 0.8rem; }
+td.num, th.num { text-align: right; font-variant-numeric: tabular-nums; }
+td.title { white-space: normal; min-width: 12em; }
+.added { color: var(--busy); }
+.removed { color: var(--free); }
+.bar { display: inline-block; height: 0.6em; border-radius: 3px; background: var(--accent); vertical-align: middle; margin-left: 6px; }

@@ -1,0 +1,2 @@
+# Only for scripts/make_share_images.py (preview images for invite links), run before each deploy.
+Pillow==10.3.0

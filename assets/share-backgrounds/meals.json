@@ -1,0 +1,6 @@
+[
+  { "file": "frooms_lunch_img_1.jpg", "room": "#1d2a5b", "text": "#b4492f", "glow": [251, 244, 232] },
+  { "file": "frooms_lunch_img_2.jpg", "room": "#1d2a5b", "text": "#b4492f", "glow": [251, 245, 234] },
+  { "file": "UZH_lunch_background_1.jpeg", "university": "UZH", "room": "#1d2a5b", "text": "#3a5fae", "glow": [251, 244, 232] },
+  { "file": "UZH_Lunch_background_2.jpeg", "university": "UZH", "room": "#1d2a5b", "text": "#3a5fae", "glow": [251, 245, 234] }
+]

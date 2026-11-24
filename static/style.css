@@ -1,0 +1,2150 @@
+/* Archivo by the Archivo Project Authors, SIL Open Font License 1.1 (see fonts/Archivo-OFL.txt) */
+@font-face {
+  font-family: "Archivo";
+  src: url("fonts/Archivo.woff2") format("woff2");
+  font-weight: 100 900;
+  font-stretch: 62% 125%;
+  font-display: swap;
+}
+
+:root {
+  /* Wide windows (from 1000 px): the list column, 40 % of the window but never narrower than the 440 px it was. */
+  --list-w: max(440px, 40vw);
+  --bg: #f6f7f8;
+  --card: #ffffff;
+  --text: #1c1f23;
+  --muted: #6b7280;
+  --line: #e3e5e8;
+  --accent: #010057; /* navy, same as the wordmark */
+  --dot: #da291c;
+  --ink: var(--accent); /* wordmark */
+  /* Status colours: green only for free rooms; navy for an open study space; amber for serving food; brown for an open
+     cafeteria; grey closed. */
+  --free: #2e7d32;
+  --free-soon: #6b9a62; /* rooms free soon: almost free */
+  --open: #010057;
+  --food: #a15f00; /* 5:1 on the cards, 4.7:1 on the page (AA for text) */
+  --cafe: #5c3a21; /* coffee */
+  --soon: #a15f00;
+  --busy: #9a3b3b;
+  /* Occupancy reports (the mannequins): free green (--free), crowded orange, full red (--busy). frooms' own estimate is
+     navy (--open), so the two are told apart. --meeting (blue) is kept for scheduled meetings on the schedule bar, later. */
+  --crowded: #d9750b; /* the mannequins (3:1, enough for a figure) */
+  --crowded-text: #a85a06; /* the Crowded button's word (AA) */
+  --meeting: #2458c8;
+  /* The map's occupancy dots keep ETH's traffic light. */
+  --occ-green: #2e7d32;
+  --occ-yellow: #b26a00;
+  --occ-red: #9a3b3b;
+  /* Dish types in the menus. */
+  --vegan: #2f7d4a;
+  --vegetarian: #7c8f2a;
+  --fish: #2a6f9a;
+  --meat: #a14a3a;
+  --chip-bg: #eceef1;
+  /* Map (static/map.js) */
+  --map-ground: #f3f1ec;
+  --map-green: #dfe8d3;
+  --map-water: #cfe0ec;
+  --map-plaza: #ebe7df;
+  --map-road: #ffffff;
+  --map-casing: #dcd7cd;
+  --map-path: #c9c3b7;
+  --map-rail: #a7adb6;
+  --map-house: #e4e0d8;
+  --map-house-line: #d3cec4;
+  --map-eth: #d6dae6;
+  --map-eth-line: #b7bdd0;
+  --map-campus: #c9cfe2;
+  --map-campus-line: #9aa3c2;
+  --map-dome: #b3bcd8;
+  --map-dome-line: #6e7aa6;
+  /* Campus buildings in one calm frooms blue for both universities (Raffaele, 17 November 2026: "One frooms blue"):
+     selected (a navy gradient, --map-sel-from to --map-sel-to), on the selected campus, on another campus. The
+     universities' own blues stay for what is theirs (the mensa tiles). */
+  --map-eth-sel: #1b2a8c;
+  --map-eth-act: #c3cce0;
+  --map-eth-inact: #e2e6ef;
+  --map-uzh-sel: #1b2a8c;
+  --map-uzh-act: #c3cce0;
+  --map-uzh-inact: #e2e6ef;
+  --map-sel-from: #3a44b8;
+  --map-sel-to: #010057;
+  --eth-blue: #215caf;
+  --uzh-blue: #0028a5;
+  --me: #1a73e8; /* the person's dot on the map: the blue people know from map apps */
+  /* Meal ratings (ratings.js reads these, lib.js ratingColour mixes them): -5, 0 and +5; the bars use the ends. */
+  --rate-neg: #8b1a1a;
+  --rate-zero: #010057;
+  --rate-pos: #1b5e20;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #121417;
+    --card: #1b1e22;
+    --text: #e6e8eb;
+    --muted: #9aa1ab;
+    --line: #2c3036;
+    --accent: #3a3aa8; /* lighter navy, so it stands out on the dark background */
+    --me: #4c8df6;
+    --ink: var(--text);
+    --rate-neg: #ff8a80;
+    --rate-zero: #ffffff;
+    --rate-pos: #81c784;
+    --free: #6cc070;
+    --free-soon: #9cc394;
+    --open: #9aa6ff; /* lighter navy, readable on the dark background */
+    --food: #e0a040;
+    --cafe: #b88b68;
+    --soon: #e0a040;
+    --busy: #e08080;
+    --crowded: #f0a050;
+    --crowded-text: #f0a050;
+    --meeting: #6b94f0;
+    --occ-green: #6cc070;
+    --occ-yellow: #e0a040;
+    --occ-red: #e08080;
+    --vegan: #6cc08a;
+    --vegetarian: #bccb6a;
+    --fish: #74b4e0;
+    --meat: #e0907e;
+    --chip-bg: #262a30;
+    --map-ground: #17191c;
+    --map-green: #1c2a1f;
+    --map-water: #1a2a36;
+    --map-plaza: #1f2226;
+    --map-road: #2b2f35;
+    --map-casing: #1f2226;
+    --map-path: #3a3f46;
+    --map-rail: #4a505a;
+    --map-house: #23262b;
+    --map-house-line: #2e3238;
+    --map-eth: #2a2f45;
+    --map-eth-line: #3a4160;
+    --map-campus: #343b5e;
+    --map-campus-line: #56608c;
+    --map-dome: #4a5384;
+    --map-dome-line: #8e98c8;
+    --map-eth-sel: #8c94f0;
+    --map-eth-act: #3a4370;
+    --map-eth-inact: #272d48;
+    --map-uzh-sel: #8c94f0;
+    --map-uzh-act: #3a4370;
+    --map-uzh-inact: #272d48;
+    --map-sel-from: #7a83ec;
+    --map-sel-to: #3a3aa8;
+  }
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font: 15px/1.45 system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+
+h1 { margin: 0; line-height: 1; }
+.wordmark {
+  font-family: "Archivo", system-ui, sans-serif;
+  font-weight: 800;
+  font-stretch: 87.5%;
+  font-size: 1.6rem;
+  line-height: 1;
+  letter-spacing: -0.02em;
+  color: var(--ink);
+}
+.wordmark .dot {
+  display: inline-block;
+  width: 0.2em;
+  height: 0.2em;
+  margin-left: 0.05em;
+  border-radius: 50%;
+  background: var(--dot);
+}
+h2 { font-size: 1rem; margin: 0; display: inline; }
+.muted { color: var(--muted); font-weight: normal; }
+#asof { margin: 16px 2px 0; font-size: 0.85rem; min-height: 1.2em; }
+
+.controls {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 12px 14px;
+  display: grid;
+  gap: 12px;
+}
+.field { display: grid; gap: 6px; }
+.label { font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.04em; color: var(--muted); }
+summary.label { cursor: pointer; }
+.row { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; }
+#filters[open] > .row { margin: 8px 0; }
+
+.chips { display: flex; flex-wrap: wrap; gap: 6px; }
+.chip {
+  border: 1px solid transparent;
+  background: var(--chip-bg);
+  color: var(--text);
+  border-radius: 999px;
+  padding: 5px 12px;
+  font: inherit;
+  font-size: 0.9rem;
+  cursor: pointer;
+}
+.chip.on { background: var(--accent); color: #fff; }
+.chip small { opacity: 0.7; margin-left: 4px; }
+.chip.more { background: transparent; border-color: var(--line); color: var(--muted); }
+.chips .empty { color: var(--muted); font-size: 0.9rem; }
+/* The building chips: one line that scrolls sideways on phones, fading out at the right edge; wrapped on wide windows. */
+#buildings {
+  flex-wrap: nowrap; overflow-x: auto; scrollbar-width: none; overscroll-behavior-x: contain;
+  margin-right: -14px; padding-right: 30px;
+  -webkit-mask-image: linear-gradient(to right, #000 calc(100% - 40px), transparent);
+  mask-image: linear-gradient(to right, #000 calc(100% - 40px), transparent);
+}
+#buildings::-webkit-scrollbar { display: none; }
+#buildings .chip { flex: none; white-space: nowrap; }
+.chip-star { color: var(--food); margin-right: 3px; font-size: 0.85em; }
+.chip.on .chip-star { color: #ffd27a; }
+@media (min-width: 1000px) {
+  #buildings { flex-wrap: wrap; overflow: visible; margin-right: 0; padding-right: 0; -webkit-mask-image: none; mask-image: none; }
+}
+
+input[type=number] {
+  font: inherit;
+  padding: 4px 8px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--card);
+  color: var(--text);
+  width: 6em;
+}
+input:disabled { opacity: 0.45; }
+
+/* The Time field (app.js renderTimeField): the Now chip, then the date and the time as buttons; a click opens the
+   calendar or the time wheel (static/picker.js) in a card under the row. While Now is on the buttons show the current
+   date and time, muted. */
+.time-btn {
+  padding: 5px 12px; border: 1px solid var(--line); border-radius: 999px; background: var(--card); color: var(--text);
+  font: inherit; font-size: 0.9rem; font-variant-numeric: tabular-nums; cursor: pointer;
+}
+.time-btn.live { color: var(--muted); }
+.time-btn[aria-expanded="true"] { border-color: var(--accent); color: var(--accent); background: color-mix(in srgb, var(--accent) 8%, var(--card)); }
+.picker { justify-self: start; max-width: 100%; margin-top: 2px; padding: 10px; border: 1px solid var(--line); border-radius: 12px; background: var(--bg); }
+.picker[hidden] { display: none; }
+
+/* The calendar: a month grid, Monday first. The selected day is navy with white text, today has a thin navy ring,
+   days outside /api/dates' range are faded. */
+.cal { display: grid; gap: 4px; }
+.cal-head { display: flex; align-items: center; justify-content: space-between; padding: 0 2px; }
+.cal-title { font-weight: 650; }
+.cal-nav { width: 32px; height: 32px; border: 0; border-radius: 50%; background: transparent; color: var(--text); font: inherit; font-size: 1.3rem; line-height: 1; cursor: pointer; }
+.cal-nav:hover { background: var(--chip-bg); }
+.cal-nav:disabled { opacity: 0.3; cursor: default; background: transparent; }
+.cal-row { display: grid; grid-template-columns: repeat(7, 40px); }
+.cal-wd { text-align: center; font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.04em; color: var(--muted); line-height: 24px; }
+.cal-day {
+  width: 36px; height: 36px; margin: 2px; border: 0; border-radius: 50%; background: transparent; color: var(--text);
+  font: inherit; font-size: 0.92rem; font-variant-numeric: tabular-nums; cursor: pointer;
+}
+.cal-day:hover { background: var(--chip-bg); }
+.cal-day.today { box-shadow: inset 0 0 0 1.5px var(--accent); }
+.cal-day.sel, .cal-day.sel:hover { background: var(--accent); color: #fff; }
+.cal-day:disabled { color: var(--muted); opacity: 0.4; cursor: default; background: transparent; }
+.cal-day:focus-visible, .cal-nav:focus-visible { outline: 2px solid var(--accent); outline-offset: 1px; }
+
+/* The time wheel: an hours drum and a minutes drum (5-minute steps) behind a window of five values, the middle one
+   large and navy on a soft band, the others fading out towards the edges. The drums are circular and follow the
+   finger 1:1; the sizes (WHEEL_STEP_PX, WHEEL_VISIBLE) are set from picker.js. */
+.wheel { display: flex; align-items: center; gap: 2px; padding: 0 4px; }
+.wheel-colon { font-size: 1.4rem; font-weight: 700; color: var(--accent); padding-bottom: 3px; }
+.drum { position: relative; width: 76px; border-radius: 10px; touch-action: none; user-select: none; -webkit-user-select: none; cursor: grab; }
+.drum:active { cursor: grabbing; }
+.drum:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.drum-band { position: absolute; left: 4px; right: 4px; border-radius: 8px; background: var(--chip-bg); }
+.drum-list {
+  position: relative; overflow: hidden;
+  -webkit-mask-image: linear-gradient(to bottom, transparent, #000 32%, #000 68%, transparent);
+  mask-image: linear-gradient(to bottom, transparent, #000 32%, #000 68%, transparent);
+}
+.drum-v {
+  position: absolute; left: 0; right: 0; top: 0; height: 36px; line-height: 36px; text-align: center;
+  font-size: 1.2rem; font-variant-numeric: tabular-nums; color: var(--muted); will-change: transform;
+}
+.drum-v.mid { color: var(--accent); font-weight: 700; }
+@media (prefers-color-scheme: dark) {
+  .time-btn[aria-expanded="true"], .wheel-colon, .drum-v.mid { color: var(--open); }
+}
+
+.message { padding: 10px 14px; border-radius: 10px; background: var(--card); border: 1px solid var(--line); }
+
+#results, #space-results, #you { margin: 10px 0 24px; display: grid; gap: 16px; }
+#results[hidden], #space-results[hidden], #you[hidden], #filters[hidden], .group[hidden] { display: none; }
+.group > summary { cursor: pointer; list-style-position: inside; }
+.group ul { list-style: none; margin: 8px 0 0; padding: 0; display: grid; gap: 6px; }
+.count { color: var(--muted); font-weight: normal; }
+
+/* List rows: one button each (name, the reports' mannequins, status in its colour, one meta line, the estimate's bar,
+   a room's schedule bar), opening the detail view; a mensa's Menu button beside it. The left border is the status colour. */
+.room {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: center;
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-left: 4px solid var(--muted);
+  border-radius: 10px;
+  position: relative;
+}
+.room.free { border-left-color: var(--free); }
+.room.soon { border-left-color: var(--free-soon); }
+.room.busy { border-left-color: var(--busy); }
+.room.managed { border-left-color: var(--crowded); }
+.room.short { opacity: 0.55; }
+.row-open {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto auto;
+  grid-template-areas: "name ppl when" "meta meta meta" "occ occ occ" "rep rep rep" "sched sched sched";
+  align-items: baseline;
+  width: 100%;
+  padding: 8px 12px;
+  border: 0;
+  border-radius: 9px;
+  background: none;
+  color: inherit;
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+}
+.room.has-menu .row-open { grid-column: 1; }
+.row-open:focus-visible { outline: 2px solid var(--accent); outline-offset: 1px; }
+@media (hover: hover) { .row-open:hover { background: color-mix(in srgb, var(--chip-bg) 55%, transparent); } }
+.room .name { grid-area: name; font-weight: 600; min-width: 0; }
+.room .when { grid-area: when; margin-left: 10px; font-weight: 600; text-align: right; justify-self: end; }
+.room.free .when { color: var(--free); }
+.room.soon .when { color: var(--free-soon); }
+.room.busy .when { color: var(--busy); }
+.room.managed .when { color: var(--crowded-text); }
+.room .meta { grid-area: meta; font-size: 0.85rem; color: var(--muted); }
+.room .kicker { grid-column: 1 / -1; font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.06em; color: var(--muted); font-weight: 650; }
+.room .kicker .dist { text-transform: none; letter-spacing: 0; color: var(--text); }
+.room.near .row-open { grid-template-areas: "kicker kicker kicker" "name name name" "meta meta meta"; }
+.star-mark { color: var(--food); margin-right: 4px; }
+
+.room.space.study { border-left-color: var(--open); }
+.room.space.food { border-left-color: var(--food); }
+.room.space.cafe { border-left-color: var(--cafe); }
+.room.space.closed { border-left-color: var(--muted); }
+.room.building.open { border-left-color: var(--open); }
+.room .status { grid-area: when; margin-left: 10px; display: flex; flex-direction: column; align-items: flex-end; text-align: right; }
+.room .status .when { grid-area: auto; }
+.room .status .when2 { font-size: 0.85rem; font-weight: 600; }
+.room .status .study, .detail-status .study { color: var(--open); }
+.room .status .food, .detail-status .food { color: var(--food); }
+.room .status .cafe, .detail-status .cafe { color: var(--cafe); }
+.room .status .plain, .detail-status .plain { color: var(--text); }
+.room .status .closed, .detail-status .closed { color: var(--muted); }
+.room .menu-btn { margin: 0 10px 0 0; align-self: center; }
+.menu-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 3px 12px 3px 9px;
+  border: 1px solid var(--food);
+  border-radius: 999px;
+  background: none;
+  color: var(--food);
+  font: inherit;
+  font-size: 0.85rem;
+  font-weight: 650;
+  cursor: pointer;
+}
+.menu-btn:hover { background: color-mix(in srgb, var(--food) 12%, transparent); }
+.menu-btn svg { width: 15px; height: 15px; flex-shrink: 0; fill: none; stroke: currentColor; stroke-width: 1.9; stroke-linejoin: round; stroke-linecap: round; }
+/* --- The Eat tab (app.js renderEat) --- */
+
+/* The two buttons at the top: Compare menus, full width in a navy gradient; Find your meal, outlined navy. */
+.eat-actions { display: grid; gap: 8px; }
+.eat-actions[hidden] { display: none; }
+.eat-primary, .eat-secondary {
+  display: flex; align-items: center; gap: 10px; width: 100%; padding: 0 16px; border-radius: 14px;
+  font: inherit; font-size: 1rem; font-weight: 700; text-align: left; cursor: pointer;
+}
+.eat-primary {
+  height: 56px; border: 0; color: #fff;
+  background: linear-gradient(100deg, var(--accent), color-mix(in srgb, var(--accent) 70%, #4a6cf0));
+  box-shadow: 0 4px 14px color-mix(in srgb, var(--accent) 30%, transparent);
+}
+.eat-primary:hover { background: linear-gradient(100deg, color-mix(in srgb, var(--accent) 90%, #fff), color-mix(in srgb, var(--accent) 60%, #4a6cf0)); }
+.eat-primary span { flex: 1 1 auto; }
+.eat-secondary { height: 48px; border: 1.5px solid var(--accent); background: var(--card); color: var(--accent); font-size: 0.95rem; }
+.eat-secondary:hover { background: color-mix(in srgb, var(--accent) 8%, var(--card)); }
+.eat-actions svg { width: 22px; height: 22px; flex: none; fill: none; stroke: currentColor; stroke-width: 1.9; stroke-linejoin: round; stroke-linecap: round; }
+.eat-actions .chev { width: 18px; height: 18px; opacity: 0.8; }
+.eat-primary:focus-visible, .eat-secondary:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+@media (prefers-color-scheme: dark) {
+  .eat-primary { background: linear-gradient(100deg, #2b2b8a, #3a4cc0); box-shadow: none; }
+  .eat-primary:hover { background: linear-gradient(100deg, #34349a, #4457cc); }
+  .eat-secondary { border-color: var(--open); color: var(--open); }
+}
+
+/* A mensa's card (app.js mensaCard): the photo (or a tile with its initials) left, name, status, flagship dish and
+   meta right; about twice a row's height. */
+.mcard .row-open { display: grid; grid-template-columns: 96px minmax(0, 1fr); grid-template-areas: none; gap: 0 12px; align-items: center; padding: 8px 12px 8px 8px; }
+/* The card's menu button: round, the food colour, right of the card. */
+.mcard-menu { align-self: center; display: grid; place-items: center; width: 42px; height: 42px; margin: 0 10px 0 0; padding: 0; border: 1.5px solid var(--food); border-radius: 50%; background: none; color: var(--food); cursor: pointer; }
+.mcard-menu:hover { background: color-mix(in srgb, var(--food) 12%, transparent); }
+.mcard-menu svg { width: 20px; height: 20px; fill: none; stroke: currentColor; stroke-width: 1.9; stroke-linejoin: round; stroke-linecap: round; }
+.mcard-photo, .mcard-tile { display: block; width: 96px; height: 96px; border-radius: 10px; object-fit: cover; background: var(--chip-bg); }
+.mcard-tile {
+  display: flex; align-items: center; justify-content: center; color: #fff;
+  font-family: "Archivo", system-ui, sans-serif; font-weight: 800; font-stretch: 87.5%; font-size: 1.7rem; letter-spacing: 0.02em;
+}
+.mcard-tile.eth { background: linear-gradient(135deg, var(--eth-blue), color-mix(in srgb, var(--eth-blue) 70%, #000)); }
+.mcard-tile.uzh { background: linear-gradient(135deg, var(--uzh-blue), color-mix(in srgb, var(--uzh-blue) 70%, #000)); }
+.mcard-body { display: grid; grid-template-columns: minmax(0, 1fr); gap: 2px; min-width: 0; }
+.mcard .mcard-body > * { grid-area: auto; grid-column: 1; } /* the row rules' named areas don't apply inside the card */
+.mcard .name { display: flex; align-items: baseline; gap: 6px; min-width: 0; white-space: nowrap; }
+.mcard .name .star-mark { margin-right: 0; }
+.mcard-name { min-width: 0; overflow: hidden; text-overflow: ellipsis; }
+.mcard-uni { flex: none; }
+.mcard-uni { font-size: 0.7rem; font-weight: 700; letter-spacing: 0.04em; color: var(--muted); border: 1px solid var(--line); border-radius: 4px; padding: 0 4px; line-height: 1.4; }
+.mcard-status { display: flex; align-items: center; gap: 6px; min-width: 0; }
+.mcard .when { margin: 0; text-align: left; justify-self: start; font-size: 0.92rem; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.mcard .when.food { color: var(--food); }
+.mcard .when.cafe { color: var(--cafe); }
+.mcard .when.plain { color: var(--text); }
+.mcard .when.closed { color: var(--muted); }
+.mcard-dish { display: flex; align-items: baseline; gap: 6px; min-width: 0; font-size: 0.88rem; }
+.mcard .name { font-size: 1.02rem; font-weight: 700; }
+.mcard-dish .line { flex: none; color: var(--muted); }
+.mcard-dish .line::after { content: " ·"; }
+.mcard-dish .dish-price::before { content: "· "; color: var(--muted); }
+.mcard-dish .dish-name { min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; font-weight: 500; }
+.mcard-dish .dish-price { flex: none; font-size: 0.85rem; }
+.mcard-yours { flex: none; color: var(--food); font-weight: 650; }
+.mcard .meta { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+/* The starred food preference's row in the You tab (app.js mealPrefRow). */
+.room.pref { border-left-color: var(--food); }
+.mcard.plain { border-left-color: var(--line); }
+
+/* Microwaves (app.js renderMicrowaves): by building like Meet's groups; a row names the count and the place. */
+.room.micro { border-left-color: var(--line); }
+.room.micro .name { display: flex; align-items: center; gap: 6px; }
+.room.micro .name svg { width: 16px; height: 16px; flex: none; fill: none; stroke: var(--muted); stroke-width: 1.7; stroke-linejoin: round; stroke-linecap: round; }
+#s-micro .bgroups { margin-top: 8px; }
+.panel-note { margin: 10px 0 0; font-size: 0.88rem; }
+/* frooms' estimate: five navy steps (and "usually about 60 % full" for a future time), the reports' mannequins beside it. */
+.room .occ { grid-area: occ; display: flex; align-items: center; gap: 8px; margin-top: 4px; font-size: 0.85rem; }
+.occ-bar { display: inline-flex; gap: 2px; }
+.occ-bar i { width: 14px; height: 6px; border-radius: 2px; background: var(--line); }
+.occ-bar i.on { background: var(--open); }
+.occ.usual .occ-bar i.on { opacity: 0.6; }
+.room .reported { grid-area: rep; margin-top: 2px; font-size: 0.85rem; }
+
+/* The reports' mannequins (app.js people): one grey without reports, one green free, two orange crowded, three red full. */
+.people { flex: none; height: 14px; fill: currentColor; color: var(--muted); }
+.people.free { color: var(--free); }
+.people.crowded { color: var(--crowded); }
+.people.full { color: var(--busy); }
+.room .row-open > .people { grid-area: ppl; align-self: center; margin-left: 10px; }
+
+/* The schedule bar (app.js scheduleBar): the day from 07:00 to 22:00, free green, booked red, closed grey, the navy
+   needle at the chosen time. Blue (--meeting) is kept for scheduled meetings. */
+.room .sched { grid-area: sched; }
+.sched { position: relative; display: block; height: 6px; margin-top: 10px; }
+.sched-track { position: absolute; inset: 0; border-radius: 3px; background: var(--free); overflow: hidden; }
+.sched-track i { position: absolute; top: 0; bottom: 0; }
+.sched-track.managed { background: var(--crowded); } /* a department's room: ETH lists nothing, it may still be booked */
+.sched-b { background: var(--busy); }
+.sched-c { background: var(--muted); opacity: 0.55; }
+.sched-needle { position: absolute; top: -2px; bottom: -1px; width: 2px; margin-left: -1px; background: var(--accent); }
+.sched-needle::before { content: ""; position: absolute; top: -4px; left: -3px; border-left: 4px solid transparent; border-right: 4px solid transparent; border-top: 4px solid var(--accent); }
+@media (prefers-color-scheme: dark) { .sched-needle, .sched-needle::before { background-color: var(--open); border-top-color: var(--open); } }
+.sched-box { display: block; }
+.detail .sched-box .sched { height: 8px; margin-top: 8px; }
+.sched-ticks { position: relative; display: block; height: 14px; margin-top: 3px; font-size: 0.7rem; color: var(--muted); font-variant-numeric: tabular-nums; }
+.sched-ticks span { position: absolute; transform: translateX(-50%); }
+.row[hidden], .chips[hidden] { display: none; }
+
+/* Invite menu: WhatsApp or copy the link, below the invite button. */
+.invite-menu {
+  position: absolute;
+  right: 8px;
+  top: calc(100% - 4px);
+  z-index: 2;
+  display: grid;
+  min-width: 170px;
+  padding: 4px;
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.14);
+  animation: reveal 0.2s ease both;
+  cursor: default;
+}
+.invite-menu[hidden] { display: none; }
+.invite-menu button {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 9px 10px;
+  border: 0;
+  border-radius: 7px;
+  background: none;
+  color: var(--text);
+  font: inherit;
+  font-size: 0.92rem;
+  font-weight: 600;
+  text-align: left;
+  cursor: pointer;
+}
+.invite-menu button:hover { background: var(--chip-bg); }
+.invite-menu svg { width: 20px; height: 20px; flex-shrink: 0; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+.invite-menu img { width: 20px; height: 20px; flex-shrink: 0; }
+/* Invites outside the list cards (map sheet, menu panel, comparison): the menu opens below the button, or above it
+   (`up`), from its left edge. */
+.invite-box { position: relative; display: inline-block; }
+.invite-box .invite { display: inline-flex; align-items: center; gap: 6px; padding: 6px 8px; border: 0; border-radius: 8px; background: none; color: var(--open); font: inherit; font-size: 0.88rem; font-weight: 600; cursor: pointer; }
+.invite-box .invite:hover { background: var(--chip-bg); }
+.invite-box .invite svg { width: 18px; height: 18px; flex-shrink: 0; fill: none; stroke: currentColor; stroke-width: 2; stroke-linejoin: round; stroke-linecap: round; }
+.invite-box .invite-menu { right: auto; left: 0; top: calc(100% + 4px); }
+.invite-box.up .invite-menu { top: auto; bottom: calc(100% + 4px); }
+.sheet-row > .invite-box, .sheet-actions { margin: 4px 0 0 -8px; }
+.sheet-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 4px 10px; padding-left: 8px; }
+.panel-actions { display: flex; align-items: center; gap: 2px; flex-shrink: 0; }
+.cmp > .cmp-invite { border-bottom: 0; padding-top: 4px; }
+.cmp-cell.cmp-invite { justify-items: start; }
+.cmp-invite .invite-menu { z-index: 3; }
+.panel-actions .invite-menu { left: auto; right: 0; } /* at the panel's right edge */
+/* A meal invite's time picker, above WhatsApp and Copy link. */
+/* A meal invite's time (app.js inviteTimePicker): No time, Now and the time button, and the wheel below them. */
+.invite-menu .invite-when { display: grid; gap: 6px; margin: 2px 2px 6px; padding: 6px 6px 8px; border-bottom: 1px solid var(--line); }
+.invite-when-label { font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.06em; color: var(--muted); font-weight: 650; }
+.invite-when .row { display: flex; flex-wrap: wrap; gap: 6px; align-items: center; }
+.invite-menu .invite-when .chip, .invite-menu .invite-when .time-btn { display: inline-block; width: auto; padding: 5px 12px; border-radius: 999px; font-size: 0.86rem; font-weight: 600; }
+.invite-menu .invite-when .chip { border: 1px solid transparent; background: var(--chip-bg); color: var(--text); }
+.invite-menu .invite-when .chip.on { background: var(--accent); color: #fff; }
+.invite-menu .invite-when .time-btn { border: 1px solid var(--line); background: var(--card); color: var(--text); font-variant-numeric: tabular-nums; }
+.invite-menu .invite-when .time-btn.live { color: var(--muted); }
+.invite-menu .invite-when .time-btn[aria-expanded="true"] { border-color: var(--accent); color: var(--accent); }
+.invite-menu .invite-when .drum { width: 64px; }
+.invite-when .invite-wheel { margin: 0; }
+.invite-when .invite-wheel[hidden] { display: none; }
+
+
+/* keep long labels from widening the page on narrow screens */
+.controls, #results, #space-results, #you, .group ul { grid-template-columns: minmax(0, 1fr); }
+
+.message.warning { border-left: 4px solid var(--soon); display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
+.message.warning[hidden] { display: none; }
+
+/* --- Feedback form: a centred dialog, 80 % of the screen on phones; tap beside it or ✕ to close. --- */
+
+#feedback {
+  width: min(80vw, 560px);
+  max-height: 80dvh;
+  box-sizing: border-box;
+  padding: 0;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  background: var(--card);
+  color: var(--text);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.25);
+}
+@media (max-width: 640px) { #feedback { width: 80vw; height: 80dvh; } }
+#feedback::backdrop { background: rgba(0, 0, 0, 0.45); }
+#feedback[open] { display: flex; flex-direction: column; }
+.feedback-head {
+  display: flex; align-items: center; justify-content: space-between; gap: 12px;
+  padding: 12px 12px 12px 18px; border-bottom: 1px solid var(--line);
+}
+.feedback-head h2 { margin: 0; font-size: 1.1rem; }
+.feedback-close {
+  font: inherit; font-size: 1.1rem; line-height: 1; color: var(--muted);
+  background: none; border: 0; border-radius: 8px; padding: 8px 10px; cursor: pointer;
+}
+.feedback-close:hover { background: var(--chip-bg); color: var(--text); }
+#feedback-form, .feedback-done { padding: 16px 18px 18px; overflow-y: auto; display: grid; gap: 14px; align-content: start; }
+.feedback-cats { border: 0; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 8px; }
+.feedback-cats legend { padding: 0; margin-bottom: 8px; font-weight: 600; }
+.feedback-cats label {
+  display: inline-flex; align-items: center; padding: 7px 12px; border-radius: 999px;
+  background: var(--chip-bg); border: 1px solid transparent; cursor: pointer; font-size: 0.92rem;
+}
+.feedback-cats input { position: absolute; opacity: 0; pointer-events: none; }
+.feedback-cats label:has(input:checked) { background: var(--accent); color: #fff; }
+.feedback-cats label:has(input:focus-visible) { outline: 2px solid var(--accent); outline-offset: 2px; }
+.feedback-field { display: grid; gap: 6px; }
+.feedback-field span { font-weight: 600; }
+.feedback-field em { font-weight: 400; font-style: normal; color: var(--muted); }
+.feedback-field textarea, .feedback-field input {
+  font: inherit; font-size: 16px; /* 16px keeps iOS from zooming in */
+  color: var(--text); background: var(--bg); border: 1px solid var(--line); border-radius: 8px;
+  padding: 9px 10px; width: 100%; box-sizing: border-box;
+}
+.feedback-field textarea { resize: vertical; min-height: 7em; }
+.feedback-trap { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
+.feedback-note { margin: 0; font-size: 0.85rem; color: var(--muted); }
+.feedback-error { margin: 0; color: var(--busy); font-size: 0.92rem; }
+.feedback-send {
+  justify-self: start; font: inherit; font-weight: 600; color: #fff; background: var(--accent);
+  border: 0; border-radius: 9px; padding: 10px 22px; cursor: pointer;
+}
+.feedback-send:disabled { opacity: 0.6; cursor: default; }
+.feedback-done p { margin: 0; }
+#feedback-form[hidden], .feedback-done[hidden], .feedback-error[hidden] { display: none; }
+/* "Report a bug" (bugs.js): the picked element and the reward, above the text. */
+.feedback-bug { display: grid; gap: 8px; }
+.feedback-bug[hidden], .feedback-cats[hidden] { display: none; }
+.feedback-bug-el { display: flex; align-items: center; justify-content: space-between; gap: 10px; padding: 9px 12px; border: 1px solid var(--line); border-radius: 10px; background: var(--bg); font-size: 0.92rem; }
+.feedback-bug-el > span { min-width: 0; overflow-wrap: anywhere; }
+.feedback-bug-again { flex: none; padding: 5px 10px; border: 1px solid var(--line); border-radius: 999px; background: var(--card); color: var(--text); font: inherit; font-size: 0.85rem; cursor: pointer; }
+.feedback-bug-reward { margin: 0; font-size: 0.88rem; color: var(--muted); }
+.feedback-bug-reward .link-btn { padding: 0; border: 0; background: none; color: var(--accent); font: inherit; font-weight: 600; text-decoration: underline; cursor: pointer; }
+
+/* The picker: a clear layer over everything, an outline on the element under the pointer, a bar at the top. */
+.bug-pick { position: fixed; inset: 0; z-index: 10000; cursor: crosshair; touch-action: none; }
+.bug-pick-box { position: fixed; border: 2px solid var(--busy); border-radius: 6px; background: color-mix(in srgb, var(--busy) 12%, transparent); pointer-events: none; }
+.bug-pick-box[hidden] { display: none; }
+.bug-pick-bar {
+  position: fixed; top: max(10px, env(safe-area-inset-top)); left: 50%; transform: translateX(-50%); width: min(460px, calc(100vw - 24px));
+  display: flex; align-items: center; gap: 8px; padding: 10px 12px; border-radius: 14px; background: var(--card); color: var(--text);
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.25); cursor: default;
+}
+.bug-pick-text { flex: 1; min-width: 0; display: grid; font-size: 0.92rem; line-height: 1.3; }
+.bug-pick-text .muted { font-size: 0.82rem; }
+.bug-pick-btn { flex: none; padding: 6px 12px; border: 1px solid var(--line); border-radius: 999px; background: var(--card); color: var(--text); font: inherit; font-size: 0.88rem; cursor: pointer; }
+
+/* --- Map (static/map.js) --- */
+
+.map-top { position: absolute; left: 10px; top: 10px; right: 56px; display: flex; flex-wrap: wrap; gap: 6px; align-items: center; pointer-events: none; }
+.map-top > * { pointer-events: auto; }
+.map-close {
+  padding: 7px 12px;
+  border: 0;
+  border-radius: 10px;
+  background: var(--card);
+  color: var(--text);
+  font: inherit;
+  font-size: 0.9rem;
+  font-weight: 650;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.15);
+  cursor: pointer;
+}
+.map-note { position: absolute; left: 6px; bottom: 4px; max-width: calc(100% - 140px); margin: 0; padding: 1px 6px; border-radius: 4px; font-size: 0.7rem; color: var(--muted); background: color-mix(in srgb, var(--card) 80%, transparent); }
+.map-note[hidden], .map-note:empty { display: none; }
+
+/* Only the map surface takes over touch gestures; the sheet keeps normal scrolling. */
+.map-svg { position: absolute; inset: 0; width: 100%; height: 100%; display: block; touch-action: none; }
+.map-svg path { fill: none; vector-effect: non-scaling-stroke; stroke-linejoin: round; stroke-linecap: round; }
+.map-svg .l-green { fill: var(--map-green); }
+.map-svg .l-water { fill: var(--map-water); }
+.map-svg .l-river { stroke: var(--map-water); stroke-width: 14; }
+.map-svg .l-plaza { fill: var(--map-plaza); }
+.map-svg .l-case { stroke: var(--map-casing); }
+.map-svg .l-major, .map-svg .l-minor, .map-svg .l-service { stroke: var(--map-road); }
+.map-svg .l-foot { stroke: var(--map-path); stroke-width: 0.8; stroke-dasharray: 2 2.5; }
+.map-svg .l-rail { stroke: var(--map-rail); stroke-width: 1.2; }
+.map-svg .l-funicular { stroke: var(--dot); stroke-width: 2; stroke-dasharray: 5 3; }
+.map-svg .l-other { fill: var(--map-house); stroke: var(--map-house-line); stroke-width: 0.6; }
+.map-svg .l-eth { fill: var(--map-eth); stroke: var(--map-eth-line); stroke-width: 0.7; }
+.map-svg .map-buildings { --b-sel: var(--map-eth-sel); --b-act: var(--map-eth-act); --b-inact: var(--map-eth-inact); }
+.map-svg .map-buildings.uzh { --b-sel: var(--map-uzh-sel); --b-act: var(--map-uzh-act); --b-inact: var(--map-uzh-inact); }
+.map-svg .map-building { fill: var(--b-act); stroke: color-mix(in srgb, var(--b-sel) 40%, transparent); stroke-width: 1; cursor: pointer; }
+.map-svg .map-building.selected { fill: url(#map-sel-grad); stroke: var(--map-sel-to); stroke-width: 2.2; }
+.map-svg .sel-from { stop-color: var(--map-sel-from); }
+.map-svg .sel-to { stop-color: var(--map-sel-to); }
+.map-svg .map-dome circle { fill: var(--map-dome); stroke: var(--map-dome-line); stroke-width: 1.2; vector-effect: non-scaling-stroke; }
+.map-svg .map-dome line { stroke: var(--map-dome-line); stroke-width: 0.7; vector-effect: non-scaling-stroke; }
+.map-svg .map-dome .lantern { fill: var(--map-dome-line); }
+
+/* Road widths in px per zoom step (the strokes don't scale with the map). Footpaths only when zoomed in. */
+.map-view .l-case.l-major { stroke-width: 6; } .map-view .l-major { stroke-width: 4.4; }
+.map-view .l-case.l-minor { stroke-width: 3.6; } .map-view .l-minor { stroke-width: 2.4; }
+.map-view .l-case.l-service { stroke-width: 1.6; } .map-view .l-service { stroke-width: 0.9; }
+.map-view:not(.cards) .l-foot { display: none; }
+.map-view.cards .l-case.l-major { stroke-width: 13; } .map-view.cards .l-major { stroke-width: 10.5; }
+.map-view.cards .l-case.l-minor { stroke-width: 9; } .map-view.cards .l-minor { stroke-width: 7; }
+.map-view.cards .l-case.l-service { stroke-width: 4.5; } .map-view.cards .l-service { stroke-width: 3; }
+.map-view.close .l-case.l-major { stroke-width: 24; } .map-view.close .l-major { stroke-width: 20; }
+.map-view.close .l-case.l-minor { stroke-width: 16; } .map-view.close .l-minor { stroke-width: 13; }
+.map-view.close .l-case.l-service { stroke-width: 8; } .map-view.close .l-service { stroke-width: 6; }
+
+/* Labels: the code alone when zoomed out, a card with the counts when zoomed in; the code in its university's colour. */
+.map-labels { position: absolute; inset: 0; pointer-events: none; --uni: var(--map-eth-sel); }
+.map-labels[data-uni="uzh"] { --uni: var(--map-uzh-sel); }
+.map-label {
+  position: absolute;
+  left: 0;
+  top: 0;
+  pointer-events: auto;
+  touch-action: none;
+  white-space: nowrap;
+  border: 0;
+  font: inherit;
+  cursor: pointer;
+  background: var(--card);
+  color: var(--uni);
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  padding: 1px 5px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  line-height: 1.1;
+}
+.map-label.hidden { visibility: hidden; }
+.map-label.off { display: none; }
+/* A building with nothing open or free in the layers that are on. */
+.map-label.dim { background: var(--chip-bg); color: var(--muted); box-shadow: 0 1px 2px rgba(0, 0, 0, 0.12); }
+.map-view.cards .map-label.dim { background: var(--chip-bg); }
+.map-view.cards .map-label.dim .code { color: var(--muted); }
+.map-label .code { display: block; font-family: "Archivo", system-ui, sans-serif; font-weight: 800; font-stretch: 87.5%; font-size: 0.75rem; letter-spacing: 0.02em; }
+.map-label .nums { display: none; }
+.map-view.cards .map-label { background: var(--card); color: var(--text); border: 1px solid var(--line); border-radius: 10px; padding: 4px 7px 5px; box-shadow: 0 2px 6px rgba(0, 0, 0, 0.18); }
+.map-view.cards .map-label .code { font-size: 0.9rem; color: var(--uni); }
+.map-view.cards .map-label .nums { display: flex; gap: 7px; margin-top: 2px; font-size: 0.78rem; font-weight: 650; }
+/* Side layout: each count is its own target, opening that tab for the building. */
+.map-view.side.cards .map-label .n[data-mode] { padding: 1px 3px; margin: -1px -3px; border-radius: 4px; }
+@media (hover: hover) {
+  .map-view.side.cards .map-label .n[data-mode]:hover { background: var(--chip-bg); }
+}
+/* Mensas: amber while serving food, a study-space card outside the meal times, faded when closed; the icon in the
+   corner says which. Inside a building with its own label, zoomed out they're just the icon. */
+.map-label.mensa { --m-bg: var(--card); --m-text: var(--text); --m-code: var(--open); --m-line: var(--line); --m-badge: var(--open); }
+.map-label.mensa.food { --m-bg: #fff3df; --m-text: #7a4f00; --m-code: #7a4f00; --m-line: #e5b768; --m-badge: var(--food); }
+.map-label.mensa.open { --m-code: var(--text); --m-badge: var(--muted); }
+.map-label.mensa.open.cafe { --m-bg: #f4ede7; --m-text: var(--cafe); --m-code: var(--cafe); --m-line: #cbb3a0; --m-badge: var(--cafe); }
+.map-label.mensa.closed { --m-bg: var(--chip-bg); --m-text: var(--muted); --m-code: var(--muted); --m-line: var(--line); --m-badge: var(--muted); opacity: 0.85; }
+.map-label.mensa, .map-view.cards .map-label.mensa { background: var(--m-bg); color: var(--m-text); border: 1px solid var(--m-line); box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15); }
+.map-label.mensa .code, .map-view.cards .map-label.mensa .code { color: var(--m-code); }
+.map-view.cards .map-label.mensa .code { font-size: 0.8rem; }
+.map-label.mensa .badge { position: absolute; top: -7px; right: -7px; display: flex; align-items: center; justify-content: center; width: 17px; height: 17px; border-radius: 50%; background: var(--m-badge); color: #fff; box-shadow: 0 0 0 1.5px var(--bg); }
+.map-label.mensa .badge .map-ic { width: 11px; height: 11px; stroke-width: 1.7; }
+.map-view:not(.cards) .map-label.mensa { margin-right: 6px; }
+.map-view:not(.cards) .map-label.mensa .badge { top: -6px; right: -11px; width: 15px; height: 15px; }
+.map-view:not(.cards) .map-label.mensa .badge .map-ic { width: 10px; height: 10px; }
+/* A mensa or cafeteria of its own: a smaller card under its building's label. */
+.map-label.place .code, .map-view.cards .map-label.place .code { font-size: 0.72rem; }
+/* Microwaves (map.js syncMicroLabels): a small round label, the count as a badge, under the mensa filter. */
+.map-label.micro, .map-view.cards .map-label.micro { display: flex; align-items: center; justify-content: center; width: 24px; height: 24px; padding: 0; border-radius: 50%; background: var(--card); color: var(--muted); border: 1px solid var(--line); box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15); }
+.map-label.micro.off, .map-view.cards .map-label.micro.off { display: none; }
+.map-label.micro .map-ic { width: 15px; height: 15px; stroke-width: 1.8; }
+.map-label.micro .badge { position: absolute; top: -6px; right: -8px; min-width: 15px; height: 15px; padding: 0 3px; border-radius: 8px; background: var(--muted); color: #fff; font-size: 0.62rem; font-weight: 700; line-height: 15px; box-shadow: 0 0 0 1.5px var(--bg); }
+/* A microwave entry of its own, where it is (zoomed in; on the floor plans too). */
+.map-label.micro.spot, .map-view.cards .map-label.micro.spot { width: 20px; height: 20px; }
+.map-label.micro.spot .map-ic { width: 13px; height: 13px; }
+.map-label.micro.spot .badge { top: -6px; right: -9px; min-width: 14px; height: 14px; font-size: 0.6rem; line-height: 14px; }
+.floor-micro { position: absolute; left: 0; top: 0; z-index: 1; pointer-events: none; display: flex; align-items: center; justify-content: center; width: 20px; height: 20px; border-radius: 50%; background: var(--card); color: var(--muted); border: 1px solid var(--line); box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2); }
+.floor-micro .map-ic { width: 13px; height: 13px; stroke-width: 1.8; }
+.floor-micro .badge { position: absolute; top: -6px; right: -9px; min-width: 14px; height: 14px; padding: 0 3px; border-radius: 7px; background: var(--muted); color: #fff; font-size: 0.6rem; font-weight: 700; line-height: 14px; box-shadow: 0 0 0 1.5px var(--bg); }
+/* Selected: the label stays as it is, with the frooms navy outline its building has too. */
+.map-label.selected, .map-view.cards .map-label.selected, .map-label.mensa.selected, .map-view.cards .map-label.mensa.selected { border-color: var(--accent); box-shadow: 0 0 0 1px var(--accent), 0 2px 6px rgba(0, 0, 0, 0.18); z-index: 1; }
+.map-label.hover { outline: 2px solid var(--accent); outline-offset: 1px; z-index: 1; }
+.map-svg .map-building.hover { stroke: var(--accent); stroke-width: 2.2; }
+@media (prefers-color-scheme: dark) {
+  .map-label.mensa.food { --m-bg: #2e2414; --m-text: #f0c070; --m-code: #f0c070; --m-line: #7a5a20; --m-badge: #c47f12; }
+  .map-label.mensa.study { --m-code: var(--open); --m-badge: #3a3aa8; }
+  .map-label.mensa.open.cafe { --m-bg: #2a211b; --m-line: #5c4636; --m-badge: #8a6247; }
+}
+.map-label:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+
+/* Pin mode (?pins): labels are dragged, not tapped; the panel lists the moved pins to copy. */
+.pin-mode .map-label { cursor: grab; touch-action: none; }
+.pin-mode .map-label.micro.spot { z-index: 1; } /* over the labels, to drag them */
+.pin-mode .map-label.pinned { outline: 2px dashed var(--food); outline-offset: 1px; }
+.pin-mode .map-label.pin-selected { outline: 2px solid var(--dot); outline-offset: 2px; z-index: 2; }
+.map-pins { position: absolute; left: 10px; bottom: 30px; z-index: 3; width: min(320px, calc(100% - 70px)); display: grid; gap: 6px; padding: 10px 12px; border-radius: 10px; background: var(--card); color: var(--text); box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25); font-size: 0.82rem; }
+.map-pins p { margin: 0; }
+.map-pins .pin-actions { display: flex; flex-wrap: wrap; gap: 6px; }
+.map-pins button { padding: 4px 9px; border: 1px solid var(--line); border-radius: 999px; background: var(--chip-bg); color: var(--text); font: inherit; cursor: pointer; }
+.map-pins button:disabled { opacity: 0.5; cursor: default; }
+.map-pins textarea { width: 100%; font: 0.72rem ui-monospace, monospace; resize: vertical; background: var(--bg); color: var(--text); border: 1px solid var(--line); border-radius: 6px; }
+/* The edit mode (?edit, static/edit.js): its panel in place of pin mode's, the corners and picked marks over the map. */
+.edit-mode .map-pins { display: none; }
+.edit-panel { position: absolute; left: 10px; bottom: 30px; z-index: 4; width: min(360px, calc(100% - 70px)); max-height: 60%; overflow-y: auto; display: grid; gap: 6px; padding: 10px 12px; border-radius: 10px; background: var(--card); color: var(--text); box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25); font-size: 0.82rem; }
+.edit-panel p { margin: 0; }
+.edit-panel .edit-head { justify-self: start; padding: 0; border: 0; background: none; font-weight: 700; }
+/* Phones: under the floor view's bar, where the sheet doesn't cover it. */
+@media (max-width: 760px) { .edit-panel { top: 108px; bottom: auto; width: calc(100% - 70px); max-height: 45%; } }
+.edit-tools, .edit-row { display: flex; flex-wrap: wrap; gap: 5px; align-items: center; }
+.edit-panel button { padding: 4px 9px; border: 1px solid var(--line); border-radius: 999px; background: var(--chip-bg); color: var(--text); font: inherit; cursor: pointer; }
+.edit-panel button.on { background: var(--accent); border-color: var(--accent); color: #fff; }
+.edit-panel button:disabled { opacity: 0.45; cursor: default; }
+.edit-panel input { min-width: 0; flex: 1; padding: 4px 8px; border: 1px solid var(--line); border-radius: 6px; background: var(--bg); color: var(--text); font: inherit; }
+.edit-panel input[type="number"] { flex: 0 0 64px; }
+.edit-panel textarea { width: 100%; font: 0.72rem ui-monospace, monospace; resize: vertical; background: var(--bg); color: var(--text); border: 1px solid var(--line); border-radius: 6px; }
+.edit-layer { position: absolute; inset: 0; z-index: 3; pointer-events: none; overflow: hidden; }
+.edit-corner, .edit-item { position: absolute; left: 0; top: 0; pointer-events: auto; touch-action: none; cursor: grab; border-radius: 50%; }
+.edit-corner { width: 14px; height: 14px; background: var(--card); border: 2px solid var(--accent); box-shadow: 0 0 0 1px var(--card); }
+.edit-corner.on { background: #da291c; border-color: #fff; }
+.edit-item { width: 30px; height: 30px; border: 2px dashed var(--accent); background: color-mix(in srgb, var(--accent) 10%, transparent); }
+.edit-item.on { border-style: solid; border-color: #da291c; }
+.edit-box { position: absolute; left: 0; top: 0; border: 1.5px dashed #da291c; background: rgba(218, 41, 28, 0.08); }
+
+.n { display: inline-flex; align-items: center; gap: 3px; color: var(--text); }
+.n.ok { color: var(--free); }
+.n.zero { color: var(--muted); opacity: 0.8; }
+.place-t.food { color: var(--food); }
+.place-t.study { color: var(--open); }
+.place-t.closed { color: var(--muted); }
+.map-ic { width: 13px; height: 13px; fill: none; stroke: currentColor; stroke-width: 1.5; stroke-linejoin: round; stroke-linecap: round; }
+.occ-dot { display: inline-block; width: 7px; height: 7px; border-radius: 50%; margin-left: 1px; background: var(--muted); }
+.occ-dot.green { background: var(--occ-green); }
+.occ-dot.yellow { background: var(--occ-yellow); }
+.occ-dot.red { background: var(--occ-red); }
+/* The occupancy text in the building sheet, in its dot's colour. */
+.occ-t { font-weight: 600; }
+.occ-t.green { color: var(--occ-green); }
+.occ-t.yellow { color: var(--occ-yellow); }
+.occ-t.red { color: var(--occ-red); }
+
+.map-tools { position: absolute; right: 10px; top: 10px; display: flex; flex-direction: column; gap: 8px; }
+.map-zoom, .map-layers { display: grid; gap: 1px; background: var(--line); border-radius: 9px; overflow: hidden; box-shadow: 0 1px 4px rgba(0, 0, 0, 0.15); }
+.map-tools button { width: 36px; height: 36px; border: 0; background: var(--card); color: var(--text); font: inherit; font-size: 1.15rem; cursor: pointer; }
+.map-tools button:hover { background: var(--chip-bg); }
+/* Layer buttons: in their colour when on, faded when off. */
+.map-layers button { display: flex; align-items: center; justify-content: center; color: var(--muted); }
+.map-layers button .map-ic { width: 19px; height: 19px; stroke-width: 1.5; opacity: 0.5; }
+.map-layers button[aria-pressed="true"] .map-ic { opacity: 1; }
+.map-layers button.study[aria-pressed="true"] { color: var(--open); }
+.map-layers button.rooms[aria-pressed="true"] { color: var(--free); }
+.map-layers button.mensa[aria-pressed="true"] { color: var(--food); }
+.map-layers button.cafe[aria-pressed="true"] { color: var(--cafe); }
+.map-layers button[aria-pressed="true"] { background: color-mix(in srgb, currentColor 12%, var(--card)); }
+/* The filters' names (expanded) and the handle left of them that collapses them to the icons (map.js syncLayersToggle). */
+.map-tools { align-items: flex-end; }
+.map-zoom { width: 36px; }
+.map-layers-box { position: relative; display: flex; align-items: center; gap: 4px; }
+.map-tools button.map-layers-toggle {
+  width: 18px; height: 44px; padding: 0; border-radius: 9px 0 0 9px; background: color-mix(in srgb, var(--card) 88%, transparent);
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.15); display: grid; place-items: center; touch-action: none; cursor: grab;
+}
+.map-layers-toggle span { width: 7px; height: 7px; border-right: 2px solid var(--muted); border-bottom: 2px solid var(--muted); transform: rotate(-45deg); margin-left: -3px; }
+.map-layers-box:not(.open) .map-layers-toggle span { transform: rotate(135deg); margin-left: 3px; }
+.map-layers-toggle[hidden] { display: none; }
+.map-layers .layer-name { display: none; }
+.map-layers-box.open .map-tools button.layer, .map-layers-box.open .map-layers button.layer { width: auto; min-width: 36px; justify-content: flex-end; gap: 8px; padding: 0 9px 0 12px; }
+.map-layers-box.open .map-layers .layer-name { display: inline; font-size: 0.82rem; font-weight: 650; white-space: nowrap; color: var(--text); }
+.map-layers-box.open .map-layers button[aria-pressed="false"] .layer-name { color: var(--muted); }
+.map-layers-box.open .map-layers button[aria-pressed="true"] .layer-name { color: currentColor; }
+/* Near you: the locate button (navy while showing the position, pulsing while waiting for it), the person's dot
+   above the labels, and how exact the position is, as a glow in metres on the map. */
+.map-locate { display: flex; align-items: center; justify-content: center; }
+.map-locate .map-ic { width: 19px; height: 19px; }
+.map-locate .me { fill: currentColor; stroke: none; opacity: 0; }
+.map-locate[aria-pressed="true"] { color: var(--me); }
+.map-locate[aria-pressed="true"] .me { opacity: 1; }
+.map-locate.wait .map-ic { animation: locate-wait 1.2s ease-in-out infinite; }
+@keyframes locate-wait { 50% { opacity: 0.35; } }
+@media (prefers-reduced-motion: reduce) { .map-locate.wait .map-ic { animation: none; opacity: 0.5; } }
+.map-me { position: absolute; left: 0; top: 0; width: 16px; height: 16px; border-radius: 50%; background: var(--me); border: 2.5px solid #fff; box-shadow: 0 1px 4px rgba(0, 0, 0, 0.35); pointer-events: none; }
+.map-me[hidden] { display: none; }
+.map-svg .map-me-acc { pointer-events: none; }
+.map-svg .map-me-acc stop { stop-color: var(--me); }
+/* The glow breathes a little, so it reads as "somewhere around here" rather than a drawn shape. */
+.map-svg .map-me-acc circle { transform-box: fill-box; transform-origin: center; animation: me-glow 4s ease-in-out infinite; }
+@keyframes me-glow { 50% { transform: scale(1.06); opacity: 0.85; } }
+@media (prefers-reduced-motion: reduce) { .map-svg .map-me-acc circle { animation: none; } }
+/* The overview: the whole region, light, under the tiles (seen beyond the land between the campuses); and what's hidden while flying. */
+.map-overview { opacity: 0.75; }
+.map-overview .l-river { stroke: var(--map-water); stroke-width: 4; }
+.map-overview .l-case.l-major { stroke-width: 3.2; }
+.map-overview .l-major { stroke-width: 2; }
+.map-buildings.flight .map-building { cursor: default; }
+/* Another campus's buildings: a paler version of their university's colour, until that campus is selected. */
+.map-svg .map-buildings.inactive .map-building { fill: var(--b-inact); stroke: color-mix(in srgb, var(--b-sel) 25%, transparent); stroke-width: 0.6; cursor: pointer; } /* a tap switches to that campus */
+.map-svg .map-buildings.inactive .map-dome circle { fill: var(--map-house); stroke: var(--map-house-line); }
+.map-svg .map-buildings.inactive .map-dome line { stroke: var(--map-house-line); }
+.map-svg .map-buildings.inactive .map-dome .lantern { fill: var(--map-house-line); }
+.map-svg .l-eth, .map-svg .map-dome circle { transition: fill 0.35s, stroke 0.35s; }
+.map-svg .map-buildings .map-building { transition: fill 0.35s, stroke 0.35s; }
+.map-svg .l-ground { fill: var(--map-ground); stroke: none; }
+/* A campus's tag: larger than a building's, in its university's colour; a tap switches to it. */
+.map-label.campus { --uni: var(--map-eth-sel); padding: 4px 10px 5px; border-radius: 10px; border-color: color-mix(in srgb, var(--uni) 35%, var(--line)); box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2); z-index: 2; }
+.map-label.campus.uzh { --uni: var(--map-uzh-sel); }
+.map-label.campus .code, .map-view.cards .map-label.campus .code { font-size: 0.95rem; color: var(--uni); }
+.map-labels, .map-links, .map-me { transition: opacity 0.2s; }
+.map-view.flying .map-labels, .map-view.flying .map-links, .map-view.flying .map-me, .map-view.flying .map-floors-open { opacity: 0; pointer-events: none; }
+/* Buttons to the neighbouring campuses: at the edge, an arrow pointing the campus's way; on a building of the other
+   Zentrum map, without the arrow while it's in view. */
+.map-links { position: absolute; inset: 0; pointer-events: none; }
+.map-links[hidden], .map-link[hidden] { display: none; }
+.map-link { position: absolute; left: 0; top: 0; display: flex; align-items: center; height: 32px; padding-left: 8px; border-radius: 999px; background: var(--card); box-shadow: 0 1px 5px rgba(0, 0, 0, 0.22); pointer-events: auto; white-space: nowrap; }
+.map-link .arrow { width: 15px; height: 15px; stroke-width: 1.8; color: var(--accent); flex: none; }
+.map-link.at { padding-left: 4px; }
+.map-link.at .arrow { display: none; }
+.map-link button { height: 100%; border: 0; background: none; padding: 0 11px 0 6px; color: var(--accent); font: inherit; font-size: 0.82rem; font-weight: 650; cursor: pointer; border-radius: 999px; }
+.map-link button + button { border-left: 1px solid var(--line); border-radius: 0 999px 999px 0; padding-left: 10px; }
+.map-link button:hover { background: var(--chip-bg); }
+.map-link button:focus-visible { outline: 2px solid var(--accent); outline-offset: -2px; }
+.map-link.on-building { box-shadow: 0 0 0 2px var(--accent), 0 1px 5px rgba(0, 0, 0, 0.22); }
+@media (prefers-color-scheme: dark) {
+  .map-link .arrow, .map-link button { color: var(--text); }
+}
+.map-attrib { position: absolute; right: 6px; bottom: 4px; font-size: 0.65rem; color: var(--muted); background: color-mix(in srgb, var(--card) 75%, transparent); padding: 1px 5px; border-radius: 4px; }
+.map-attrib a { color: inherit; }
+.map-missing { position: absolute; inset: auto 16px 50% 16px; text-align: center; color: var(--muted); }
+
+.ok-t { color: var(--free); font-weight: 600; }
+.sheet-link { border: 0; background: none; padding: 4px 0; color: var(--accent); font: inherit; font-size: 0.92rem; font-weight: 650; cursor: pointer; }
+@media (prefers-color-scheme: dark) {
+  .sheet-link { color: var(--text); }
+}
+
+/* --- Menu panel (static/app.js openMenu): centred on wide screens, full screen on phones --- */
+
+.menu-panel {
+  width: min(720px, calc(100vw - 32px));
+  max-height: 90vh;
+  padding: 0;
+  border: 0;
+  border-radius: 16px;
+  background: var(--card);
+  color: var(--text);
+  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.25);
+  overflow: hidden;
+}
+.menu-panel[open] { display: flex; flex-direction: column; }
+.menu-panel.wide { width: min(1200px, calc(100vw - 32px)); }
+.menu-panel::backdrop { background: rgba(10, 12, 20, 0.45); }
+body:has(.menu-panel[open]) { overflow: hidden; }
+@media (max-width: 640px) {
+  .menu-panel, .menu-panel.wide { width: 100vw; max-width: 100vw; height: 100dvh; max-height: 100dvh; margin: 0; border-radius: 0; }
+}
+/* The comparison keeps one size whatever it shows (the diet, the mensas picked); its table scrolls both ways inside. */
+.menu-panel.compare { width: min(1100px, calc(100vw - 32px)); height: 90vh; max-height: 90vh; }
+@media (max-width: 640px) {
+  .menu-panel.compare { width: 100vw; max-width: 100vw; height: calc(100dvh - 16px); max-height: calc(100dvh - 16px); margin: auto 0 0; border-radius: 16px 16px 0 0; }
+}
+.menu-panel.compare > .cmp-scroll, .menu-panel.compare > .panel-msg { flex: 1 1 0; }
+
+/* A dish's lightbox, over the comparison (app.js openPhotoBox). */
+.photo-box { width: min(90vw, 680px); max-width: min(90vw, 680px); max-height: 90vh; padding: 0; border: 0; border-radius: 14px; background: var(--card); color: var(--text); box-shadow: 0 16px 48px rgba(0, 0, 0, 0.35); overflow: auto; }
+.photo-box.text-only { width: min(90vw, 440px); }
+.photo-box::backdrop { background: rgba(10, 12, 20, 0.6); }
+.photo-big { display: block; width: 100%; height: auto; max-height: 66vh; margin: 0 auto; object-fit: contain; }
+.photo-text { display: grid; gap: 4px; padding: 12px 16px 16px; }
+.photo-box.text-only .photo-text { padding-top: 16px; padding-right: 48px; }
+.photo-text h3 { margin: 0; font-size: 1.1rem; }
+.photo-text .dish-price { color: var(--muted); font-weight: 600; white-space: nowrap; }
+.photo-text p { margin: 0; font-size: 0.9rem; }
+.photo-text .line { font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.06em; color: var(--muted); font-weight: 650; }
+.photo-close { position: absolute; top: 8px; right: 8px; width: 36px; height: 36px; border: 0; border-radius: 50%; background: rgba(0, 0, 0, 0.5); color: #fff; font-size: 1.5rem; line-height: 1; cursor: pointer; }
+.photo-box.text-only .photo-close { background: none; color: var(--muted); }
+.menu-panel > * { padding-left: 18px; padding-right: 18px; }
+.panel-head { display: flex; justify-content: space-between; align-items: flex-start; gap: 12px; padding-top: max(14px, env(safe-area-inset-top)); padding-bottom: 8px; border-bottom: 1px solid var(--line); }
+.panel-title { display: grid; gap: 2px; min-width: 0; }
+.panel-title h2 { display: block; font-family: "Archivo", system-ui, sans-serif; font-size: 1.4rem; font-weight: 700; line-height: 1.15; }
+.panel-title .status { display: flex; flex-wrap: wrap; gap: 2px 12px; font-size: 0.9rem; font-weight: 600; }
+.panel-title .study { color: var(--open); }
+.panel-title .food { color: var(--food); }
+.panel-title .cafe { color: var(--cafe); }
+.panel-title .closed { color: var(--muted); }
+.panel-close { border: 0; background: none; color: var(--muted); font-size: 1.7rem; line-height: 1; padding: 0 4px; cursor: pointer; }
+.panel-tools { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 14px; padding-top: 10px; padding-bottom: 8px; position: relative; }
+.panel-body, .menu-panel .week, .cmp-scroll { flex: 1 1 auto; overflow-y: auto; min-height: 0; }
+.panel-foot { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 6px 16px; padding-top: 8px; padding-bottom: max(10px, env(safe-area-inset-bottom)); border-top: 1px solid var(--line); }
+.panel-foot:empty { display: none; }
+.panel-link { border: 0; background: none; padding: 6px 0; color: var(--accent); font: inherit; font-size: 0.95rem; font-weight: 650; cursor: pointer; }
+.panel-msg { color: var(--muted); margin: 14px 0; }
+.meal-time { margin: 4px 0 0; font-size: 0.88rem; }
+.switch { display: flex; gap: 4px; }
+.switch .chip { padding: 3px 10px; font-size: 0.82rem; }
+/* The comparison's mensas: one line that scrolls sideways, on every width (the panel's own 18px sides are the edge). */
+.compare-places { flex-wrap: nowrap; overflow-x: auto; scrollbar-width: none; overscroll-behavior-x: contain; padding-bottom: 10px; }
+.compare-places::-webkit-scrollbar { display: none; }
+.compare-places .chip { flex: none; white-space: nowrap; font-size: 0.85rem; }
+@media (prefers-color-scheme: dark) {
+  .panel-link { color: var(--open); }
+}
+
+/* The meal stepper: ‹ label ›, and a popover with the days and lunch or dinner. */
+.stepper { display: flex; align-items: center; gap: 2px; }
+.stepper .step { width: 34px; height: 34px; border: 1px solid var(--line); border-radius: 9px; background: var(--card); color: var(--text); font: inherit; font-size: 1.2rem; cursor: pointer; }
+.stepper .step:disabled { opacity: 0.35; cursor: default; }
+.step-label { min-width: 150px; padding: 6px 10px; border: 0; border-radius: 9px; background: var(--chip-bg); color: var(--text); font: inherit; font-weight: 650; cursor: pointer; }
+.step-label.static { cursor: default; background: none; }
+.step-pop { position: absolute; top: calc(100% - 4px); left: 18px; z-index: 3; display: grid; gap: 8px; padding: 10px; background: var(--card); border: 1px solid var(--line); border-radius: 12px; box-shadow: 0 8px 24px rgba(0, 0, 0, 0.16); }
+.step-pop[hidden] { display: none; }
+.step-days { display: flex; flex-wrap: wrap; gap: 4px; }
+.step-days .chip { padding: 4px 9px; font-size: 0.85rem; }
+.step-days .chip:disabled { opacity: 0.35; cursor: default; }
+.chip .sort-dir { margin-left: 4px; font-weight: 700; }
+.compare-places .compare-sep { flex: none; align-self: center; color: var(--line); font-size: 1.2rem; line-height: 1; padding: 0 2px; }
+.compare-places .compare-hint { flex: none; cursor: default; background: var(--chip-bg); color: var(--muted); border-color: transparent; }
+.compare-places .chip:disabled { opacity: 0.45; cursor: not-allowed; }
+.menu-panel > .compare-limit { margin: 0 0 6px; font-size: 0.8rem; }
+
+/* Dishes: line and type on top, then the dish, the description and the allergens behind a tap; price on the right. */
+.dishes { list-style: none; margin: 8px 0 16px; padding: 0; display: grid; gap: 2px; }
+.dish { display: flex; gap: 12px; align-items: flex-start; padding: 10px 0; border-bottom: 1px solid var(--line); }
+.dish:last-child { border-bottom: 0; }
+.dish-main { flex: 1 1 auto; min-width: 0; }
+.dish-top { display: flex; align-items: center; gap: 8px; }
+.dish .line, .cmp-dish .line { font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.06em; color: var(--muted); font-weight: 650; }
+.dish-name { font-weight: 650; }
+.dish-desc { font-size: 0.88rem; color: var(--muted); }
+.dish-nutrition { font-size: 0.8rem; color: var(--muted); font-variant-numeric: tabular-nums; }
+.dish-price { font-weight: 650; white-space: nowrap; font-variant-numeric: tabular-nums; }
+.dish-photo { padding: 0; border: 0; background: none; border-radius: 8px; cursor: zoom-in; flex-shrink: 0; }
+.dish .photo { display: block; width: 96px; height: 72px; object-fit: cover; border-radius: 8px; background: var(--chip-bg); flex-shrink: 0; }
+.allergens { font-size: 0.82rem; color: var(--muted); margin-top: 2px; }
+.allergens summary { cursor: pointer; width: fit-content; }
+.allergens p { margin: 2px 0 0; }
+.allergens .dish-values { font-variant-numeric: tabular-nums; }
+.type { font-size: 0.7rem; font-weight: 700; padding: 0 6px; border-radius: 999px; border: 1px solid currentColor; line-height: 1.5; }
+.type.vegan { color: var(--vegan); }
+.type.vegetarian { color: var(--vegetarian); }
+.type.fish { color: var(--fish); }
+.type.meat { color: var(--meat); }
+.type.other { color: var(--muted); }
+/* A UZH dish's climate rating: food2050's own colours on a dot (the text beside it says the rating). */
+.climate-mark { display: inline-block; width: 0.6em; height: 0.6em; border-radius: 50%; margin-right: 0.4em; box-shadow: 0 0 0 1px rgb(0 0 0 / 0.25); }
+.climate-mark.low { background: #00edfb; }
+.climate-mark.medium { background: #f4dc03; }
+.climate-mark.high { background: #ff554a; }
+
+/* A dish with its rating (ratings.js): photo, text and price as before, the rating at the bottom right. On phones the
+   rating takes its own line below the text, so the text keeps its width. */
+.rated-dish { display: grid; grid-template-columns: minmax(0, 1fr) auto; grid-template-areas: "main price" "main rating"; column-gap: 12px; row-gap: 6px; align-items: start; }
+.rated-dish.has-photo { grid-template-columns: auto minmax(0, 1fr) auto; grid-template-areas: "photo main price" "photo main rating"; }
+.rated-dish > .dish-photo { grid-area: photo; }
+.rated-dish > .dish-main { grid-area: main; }
+.rated-dish > .dish-price { grid-area: price; justify-self: end; }
+.rated-dish > .dish-rating { grid-area: rating; justify-self: end; align-self: end; }
+@media (max-width: 640px) {
+  .rated-dish { grid-template-areas: "main price" "rating rating"; }
+  .rated-dish.has-photo { grid-template-areas: "photo main price" "photo rating rating"; }
+}
+.dish-rating { display: flex; align-items: center; gap: 10px; min-height: 30px; }
+.dish-rating:empty { display: none; }
+.rate-btn { padding: 3px 11px; border: 1px solid var(--line); border-radius: 999px; background: var(--card); color: var(--accent); font: inherit; font-size: 0.8rem; font-weight: 650; cursor: pointer; }
+.rate-btn:hover { border-color: var(--accent); }
+.rating-figure, .rating-none { font-family: "Archivo", system-ui, sans-serif; font-size: 1.75rem; font-weight: 800; line-height: 1; font-variant-numeric: tabular-nums; letter-spacing: -0.01em; }
+.rating-figure { padding: 0 2px; border: 0; border-radius: 6px; background: none; cursor: pointer; }
+.rating-figure:hover { text-decoration: underline; text-decoration-thickness: 2px; text-underline-offset: 3px; }
+.rating-none { color: var(--muted); font-weight: 600; opacity: 0.7; }
+.rate-btn:focus-visible, .rating-figure:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.week-col .rated-dish, .week-col .rated-dish.has-photo { display: grid; grid-template-columns: minmax(0, 1fr) auto; grid-template-areas: "main main" "price rating"; align-items: center; }
+.week-col .rated-dish > .dish-price { justify-self: start; }
+.week-col .rating-figure, .week-col .rating-none { font-size: 1.4rem; }
+.photo-text .dish-rating { justify-self: end; margin-top: 4px; }
+@media (prefers-color-scheme: dark) {
+  .rate-btn { color: var(--open); }
+}
+
+/* The rating window (ratings.js openRatingDialog): Ø, a dashed line, then taste, portion size and value for money,
+   each a bar from a common 0 line, its value above it; editable bars are sliders you drag. */
+.rating-box { display: grid; gap: 12px; padding: 18px; }
+.rating-head h2 { display: block; margin: 0; font-size: 1.15rem; }
+.rating-head p { margin: 2px 0 0; }
+.rating-box p { margin: 0; }
+.rating-chart { display: grid; grid-template-columns: 1fr 13px 1fr 1fr 1fr; align-items: stretch; }
+.rating-col { display: grid; grid-template-rows: 2.3em auto 1fr; justify-items: center; gap: 4px; min-width: 0; }
+.rating-label { align-self: end; font-size: 0.72rem; font-weight: 650; line-height: 1.15; text-align: center; color: var(--muted); }
+.rating-label .short { display: none; }
+@media (max-width: 359px) {
+  .rating-label .long { display: none; }
+  .rating-label .short { display: inline; }
+}
+.rating-col.avg .rating-label { font-size: 1rem; color: var(--text); }
+.rating-value { font-family: "Archivo", system-ui, sans-serif; font-size: 1.3rem; font-weight: 800; line-height: 1.2; font-variant-numeric: tabular-nums; color: var(--muted); }
+.rating-value.edit { min-width: 3.4em; padding: 1px 4px; border: 1px dashed var(--line); border-radius: 8px; background: none; cursor: text; }
+.rating-value.edit:hover, .rating-value.edit:focus-visible { border-color: var(--accent); outline: none; }
+.rating-chart.edit .rating-col.avg .rating-value { padding: 1px 4px; border: 1px solid transparent; } /* the same height as the editable ones, so the 0 lines meet */
+.rating-input { width: 4.2em; height: 32px; padding: 0 4px; border: 1px solid var(--accent); border-radius: 8px; background: var(--bg); color: var(--text); font: inherit; font-size: 16px; text-align: center; }
+.rating-track { position: relative; width: 100%; max-width: 64px; height: 150px; }
+.rating-zero { position: absolute; left: 4px; right: 4px; top: 50%; height: 2px; margin-top: -1px; background: var(--muted); border-radius: 1px; }
+.rating-track.unset .rating-zero { opacity: 0.35; }
+.rating-bar { position: absolute; left: 14%; right: 14%; height: var(--h, 0%); border-radius: 4px; }
+.rating-bar.pos { bottom: 50%; background: var(--rate-pos); border-radius: 5px 5px 1px 1px; }
+.rating-bar.neg { top: 50%; background: var(--rate-neg); border-radius: 1px 1px 5px 5px; }
+.rating-hint { display: none; }
+.rating-chart.edit .rating-track { cursor: ns-resize; touch-action: none; border-radius: 8px; background: color-mix(in srgb, var(--muted) 7%, transparent); }
+.rating-chart.edit .rating-col.avg .rating-track { background: none; cursor: default; }
+.rating-chart.edit .rating-track:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.rating-chart.edit .rating-track.dragging { background: color-mix(in srgb, var(--accent) 10%, transparent); }
+.rating-chart.edit .rating-track.unset .rating-hint { display: block; position: absolute; left: 0; right: 0; top: calc(50% + 6px); font-size: 0.66rem; line-height: 1.2; text-align: center; color: var(--muted); pointer-events: none; }
+.rating-sep { justify-self: center; width: 0; margin: 2.6em 0 0; border-left: 2px dashed var(--line); }
+.rating-count { font-size: 0.88rem; text-align: center; }
+.confirm-buttons.rate-buttons { justify-content: space-between; }
+.confirm-buttons button:disabled { opacity: 0.45; cursor: default; }
+
+/* Week: one column per day, all visible on wide screens; one day per screen on phones, snapping. */
+.week-nav { display: grid; gap: 6px; }
+.week-days { display: none; gap: 4px; }
+.menu-panel .week { display: grid; grid-template-columns: repeat(var(--days), minmax(0, 1fr)); gap: 14px; padding-bottom: 12px; }
+.week-col h3 { font-size: 0.95rem; margin: 6px 0 2px; position: sticky; top: 0; background: var(--card); padding: 4px 0; z-index: 1; }
+.week-col h4 { font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.05em; color: var(--food); margin: 10px 0 0; }
+.week-col .dish { flex-direction: column; gap: 2px; padding: 7px 0; }
+.week-col .dish-price { font-size: 0.88rem; }
+.week-col .dish-desc, .week-col .dish-nutrition { display: none; }
+@media (max-width: 800px) {
+  .week-days { display: flex; flex-wrap: wrap; }
+  .menu-panel .week { display: flex; overflow-x: auto; overflow-y: auto; scroll-snap-type: x mandatory; gap: 0; padding-left: 0; padding-right: 0; }
+  .week-col { flex: 0 0 100%; scroll-snap-align: start; padding: 0 18px; }
+  .week-col .dish-desc, .week-col .dish-nutrition { display: block; }
+}
+
+/* Comparison: mensas as columns (the row header sticks on the left), dish types as rows. */
+.cmp-scroll { overflow: auto; padding-bottom: 12px; }
+/* The row labels stick to the panel's left edge, their column taking the panel's margin, so dishes scrolling past
+   disappear behind them instead of showing again in the margin. */
+.menu-panel > .cmp-scroll { padding-left: 0; }
+.cmp { display: grid; grid-template-columns: 120px repeat(var(--cols), 240px); width: max-content; }
+.cmp > div { border-bottom: 1px solid var(--line); padding: 8px 8px; }
+.cmp-corner, .cmp-type { position: sticky; left: 0; background: var(--card); z-index: 1; }
+.cmp > .cmp-corner, .cmp > .cmp-type { padding-left: 18px; }
+.cmp-head { position: sticky; top: 0; background: var(--card); display: grid; align-content: start; font-size: 0.9rem; z-index: 0; }
+.cmp-corner { top: 0; z-index: 2; }
+.cmp-type { padding-top: 10px; }
+.cmp-cell { display: grid; gap: 6px; align-content: start; }
+/* A dish: its line, then the name with the price right after it (not pushed to the cell's edge). A click opens its photo. */
+.cmp-dish { display: grid; gap: 1px; text-align: left; width: calc(100% + 8px); border: 0; border-radius: 8px; margin: -4px; padding: 4px; background: none; color: inherit; font: inherit; font-size: 0.9rem; cursor: pointer; }
+.cmp-dish:hover { background: var(--line); }
+.cmp-dish .dish-name { font-weight: 600; }
+.cmp-dish .dish-price { margin-left: 4px; white-space: nowrap; color: var(--muted); font-weight: 600; }
+/* Find your meal (app.js renderSearch): the comparison's window; the chips and the results scroll together under the stepper. */
+.menu-panel.search > .meal-scroll { flex: 1 1 0; min-height: 0; overflow-y: auto; padding-bottom: max(12px, env(safe-area-inset-bottom)); }
+.search-tools { display: grid; gap: 8px; padding: 10px 0 10px; border-bottom: 1px solid var(--line); }
+.search-row { display: grid; grid-template-columns: 58px minmax(0, 1fr); align-items: baseline; gap: 8px; }
+.search-row .label { font-size: 0.72rem; }
+.search-row .chip { padding: 4px 11px; font-size: 0.85rem; }
+.preset { display: inline-flex; align-items: stretch; border-radius: 999px; background: var(--chip-bg); color: var(--text); }
+.preset button { border: 0; background: none; color: inherit; font: inherit; font-size: 0.85rem; cursor: pointer; }
+.preset-name { padding: 4px 2px 4px 11px; border-radius: 999px 0 0 999px; }
+.preset-star { padding: 4px 10px 4px 5px; border-radius: 0 999px 999px 0; color: var(--muted); }
+.preset.on { background: var(--accent); color: #fff; }
+.preset.on .preset-star { color: rgba(255, 255, 255, 0.75); }
+.preset.starred .preset-star { color: var(--food); }
+.preset.on.starred .preset-star { color: #ffd27a; }
+.meal-results { margin-top: 2px; }
+.meal-row { align-items: center; }
+.meal-photo { flex: none; border: 0; padding: 0; background: none; border-radius: 8px; cursor: pointer; }
+.meal-photo img { display: block; width: 72px; height: 54px; object-fit: cover; border-radius: 8px; background: var(--chip-bg); }
+.meal-name { display: block; border: 0; background: none; padding: 0; color: inherit; font: inherit; font-weight: 650; text-align: left; cursor: pointer; }
+.meal-name:hover, .meal-place:hover { text-decoration: underline; }
+.meal-where { font-size: 0.88rem; }
+.meal-place { border: 0; background: none; padding: 0; color: var(--accent); font: inherit; font-weight: 600; text-align: left; cursor: pointer; }
+.meal-values { font-size: 0.85rem; color: var(--muted); font-variant-numeric: tabular-nums; }
+/* The first three results: larger, with their place in front in gold, silver and bronze. */
+.meal-rank { flex: none; width: 34px; font-family: "Archivo", system-ui, sans-serif; font-size: 1.7rem; font-weight: 800; line-height: 1; color: var(--food); text-align: center; font-variant-numeric: tabular-nums; }
+.meal-row.top { padding: 14px 0; gap: 10px; }
+.meal-row.top .meal-photo img { width: 96px; height: 72px; }
+.meal-row.top .meal-name { font-size: 1.08rem; }
+.meal-row.top .dish-price { font-size: 1.05rem; }
+.meal-row.top-1 .meal-rank { font-size: 2rem; color: #c9a227; } /* gold */
+.meal-row.top-2 .meal-rank { color: #9aa1a9; } /* silver */
+.meal-row.top-3 .meal-rank { color: #b0703c; } /* bronze */
+@media (prefers-color-scheme: dark) {
+  .meal-row.top-1 .meal-rank { color: #e3bd45; }
+  .meal-row.top-2 .meal-rank { color: #c3c9d0; }
+  .meal-row.top-3 .meal-rank { color: #cd8a52; }
+}
+.meal-rest { padding: 14px 0 2px; font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.06em; font-weight: 650; color: var(--muted); }
+@media (prefers-color-scheme: dark) { .meal-place { color: var(--open); } }
+.menu-panel.search .meal-results, .menu-panel.search .meal-scroll > .panel-note { max-width: 760px; }
+/* Phones: each row of chips is one line that scrolls sideways, so the results start on the first screen. */
+@media (max-width: 640px) {
+  .search-row { grid-template-columns: minmax(0, 1fr); gap: 4px; }
+  .search-row .chips { flex-wrap: nowrap; overflow-x: auto; scrollbar-width: none; overscroll-behavior-x: contain; margin-right: -18px; padding-right: 18px; }
+  .search-row .chips::-webkit-scrollbar { display: none; }
+  .search-row .chip, .search-row .preset { flex: none; white-space: nowrap; }
+}
+.cmp-name { justify-self: start; border: 0; background: none; padding: 0; color: var(--accent); font: inherit; font-weight: 700; text-align: left; cursor: pointer; }
+.cmp-name:hover { text-decoration: underline; }
+@media (prefers-color-scheme: dark) {
+  .cmp-name { color: var(--open); }
+}
+.cmp-type .short { display: none; }
+@media (max-width: 640px) {
+  /* Two mensas in view, short row labels (VG, VT, F, M, O) and no empty rows: phones only. */
+  .cmp { grid-template-columns: 54px repeat(var(--cols), 200px); }
+  .cmp > div { padding: 8px 6px; }
+  .cmp > .cmp-corner, .cmp > .cmp-type { padding-left: 16px; }
+  .cmp-type .long { display: none; }
+  .cmp-type .short { display: inline; }
+  .cmp-type.empty, .cmp-cell.empty { display: none; }
+}
+
+/* Floor plans (map.js, floor view): one level of a building over the faded campus. */
+.map-view.floor-mode .map-tiles, .map-view.floor-mode .map-overview, .map-view.floor-mode .map-buildings { opacity: 0.22; }
+.map-view.floor-mode .map-labels:not(.map-floor-labels), .map-view.floor-mode .map-links, .map-view.floor-mode .map-close:not(.map-floor-close) { display: none; }
+.map-view.side.floor-mode .map-top { display: flex; }
+.map-floor-title { padding: 6px 10px; border-radius: 10px; background: color-mix(in srgb, var(--card) 85%, transparent); font-size: 0.85rem; font-weight: 650; box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12); }
+.map-floor-title[hidden], .map-floor-close[hidden] { display: none; }
+.map-floor-box { position: relative; }
+button.map-floor-title { border: 0; color: var(--text); font-family: inherit; cursor: pointer; }
+button.map-floor-title::after { content: " ▾"; color: var(--muted); }
+.map-floor-menu { left: 0; right: auto; max-height: min(60vh, 420px); overflow-y: auto; }
+.map-floor-menu .code { font-weight: 700; margin-right: 6px; }
+.map-floor-menu .muted { font-size: 0.85rem; }
+.map-svg .floor-outline { fill: var(--map-campus); stroke: var(--map-campus-line); stroke-width: 1.4; }
+.map-svg .floor-other { fill: color-mix(in srgb, var(--map-campus) 82%, var(--map-campus-line)); }
+.map-svg [data-floor] { cursor: pointer; stroke-width: 1; }
+.map-svg .floor-room.free { fill: color-mix(in srgb, var(--free) 45%, var(--card)); stroke: var(--free); }
+.map-svg .floor-room.soon { fill: color-mix(in srgb, var(--free-soon) 30%, var(--card)); stroke: var(--free-soon); }
+.map-svg .floor-room.busy { fill: color-mix(in srgb, var(--busy) 40%, var(--card)); stroke: var(--busy); }
+.map-svg .floor-room.managed { fill: color-mix(in srgb, var(--crowded) 40%, var(--card)); stroke: var(--crowded); }
+.map-svg .floor-room.nodata, .map-svg .floor-space.nodata, .map-svg .floor-place.nodata { fill: var(--chip-bg); stroke: var(--muted); }
+.map-svg .floor-space.open { fill: color-mix(in srgb, var(--open) 35%, var(--card)); stroke: var(--open); }
+.map-svg .floor-space.closed { fill: color-mix(in srgb, var(--muted) 25%, var(--card)); stroke: var(--muted); }
+.map-svg .floor-place.open { fill: color-mix(in srgb, var(--free) 40%, var(--card)); stroke: var(--free); }
+.map-svg .floor-place.closed { fill: color-mix(in srgb, var(--busy) 35%, var(--card)); stroke: var(--busy); }
+.map-svg [data-floor].picked { stroke: var(--accent); stroke-width: 3; }
+.floor-label {
+  position: absolute; left: 0; top: 0; pointer-events: auto; touch-action: none; white-space: nowrap; cursor: pointer;
+  display: flex; flex-direction: column; align-items: center; gap: 1px;
+  border: 1px solid var(--line); border-radius: 7px; padding: 1px 5px; font: inherit; font-size: 0.72rem; line-height: 1.15;
+  background: var(--card); color: var(--text); box-shadow: 0 1px 2px rgba(0, 0, 0, 0.18);
+}
+.floor-label.hidden { visibility: hidden; }
+.floor-label .fl-name { display: flex; align-items: center; gap: 3px; font-weight: 700; }
+.floor-label .map-ic { width: 12px; height: 12px; stroke-width: 2; flex: none; }
+.floor-label .fl-line { display: none; color: var(--muted); font-size: 0.68rem; }
+.map-view.floor-close .floor-label .fl-line { display: flex; align-items: center; gap: 3px; }
+.floor-label.room.free, .floor-label.place.open { color: var(--free); border-color: color-mix(in srgb, var(--free) 50%, var(--line)); }
+.floor-label.room.soon { color: var(--free-soon); }
+.floor-label.room.managed { color: var(--crowded-text); border-color: color-mix(in srgb, var(--crowded) 50%, var(--line)); }
+.floor-label.room.busy, .floor-label.place.closed { color: var(--busy); border-color: color-mix(in srgb, var(--busy) 50%, var(--line)); }
+.floor-label.space.open { color: var(--open); }
+.floor-label.nodata, .floor-label.space.closed { color: var(--muted); }
+.floor-label .fl-place.food, .floor-label .fl-place.open { color: var(--free); }
+.floor-label .fl-place.closed { color: var(--busy); }
+/* Entrances: arrows pointing in, larger at the main ones; under the labels, not tappable. */
+.floor-entrance { position: absolute; left: 0; top: 0; pointer-events: none; display: flex; color: var(--text); opacity: 0.75; }
+.floor-entrance .map-ic { width: 13px; height: 13px; stroke-width: 2; filter: drop-shadow(0 0 1.5px var(--card)); }
+.floor-entrance.main .map-ic { width: 22px; height: 22px; stroke-width: 2.2; }
+.floor-entrance.main { opacity: 0.9; }
+/* Stairs and lifts: a small icon in a white disc, under the labels. */
+.floor-feature { position: absolute; left: 0; top: 0; pointer-events: none; display: grid; place-items: center; width: 18px; height: 18px; border-radius: 50%; background: var(--card); color: var(--muted); border: 1px solid var(--line); box-shadow: 0 1px 2px rgba(0, 0, 0, 0.15); }
+.floor-feature .map-ic { width: 12px; height: 12px; stroke-width: 1.7; }
+/* The way into the next building (HG and MM on level B): a button where they connect. */
+.floor-link {
+  position: absolute; left: 0; top: 0; z-index: 1; pointer-events: auto; touch-action: none; cursor: pointer; white-space: nowrap;
+  display: flex; align-items: center; gap: 4px; padding: 3px 9px 3px 6px; border: 0; border-radius: 999px;
+  font: inherit; font-size: 0.8rem; font-weight: 700; color: #fff; background: var(--accent); box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
+}
+.floor-link.hidden { visibility: hidden; }
+.floor-link .map-ic { width: 14px; height: 14px; stroke-width: 2.2; }
+/* The other buildings in the floor view: their code, muted; with floor plans a button with an eye (map.js renderFloorTags). */
+.map-floor-tags { position: absolute; inset: 0; pointer-events: none; }
+.floor-tag {
+  position: absolute; left: 0; top: 0; pointer-events: none; white-space: nowrap; display: flex; align-items: center; gap: 3px;
+  padding: 1px 5px; border: 1px solid var(--line); border-radius: 6px; font: inherit; font-family: "Archivo", system-ui, sans-serif;
+  font-weight: 800; font-stretch: 87.5%; font-size: 0.7rem; letter-spacing: 0.02em; line-height: 1.2;
+  color: var(--muted); background: color-mix(in srgb, var(--card) 75%, transparent);
+}
+.floor-tag.plans { pointer-events: auto; touch-action: none; cursor: pointer; padding: 2px 7px 2px 5px; color: var(--open); background: var(--card); border-color: color-mix(in srgb, var(--open) 40%, var(--line)); box-shadow: 0 1px 3px rgba(0, 0, 0, 0.18); }
+.floor-tag .map-ic { width: 12px; height: 12px; stroke-width: 2; }
+.floor-tag.hidden { visibility: hidden; }
+@media (hover: hover) {
+  .floor-tag.plans:hover { background: color-mix(in srgb, var(--open) 12%, var(--card)); }
+}
+.floor-tag:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.map-layers button.level { font-size: 0.85rem; font-weight: 700; color: var(--muted); position: relative; }
+.map-layers button.level[aria-pressed="true"] { color: var(--accent); background: color-mix(in srgb, var(--accent) 14%, var(--card)); }
+.map-layers button.level.has-free::after { content: ""; position: absolute; top: 6px; right: 6px; width: 6px; height: 6px; border-radius: 50%; background: var(--free); }
+.map-floors-open {
+  position: absolute; left: 0; top: 0; white-space: nowrap; padding: 4px 10px; border: 0; border-radius: 8px;
+  background: var(--accent); color: #fff; font: inherit; font-size: 0.76rem; font-weight: 600; box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2); cursor: pointer;
+}
+.map-floors-open[hidden] { display: none; }
+.map-floors-open, .sheet-link.floors-link { align-items: center; gap: 5px; }
+.map-floors-open:not([hidden]) { display: inline-flex; }
+.map-floors-open .map-ic { width: 13px; height: 13px; }
+.floors-link .map-ic { width: 16px; height: 16px; }
+.busy-t { color: var(--busy); }
+/* Phones: the building panel's way into the floor plans, a light blue band (the locate button's blue) that gets
+   stronger to the right. */
+.sheet-link.floors-link {
+  display: flex; width: 100%; margin: 4px 0 8px; padding: 9px 12px; border-radius: 10px; color: var(--me);
+  background: linear-gradient(to right, color-mix(in srgb, var(--me) 4%, var(--card)), color-mix(in srgb, var(--me) 24%, var(--card)));
+}
+.sheet-link.floors-link:hover { background: linear-gradient(to right, color-mix(in srgb, var(--me) 8%, var(--card)), color-mix(in srgb, var(--me) 32%, var(--card))); }
+.sheet-link.on-plan { display: block; font-size: 0.85rem; padding: 2px 0 0; }
+
+/* --- The app frame (index.html, static/sheet.js) --- */
+
+html, body { height: 100%; }
+body { height: 100dvh; overflow: hidden; overscroll-behavior: none; }
+.visually-hidden { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+
+/* Phones: the map fills the frame; the top bar floats over it, the tabs sit at the bottom, the sheet between them. */
+#map { position: fixed; inset: 0; z-index: 0; }
+body.no-map #map { display: none; }
+.map-view { position: absolute; inset: 0; border: 0; border-radius: 0; }
+
+.topbar {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 30;
+  display: flex; align-items: center; gap: 8px;
+  padding: calc(env(safe-area-inset-top, 0px) + 8px) 10px 8px;
+  pointer-events: none;
+}
+.topbar > * { pointer-events: auto; }
+.topbar .wordmark {
+  flex: none; padding: 0 2px; font-size: 1.45rem;
+  text-shadow: 0 0 3px var(--map-ground), 0 0 3px var(--map-ground), 0 0 6px var(--map-ground);
+}
+.search-open, .campus-btn {
+  height: 40px; border: 0; border-radius: 12px; background: var(--card); color: var(--text);
+  font: inherit; font-size: 0.92rem; box-shadow: 0 1px 5px rgba(0, 0, 0, 0.18); cursor: pointer;
+}
+.search-open { flex: 1 1 auto; min-width: 0; display: flex; align-items: center; gap: 8px; padding: 0 12px; color: var(--muted); text-align: left; }
+.search-open span { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.search-ic { width: 17px; height: 17px; flex: none; fill: none; stroke: currentColor; stroke-width: 1.7; stroke-linecap: round; }
+.campus-box { position: relative; flex: none; }
+.campus-btn { padding: 0 12px; font-weight: 650; white-space: nowrap; }
+.campus-menu {
+  position: absolute; right: 0; top: calc(100% + 6px); z-index: 5; min-width: 200px; padding: 6px;
+  background: var(--card); border: 1px solid var(--line); border-radius: 12px; box-shadow: 0 8px 24px rgba(0, 0, 0, 0.18);
+}
+.campus-menu[hidden] { display: none; }
+.campus-menu .uni { font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.06em; color: var(--muted); font-weight: 650; padding: 6px 8px 2px; }
+.campus-menu button {
+  display: block; width: 100%; padding: 8px 10px; border: 0; border-radius: 8px; background: none; color: var(--text);
+  font: inherit; font-size: 0.95rem; text-align: left; cursor: pointer;
+}
+.campus-menu button:hover { background: var(--chip-bg); }
+.campus-menu button[aria-checked="true"] { font-weight: 700; color: var(--accent); }
+@media (prefers-color-scheme: dark) { .campus-menu button[aria-checked="true"] { color: var(--open); } }
+
+.tabs {
+  position: fixed; left: 0; right: 0; bottom: 0; z-index: 40;
+  display: flex; height: calc(56px + env(safe-area-inset-bottom, 0px)); padding-bottom: env(safe-area-inset-bottom, 0px);
+  background: var(--card); border-top: 1px solid var(--line);
+}
+.tabs button {
+  flex: 1 1 0; min-width: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 3px;
+  border: 0; background: none; color: var(--muted); font: inherit; font-size: 0.75rem; font-weight: 650; cursor: pointer;
+}
+.tabs button[aria-selected="true"] { color: var(--accent); }
+@media (prefers-color-scheme: dark) { .tabs button[aria-selected="true"] { color: var(--open); } }
+.mode-ic { width: 22px; height: 22px; fill: none; stroke: currentColor; stroke-width: 1.5; stroke-linejoin: round; stroke-linecap: round; }
+.tabs button[aria-selected="true"] .mode-ic { stroke-width: 1.8; }
+
+.sheet {
+  position: fixed; left: 0; right: 0; z-index: 20; top: 50%; height: 50%;
+  display: flex; flex-direction: column; align-items: stretch;
+  background: var(--bg); border-radius: 16px 16px 0 0; box-shadow: 0 -4px 18px rgba(0, 0, 0, 0.16);
+  will-change: transform;
+}
+.sheet.snapping { transition: transform 0.28s cubic-bezier(0.2, 0.8, 0.2, 1); }
+.sheet-head-bar { flex: none; padding: 0 12px 6px; touch-action: none; cursor: grab; user-select: none; -webkit-user-select: none; }
+.grabber { display: block; width: 100%; height: 18px; padding: 0; border: 0; background: none; cursor: pointer; }
+.grabber span { display: block; width: 38px; height: 5px; margin: 7px auto 0; border-radius: 3px; background: var(--line); }
+.grabber:focus-visible span { outline: 2px solid var(--accent); outline-offset: 3px; }
+.sheet-bar { display: flex; align-items: center; gap: 8px; min-height: 38px; }
+.sheet-back { flex: none; width: 38px; height: 38px; border: 0; border-radius: 10px; background: var(--chip-bg); color: var(--text); font: inherit; font-size: 1.1rem; cursor: pointer; }
+.sheet-back[hidden], .sheet-title[hidden], .filter-line[hidden] { display: none; }
+.sheet-title { flex: 1 1 auto; min-width: 0; font-family: "Archivo", system-ui, sans-serif; font-size: 1.2rem; font-weight: 700; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.filter-line {
+  flex: 1 1 auto; min-width: 0; display: flex; align-items: center; justify-content: space-between; gap: 8px;
+  height: 38px; padding: 0 12px; border: 1px solid var(--line); border-radius: 10px; background: var(--card); color: var(--text);
+  font: inherit; font-size: 0.92rem; font-weight: 600; text-align: left; cursor: pointer;
+}
+.filter-line span { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.filter-line[aria-expanded="true"] { border-color: var(--accent); }
+.filter-ic { width: 18px; height: 18px; flex: none; fill: none; stroke: currentColor; stroke-width: 1.7; stroke-linecap: round; }
+.sheet-body { flex: 1 1 auto; min-height: 0; overflow-y: auto; overscroll-behavior: contain; padding: 0 14px 16px; -webkit-overflow-scrolling: touch; }
+.tab-blurb { margin: 0 0 6px; font-size: 13px; line-height: 1.35; color: var(--muted); }
+.tab-blurb:empty { display: none; }
+#sheet-filters { margin-top: 2px; }
+#sheet-filters[hidden] { display: none; }
+.done-btn { justify-self: start; padding: 8px 20px; border: 0; border-radius: 9px; background: var(--accent); color: #fff; font: inherit; font-weight: 650; cursor: pointer; }
+#asof:empty { display: none; }
+
+/* The map's own controls stay clear of the top bar and the sheet; the notes sit just above the sheet, and only go
+   under it at full height (the OpenStreetMap credit shows at peek and half). */
+.map-view.full .map-tools, .map-view.full .map-top { top: calc(var(--top-px, 56px) + 6px); }
+.map-view.full .map-note { left: 6px; bottom: calc(100% - var(--sheet-top, 50%) + 6px); }
+.map-view.full .map-attrib { bottom: calc(100% - var(--sheet-top, 50%) + 6px); }
+body[data-sheet="full"] .map-view.full .map-note, body[data-sheet="full"] .map-view.full .map-attrib { visibility: hidden; }
+
+/* The You tab's links (About, Send feedback, Contact) and the About text. */
+#you .footer-links { display: flex; flex-wrap: wrap; gap: 8px 20px; font-size: 0.9rem; color: var(--muted); padding-top: 8px; border-top: 1px solid var(--line); }
+#you .footer-links button { font: inherit; color: inherit; background: none; border: 0; padding: 0; cursor: pointer; }
+#you .footer-links a { color: inherit; text-decoration: none; }
+#you .footer-links button:hover, #you .footer-links a:hover { text-decoration: underline; }
+/* About frooms. (account.js accountViews.about): a lead line, then short sections with small headings. */
+.about-text { display: grid; gap: 14px; font-size: 0.93rem; line-height: 1.5; }
+.about-text p { margin: 0; }
+.about-text section { display: grid; gap: 4px; }
+.about-text h3 { margin: 0; font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.06em; color: var(--muted); font-weight: 650; }
+.about-text .about-sph { display: flex; align-items: center; gap: 10px; justify-self: start; margin-top: 6px; color: var(--muted); font-size: 0.82rem; text-decoration: none; }
+.about-text .about-sph img { display: block; width: 150px; height: auto; }
+.about-text .about-lead { font-size: 1.05rem; font-weight: 650; line-height: 1.35; }
+.sheet-title .wordmark { font-size: 1em; letter-spacing: -0.01em; }
+/* Contact: the address and a copy button. */
+.contact-row { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 10px; margin-top: 4px; }
+.contact-mail { font-size: 1.1rem; font-weight: 650; }
+.copy-btn { display: grid; place-items: center; width: 38px; height: 38px; padding: 0; border: 1px solid var(--line); border-radius: 50%; background: var(--card); color: var(--text); cursor: pointer; }
+.copy-btn:hover { background: var(--chip-bg); }
+.copy-btn svg { width: 19px; height: 19px; fill: none; stroke: currentColor; stroke-width: 1.7; stroke-linecap: round; stroke-linejoin: round; }
+.copy-btn.done { border-color: var(--free); color: var(--free); }
+.copy-note { font-size: 0.85rem; color: var(--muted); }
+
+/* --- Street cred (static/cred.js): the view, its log and leaderboards, the menu's level and the toast --- */
+.account-menu .nowrap { white-space: nowrap; }
+.level-badge { padding: 1px 7px; border-radius: 999px; background: var(--chip-bg); color: var(--muted); font-size: 0.72rem; font-weight: 700; white-space: nowrap; }
+.cred-view { display: grid; gap: 14px; }
+.cred-list { list-style: none; margin: 0 0 6px; padding: 0; display: grid; gap: 2px; }
+.cred-entry { display: flex; align-items: center; justify-content: space-between; gap: 10px; padding: 5px 0; }
+.cred-what { display: grid; min-width: 0; line-height: 1.3; }
+.cred-label { font-size: 0.92rem; overflow-wrap: anywhere; }
+.cred-when { font-size: 0.8rem; }
+/* Your bug reports (cred.js credBugs): the state on the right, a decline's reason under the text. */
+.bug-status { flex: none; padding: 1px 8px; border-radius: 999px; background: var(--chip-bg); color: var(--muted); font-size: 0.78rem; font-weight: 650; white-space: nowrap; }
+.bug-reason { font-size: 0.82rem; color: var(--text); overflow-wrap: anywhere; }
+.cred-pts { flex: none; font-family: "Archivo", system-ui, sans-serif; font-weight: 800; font-size: 0.95rem; color: var(--free); font-variant-numeric: tabular-nums; }
+.cred-top { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+.cred-figs { display: grid; gap: 6px; }
+.cred-fig { display: grid; line-height: 1.1; }
+.cred-num { font-family: "Archivo", system-ui, sans-serif; font-weight: 800; font-size: 2.2rem; font-variant-numeric: tabular-nums; color: var(--ink); }
+.cred-fig + .cred-fig .cred-num { font-size: 1.6rem; }
+.cred-fig-label { font-size: 0.85rem; font-weight: 600; }
+.cred-me { display: grid; justify-items: center; gap: 6px; flex: none; }
+.cred-level { font-weight: 700; font-size: 0.9rem; }
+.cred-progress { margin-top: 12px; }
+.cred-bar { height: 10px; border-radius: 999px; background: var(--chip-bg); overflow: hidden; }
+.cred-bar-fill { display: block; height: 100%; border-radius: 999px; background: var(--accent); }
+.detail-part .cred-next { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 2px 10px; margin: 6px 0 0; font-size: 0.86rem; }
+.detail-part .cred-trusted { display: flex; align-items: center; gap: 8px; margin: 10px 0 0; }
+.cred-trusted img { flex: none; }
+.cred-how summary { cursor: pointer; list-style: none; }
+.cred-how summary::-webkit-details-marker { display: none; }
+.cred-how summary h3 { margin: 0; }
+.cred-how summary h3::after { content: "▾"; margin-left: 4px; color: var(--muted); font-size: 0.8rem; }
+.cred-how[open] summary h3::after { content: "▴"; }
+.cred-how[open] summary { margin-bottom: 6px; }
+.cred-boards .switch { margin: 2px 0 8px; }
+.cred-board { list-style: none; margin: 0 0 6px; padding: 0; display: grid; gap: 2px; }
+/* The profile step's leaderboard question: a checkbox with its explanation beside it. */
+.check-line { display: flex; align-items: flex-start; gap: 10px; cursor: pointer; }
+.check-line input { flex: none; width: 18px; height: 18px; margin: 2px 0 0; accent-color: var(--accent); }
+.check-line > span { display: grid; gap: 2px; line-height: 1.35; }
+
+/* Everyone who joined: 10 rows, then the box scrolls (cred.js sets the exact height); your row below it. */
+.cred-board-box { position: relative; max-height: 31rem; overflow-y: auto; overscroll-behavior: contain; margin: 0 0 6px; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+.cred-board-box .cred-board { margin: 0; }
+.cred-board-me { margin-top: 4px; }
+.cred-row { display: flex; align-items: center; gap: 10px; padding: 5px 6px; border-radius: 8px; }
+.cred-row.me { background: color-mix(in srgb, var(--accent) 9%, transparent); }
+@media (prefers-color-scheme: dark) { .cred-row.me { background: color-mix(in srgb, var(--accent) 28%, transparent); } }
+.cred-row .person-text { flex: 1; }
+.cred-rank { flex: none; width: 2.2em; text-align: right; font-weight: 700; color: var(--muted); font-variant-numeric: tabular-nums; }
+.cred-row-pts { flex: none; font-weight: 700; font-variant-numeric: tabular-nums; }
+.cred-gap { padding: 0 0 0 2.6em; color: var(--muted); line-height: 1; }
+.cred-leave { color: var(--muted); font-weight: 600; font-size: 0.86rem; }
+.cred-filter { display: grid; gap: 6px; }
+.cred-filter .row { display: flex; flex-wrap: wrap; align-items: center; gap: 6px; }
+.cred-filter-label { font-size: 0.8rem; font-weight: 600; }
+.cred-filter .time-btn:disabled { opacity: 0.6; cursor: default; }
+/* "+5 street cred": a manual popover (above an open dialog too), centred above the tabs on phones, at the bottom of
+   the left column on wide windows. */
+.toast {
+  position: fixed; inset: auto 16px calc(56px + env(safe-area-inset-bottom, 0px) + 16px) 16px;
+  width: fit-content; max-width: calc(100vw - 32px); margin: 0 auto; padding: 9px 16px; border: 0; border-radius: 999px;
+  background: var(--accent); color: #fff; box-shadow: 0 4px 14px rgba(0, 0, 0, 0.3);
+  font: inherit; font-size: 0.92rem; font-weight: 700; text-align: center; overflow: visible;
+}
+.toast:not(:popover-open):not(.shown) { display: none; }
+.toast:popover-open { animation: toast-in 180ms ease-out; }
+@keyframes toast-in { from { opacity: 0; transform: translateY(8px); } }
+@media (prefers-reduced-motion: reduce) { .toast:popover-open { animation: none; } }
+@media (min-width: 1000px) { .toast { left: 14px; right: calc(100vw - var(--list-w) + 14px); bottom: 24px; max-width: none; } }
+
+/* Wide windows: a left column with the top bar, the tabs, the sheet's head and the list; the map on the right. */
+@media (min-width: 1000px) {
+  body { display: grid; grid-template-columns: var(--list-w) minmax(0, 1fr); grid-template-rows: auto auto minmax(0, 1fr); }
+  body.no-map { grid-template-columns: minmax(0, 1fr); }
+  #map { position: relative; grid-column: 2; grid-row: 1 / -1; }
+  .map-view.side { border-left: 1px solid var(--line); }
+  /* Above the tabs (a grid item with z-index 40): the campus and account menus open over them. */
+  .topbar { position: relative; z-index: 50; grid-column: 1; grid-row: 1; padding: 14px 14px 8px; pointer-events: auto; background: var(--bg); }
+  .topbar .wordmark { font-size: 1.7rem; text-shadow: none; }
+  .search-open, .campus-btn { box-shadow: none; border: 1px solid var(--line); }
+  .tabs {
+    position: static; grid-column: 1; grid-row: 2; height: auto; padding: 4px; margin: 0 14px 8px;
+    border: 0; border-radius: 12px; background: var(--chip-bg); gap: 4px;
+  }
+  .tabs button { flex-direction: row; gap: 6px; padding: 8px 4px; border-radius: 9px; font-size: 0.9rem; }
+  .tabs button[aria-selected="true"] { background: var(--card); color: var(--text); box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1); }
+  .mode-ic { width: 18px; height: 18px; }
+  .sheet { position: static; grid-column: 1; grid-row: 3; height: auto; transform: none !important; border-radius: 0; box-shadow: none; min-height: 0; }
+  .sheet-head-bar { cursor: default; touch-action: auto; padding: 0 14px 6px; }
+  .grabber { display: none; }
+  .sheet-body { padding: 0 14px 24px; }
+}
+
+/* Meet: rooms free long enough, by building (app.js renderMeet). */
+.bgroups { display: grid; gap: 12px; margin-top: 8px; }
+.bgroups[hidden], #duration-field[hidden], #people-field[hidden] { display: none; }
+.bhead { display: block; font-size: 0.92rem; margin: 0 0 4px; }
+.bhead > span:first-child { font-family: "Archivo", system-ui, sans-serif; font-weight: 800; font-stretch: 87.5%; color: var(--ink); }
+.bgroup ul { margin-top: 0; }
+.more-btn { margin-top: 6px; padding: 6px 12px; border: 1px solid var(--line); border-radius: 999px; background: var(--card); color: var(--accent); font: inherit; font-size: 0.88rem; font-weight: 650; cursor: pointer; }
+.more-btn:hover { background: var(--chip-bg); }
+@media (prefers-color-scheme: dark) { .more-btn { color: var(--open); } }
+#people-field input { width: 9em; }
+
+/* --- Detail views (static/places.js) --- */
+
+.sheet.detail-open #sheet-body > :not(#detail) { display: none !important; }
+.detail { display: grid; gap: 12px; padding: 4px 0 0; }
+.detail[hidden] { display: none; }
+.invite-banner { margin: 0 0 6px; padding: 8px 12px; border-radius: 10px; background: color-mix(in srgb, var(--accent) 10%, var(--card)); color: var(--text); font-weight: 650; }
+.detail-status { display: grid; gap: 2px; font-family: "Archivo", system-ui, sans-serif; font-size: 1.35rem; font-weight: 700; line-height: 1.2; }
+.detail-status .when2 { font-size: 1rem; }
+.detail-status .free { color: var(--free); }
+.detail-status .soon { color: var(--free-soon); }
+.detail-status .busy { color: var(--busy); }
+.detail-status .managed { color: var(--crowded-text); }
+.detail-sub { margin: 4px 0 0; font-size: 0.9rem; }
+.detail-note { margin: 0; font-size: 0.9rem; }
+.detail .occ { display: flex; align-items: center; gap: 8px; font-size: 0.9rem; }
+.reported-note { margin-top: -6px; }
+/* The reports section: "full [•••] 5×, crowded [••] 2×" and the log of the past 4 hours in a small box that scrolls. */
+.reports .sheet-link { margin-top: 2px; }
+.report-levels .people { vertical-align: -2px; }
+.report-log { max-height: 160px; overflow-y: auto; overscroll-behavior: contain; margin: 4px 0 0; padding: 6px 10px; border: 1px solid var(--line); border-radius: 8px; font-size: 0.88rem; }
+.report-log[hidden] { display: none; }
+.report-log ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 3px; }
+.report-log li { display: flex; gap: 10px; align-items: center; }
+.report-log .bk-time { font-variant-numeric: tabular-nums; color: var(--muted); }
+.report-log .people { vertical-align: -2px; margin-left: 2px; }
+.report-log p { margin: 0; }
+/* Votes on a report (👍 / 👎) and the trusted reporter's mark (plans/PLAN_STREET_CRED.md, section 9). */
+.report-log li { min-height: 30px; }
+.report-log li.trusted { background: color-mix(in srgb, var(--accent) 7%, transparent); border-radius: 6px; margin: 0 -6px; padding: 0 6px; }
+@media (prefers-color-scheme: dark) { .report-log li.trusted { background: color-mix(in srgb, var(--accent) 22%, transparent); } }
+.report-log .trusted-mark { width: 18px; height: 18px; flex: none; margin-right: -4px; }
+.report-votes { margin-left: auto; display: inline-flex; gap: 4px; align-items: center; flex: none; }
+.vote-count { display: inline-flex; align-items: center; gap: 3px; padding: 0 4px; color: var(--muted); }
+.vote-btn { display: inline-flex; align-items: center; gap: 4px; min-height: 28px; padding: 0 8px; border: 1px solid var(--line); border-radius: 999px; background: var(--card); color: var(--text); font: inherit; font-size: 0.85rem; cursor: pointer; }
+.vote-btn.on { border-color: var(--accent); background: color-mix(in srgb, var(--accent) 12%, var(--card)); font-weight: 600; }
+.vote-btn:disabled { opacity: 0.6; cursor: default; }
+.vote-n { font-variant-numeric: tabular-nums; }
+.report-you { color: var(--muted); font-size: 0.82rem; padding: 0 4px; }
+.report-log .report-vote-msg { color: var(--busy); font-size: 0.82rem; margin-top: 4px; }
+.report-vote-msg:empty { display: none; }
+/* Reporting (places.js reportControls): opened by the view's "Report occupancy". */
+.detail-action[aria-expanded="true"] { border-color: var(--accent); color: var(--open); background: color-mix(in srgb, var(--accent) 8%, var(--card)); }
+.report-control { display: grid; gap: 8px; margin: 2px 0 6px; padding: 10px; border: 1px solid var(--line); border-radius: 10px; background: var(--card); }
+.report-control p { margin: 0; }
+.report-ask { font-size: 0.92rem; font-weight: 600; }
+.report-choices { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; }
+.report-choice {
+  display: grid; justify-items: center; align-content: center; gap: 4px; min-height: 64px; padding: 8px 4px;
+  border: 1.5px solid currentColor; border-radius: 10px; background: var(--card); font: inherit; font-size: 0.95rem; font-weight: 650; cursor: pointer;
+}
+.report-choice .people { height: 18px; width: auto; color: inherit; }
+.report-choice.free { color: var(--free); }
+.report-choice.crowded { color: var(--crowded); }
+.report-choice.crowded > span { color: var(--crowded-text); }
+.report-choice.full { color: var(--busy); }
+/* A microwave spot's queue (places.js queueSection, app.js microwaveItem): four lengths, green to red. */
+.report-choices.queue { grid-template-columns: repeat(4, 1fr); }
+.report-choice.queue-0, .room .status .queue-0, .detail-status .queue-0 { color: var(--free); }
+.report-choice.queue-1, .room .status .queue-1, .detail-status .queue-1 { color: var(--free-soon); }
+.report-choice.queue-2, .room .status .queue-2, .detail-status .queue-2 { color: var(--crowded-text); }
+.report-choice.queue-3, .room .status .queue-3, .detail-status .queue-3 { color: var(--busy); }
+.report-choice:hover { background: color-mix(in srgb, currentColor 8%, var(--card)); }
+.report-choice.on { background: color-mix(in srgb, currentColor 16%, var(--card)); box-shadow: inset 0 0 0 1.5px currentColor; }
+.report-choice:disabled, .report-send:disabled { cursor: default; opacity: 0.6; }
+.report-choice.on:disabled { opacity: 1; }
+.report-slider { display: flex; align-items: center; gap: 12px; }
+.report-slider input { flex: 1; min-width: 0; accent-color: var(--accent); height: 28px; }
+.report-pct { min-width: 3.4em; text-align: right; font-weight: 650; font-variant-numeric: tabular-nums; }
+.report-send {
+  justify-self: start; padding: 7px 18px; border: 0; border-radius: 999px; background: var(--accent); color: #fff;
+  font: inherit; font-size: 0.9rem; font-weight: 650; cursor: pointer;
+}
+.report-msg { font-size: 0.88rem; color: var(--muted); }
+.report-msg:empty { display: none; }
+.report-msg.error { color: var(--busy); }
+.report-msg:focus { outline: none; }
+/* "Usually this full" (places.js usualSection): one thin bar per quarter hour, 07:00 to 22:00, the chosen one amber. */
+.usual-bars { display: flex; align-items: flex-end; gap: 1px; height: 44px; padding-bottom: 1px; border-bottom: 1px solid var(--line); }
+.usual-bars i { flex: 1 1 0; min-width: 0; height: 3%; border-radius: 1px 1px 0 0; background: var(--open); opacity: 0.7; }
+.usual-bars i.none { background: var(--line); opacity: 1; }
+.usual-bars i.now { background: var(--food); opacity: 1; }
+.usual .sched-ticks { margin-top: 2px; }
+.usual-note { font-size: 0.8rem; }
+.detail-menu { justify-self: start; padding: 6px 14px 6px 11px; font-size: 0.92rem; }
+.detail-part { border-top: 1px solid var(--line); padding-top: 10px; }
+.detail-part h3 { display: flex; align-items: center; gap: 4px; margin: 0 0 6px; font-size: 0.92rem; }
+.detail-part p { margin: 0 0 4px; font-size: 0.9rem; }
+.detail-part .rows { list-style: none; margin: 0 0 6px; padding: 0; display: grid; gap: 6px; }
+.bookings { list-style: none; margin: 0; padding: 0; display: grid; gap: 2px; font-size: 0.9rem; }
+.booking { display: flex; gap: 10px; align-items: baseline; padding: 4px 8px; border-radius: 7px; }
+.booking .bk-time { font-variant-numeric: tabular-nums; color: var(--muted); min-width: 92px; }
+.booking.closed .bk-what { color: var(--muted); }
+.booking.now { background: var(--chip-bg); font-weight: 650; }
+.booking .bk-now { margin-left: auto; font-size: 0.75rem; color: var(--busy); text-transform: uppercase; letter-spacing: 0.05em; }
+/* The actions stay at the bottom of the view while it scrolls. */
+.detail-actions {
+  position: sticky; bottom: 0; z-index: 2;
+  display: flex; flex-wrap: wrap; gap: 4px 6px; align-items: center;
+  margin: 4px -14px 0; padding: 8px 14px calc(8px + env(safe-area-inset-bottom, 0px));
+  background: var(--bg); border-top: 1px solid var(--line);
+}
+.detail-actions:empty { display: none; }
+/* A room's or place's actions (places.js actionGrid): rows of two, each button as wide as its half. */
+/* Twelve columns (lib.js actionSpans): two in a row span 6, three span 4, Star 3 · Invite 3 · Checked in 4 · Check out 2. */
+.detail-actions.grid { display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); gap: 5px; align-items: stretch; }
+.detail-actions.grid .action-cell { display: flex; min-width: 0; grid-column: span 6; }
+.detail-actions.grid .action-cell.span-2 { grid-column: span 2; }
+.detail-actions.grid .action-cell.span-3 { grid-column: span 3; }
+.detail-actions.grid .action-cell.span-4 { grid-column: span 4; }
+.detail-actions.grid .action-cell.span-5 { grid-column: span 5; }
+.detail-actions.grid .action-cell.span-10 { grid-column: span 10; }
+.detail-actions.grid .action-cell.span-12 { grid-column: 1 / -1; }
+.detail-actions.grid .detail-action, .detail-actions.grid .invite-box .invite { padding: 6px 8px; font-size: 0.84rem; min-width: 0; text-align: center; line-height: 1.2; }
+.detail-actions.grid .action-cell > .detail-action, .detail-actions.grid .action-cell > .invite-box,
+.detail-actions.grid .action-cell > .invite-box > .invite { flex: 1; justify-content: center; width: 100%; }
+.detail-actions.grid .action-cell.right .invite-menu { left: auto; right: 0; }
+.detail-actions.grid .star-note { grid-column: 1 / -1; font-size: 0.8rem; color: var(--muted); }
+.detail-actions.grid .star-note:empty { display: none; }
+.detail-action {
+  display: inline-flex; align-items: center; gap: 6px; padding: 7px 10px; border: 1px solid var(--line); border-radius: 999px;
+  background: var(--card); color: var(--text); font: inherit; font-size: 0.86rem; font-weight: 600; text-decoration: none; cursor: pointer;
+}
+.detail-action:hover { background: var(--chip-bg); }
+.detail-action svg { width: 16px; height: 16px; flex: none; fill: currentColor; }
+.detail-action[aria-pressed="true"] { border-color: var(--food); color: var(--food); }
+.detail-actions .invite-box .invite { border: 1px solid var(--line); border-radius: 999px; background: var(--card); padding: 7px 10px; font-size: 0.86rem; }
+.detail-actions .invite-menu { z-index: 5; }
+.detail-links { display: flex; flex-wrap: wrap; gap: 4px 16px; }
+.near-privacy { font-size: 0.75rem; margin: 0; }
+.detail .floors-link { margin: 0; }
+.picked-bar { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 8px; }
+.picked-bar[hidden] { display: none; }
+.picked { padding: 5px 12px; border: 1px solid var(--line); border-radius: 999px; background: var(--card); color: var(--text); font: inherit; font-size: 0.88rem; cursor: pointer; }
+.picked:hover { background: var(--chip-bg); }
+.sheet.detail-open .sheet-title { font-size: 1.15rem; }
+.sheet.detail-open .sheet-body { padding-bottom: 0; }
+.notice[hidden] { display: none; }
+.notice { margin-top: 8px; border-left: 4px solid var(--muted); }
+
+/* Stars (static/places.js, app.js): the head's button, the action row's, and the You tab. */
+.sheet-star { flex: none; width: 38px; height: 38px; border: 0; border-radius: 10px; background: none; color: var(--muted); font: inherit; font-size: 1.35rem; line-height: 1; cursor: pointer; }
+.sheet-star[hidden] { display: none; }
+.sheet-star[aria-pressed="true"], .star-btn[aria-pressed="true"] .star-glyph { color: var(--food); }
+.sheet-star:hover { background: var(--chip-bg); }
+.star-glyph { font-size: 1rem; line-height: 1; }
+.star-note { flex-basis: 100%; font-size: 0.85rem; color: var(--busy); }
+.star-note:empty { display: none; }
+#you-places { display: grid; gap: 16px; }
+.you-empty { display: grid; gap: 10px; padding: 8px 0; }
+.you-empty p { margin: 0; }
+.you-area { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.06em; font-weight: 650; padding: 4px 2px 0; }
+.room.gone { border-left-color: var(--line); opacity: 0.85; }
+.room.gone .row-open { cursor: default; }
+.room.gone .when { color: var(--muted); }
+
+/* Search (static/places.js): over the sheet at full height, or the left column. */
+.search-view { display: flex; flex-direction: column; flex: 1 1 auto; min-height: 0; align-self: stretch; width: 100%; }
+.search-view[hidden] { display: none; }
+.sheet.searching > :not(.search-view) { display: none !important; }
+.search-bar { display: flex; gap: 8px; align-items: center; padding: 12px 12px 8px; }
+#search-input {
+  flex: 1 1 auto; min-width: 0; height: 42px; padding: 0 12px; border: 1px solid var(--accent); border-radius: 10px;
+  background: var(--card); color: var(--text); font: inherit; font-size: 16px; /* 16px keeps iOS from zooming in */
+}
+.search-results { flex: 1 1 auto; min-height: 0; overflow-y: auto; overscroll-behavior: contain; padding: 0 14px 16px; display: grid; gap: 14px; align-content: start; }
+.search-group h2 { display: block; font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.06em; color: var(--muted); margin: 4px 0 4px; }
+.search-group ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 4px; }
+.search-hit {
+  display: grid; width: 100%; padding: 8px 12px; border: 1px solid var(--line); border-radius: 10px; background: var(--card);
+  color: var(--text); font: inherit; text-align: left; cursor: pointer;
+}
+.search-hit:hover, .search-hit:focus-visible { background: var(--chip-bg); }
+.search-hit.intent .hit-name { color: var(--open); }
+.search-hit.intent .hit-name::after { content: " →"; }
+.hit-name { font-weight: 600; }
+.hit-sub { font-size: 0.85rem; }
+.search-hint { margin: 4px 0; }
+
+/* --- Accounts (static/account.js): the button in the top bar, its menu, bubbles, sign-in and the profile forms --- */
+
+/* Phones: the wordmark gives its place to the account button (plan 8.2). */
+@media (max-width: 999px) { .topbar .wordmark { display: none; } }
+.account-box { position: relative; flex: none; }
+.account-btn {
+  position: relative; display: grid; place-items: center; width: 40px; height: 40px; padding: 0; border: 0; border-radius: 50%;
+  background: var(--card); color: var(--text); box-shadow: 0 1px 5px rgba(0, 0, 0, 0.18); cursor: pointer;
+}
+.account-btn .map-ic { width: 20px; height: 20px; fill: none; stroke: currentColor; stroke-width: 1.6; stroke-linecap: round; }
+.account-btn .bubble { width: 34px; height: 34px; font-size: 0.85rem; }
+.account-btn.offline { opacity: 0.5; }
+.account-btn:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.account-dot { position: absolute; top: 1px; right: 1px; width: 11px; height: 11px; border-radius: 50%; background: var(--dot); border: 2px solid var(--card); }
+@media (min-width: 1000px) { .account-btn { box-shadow: none; border: 1px solid var(--line); } }
+.account-menu { min-width: 220px; }
+.account-menu button { display: flex; align-items: center; justify-content: space-between; gap: 8px; }
+/* The line above About frooms., and Privacy, a link that looks like the other items. */
+.account-menu .menu-sep { height: 0; margin: 5px 4px; border-top: 1px solid var(--line); }
+.account-menu a[role="menuitem"] { display: block; padding: 8px 10px; border-radius: 8px; color: var(--text); font-size: 0.95rem; text-decoration: none; }
+.account-menu a[role="menuitem"]:hover { background: var(--chip-bg); }
+/* "frooms." in About frooms.: the wordmark at the menu's size (the top bar's own rules don't apply here). */
+#account-menu .wordmark { display: inline; font-size: 1.08em; margin: 0; text-shadow: none; letter-spacing: -0.01em; }
+.account-who { display: flex; align-items: center; gap: 10px; padding: 6px 8px 10px; margin-bottom: 4px; border-bottom: 1px solid var(--line); }
+.account-who > span:last-child { display: grid; line-height: 1.25; min-width: 0; }
+.account-who strong { overflow: hidden; text-overflow: ellipsis; }
+.count-badge { min-width: 20px; height: 20px; padding: 0 6px; border-radius: 10px; background: var(--dot); color: #fff; font-size: 0.75rem; font-weight: 700; line-height: 20px; text-align: center; }
+
+/* A person's bubble: initials in their own two colours (set from script), the same everywhere. */
+.bubble {
+  display: inline-grid; place-items: center; flex: none; width: 32px; height: 32px; border-radius: 50%;
+  background: var(--chip-bg); color: var(--text); font-family: "Archivo", system-ui, sans-serif; font-weight: 800;
+  font-size: 0.8rem; letter-spacing: 0.02em; line-height: 1; user-select: none;
+}
+.bubble.big { width: 52px; height: 52px; font-size: 1.15rem; }
+.bubble.small { width: 26px; height: 26px; font-size: 0.68rem; }
+/* The person's look (bubble() sets the custom properties: a colour or a gradient, lib.js bubbleLook). */
+.bubble.styled { background: var(--bubble-bg); color: var(--bubble-fg); }
+/* Gradient letters (level 3 and the metals): the letters' own box, clipped to the text; the plain colour stays below. */
+.bubble.grad-text .bubble-letters {
+  background: var(--bubble-text); -webkit-background-clip: text; background-clip: text;
+  color: transparent; -webkit-text-fill-color: transparent;
+}
+/* Metals: a thin inner rim for the coin's edge (an outline, so the map's ring and shadows keep their box-shadow). */
+.bubble.metal { outline: 1px solid rgba(255, 255, 255, 0.28); outline-offset: -2px; }
+.bubble.metal-silver { outline-color: rgba(0, 0, 0, 0.18); }
+.person-row { display: flex; align-items: center; gap: 12px; min-width: 0; }
+.person-text { display: grid; min-width: 0; line-height: 1.3; }
+.person-user { font-weight: 650; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.person-name { font-size: 0.85rem; }
+
+/* Signing in. */
+.signin { display: grid; gap: 10px; justify-items: start; }
+.signin p { margin: 0; }
+.signin-lead { margin: 0; }
+.signin-why { font-weight: 600; }
+.signin-btn {
+  display: inline-flex; align-items: center; gap: 10px; padding: 11px 20px; border-radius: 12px;
+  background: var(--accent); color: #fff; font-weight: 700; text-decoration: none;
+}
+.signin-btn:hover { background: color-mix(in srgb, var(--accent) 88%, #fff); }
+.signin-btn:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.eduid-mark { padding: 1px 6px; border-radius: 6px; background: #fff; color: var(--accent); font-family: "Archivo", system-ui, sans-serif; font-weight: 800; font-size: 0.85rem; }
+.signin-note { font-size: 0.9rem; }
+.signin-links a, .privacy-line a, .detail a:not(.detail-action):not(.signin-btn) { color: var(--accent); }
+@media (prefers-color-scheme: dark) { .signin-links a, .privacy-line a, .detail a:not(.detail-action):not(.signin-btn) { color: var(--open); } }
+.message.warning { border-left: 4px solid var(--busy); }
+
+/* The profile step and Profile. */
+.account-form { display: grid; gap: 12px; padding-bottom: 16px; }
+.account-form .field { display: grid; gap: 6px; }
+.account-form p { margin: 0; }
+.edu-name { font-weight: 650; font-size: 1.05rem; }
+.small { font-size: 0.82rem; }
+.username-box { display: flex; align-items: center; height: 42px; border: 1px solid var(--line); border-radius: 10px; background: var(--card); }
+.username-box:focus-within { border-color: var(--accent); }
+.username-box .at { padding: 0 2px 0 12px; color: var(--muted); }
+.username-box input { flex: 1; min-width: 0; height: 100%; border: 0; background: none; color: var(--text); font: inherit; font-size: 16px; outline: none; }
+.username-check { font-size: 0.85rem; min-height: 1.2em; }
+.username-check.ok { color: var(--free); }
+.username-check.bad { color: var(--busy); }
+.person-row.preview { margin: 4px 0 8px; }
+.swatches { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
+.swatch { width: 30px; height: 30px; padding: 0; border: 1px solid rgba(0, 0, 0, 0.18); border-radius: 50%; cursor: pointer; }
+.swatch[aria-pressed="true"] { box-shadow: 0 0 0 2px var(--bg), 0 0 0 4px var(--accent); }
+@media (prefers-color-scheme: dark) { .swatch[aria-pressed="true"] { box-shadow: 0 0 0 2px var(--bg), 0 0 0 4px var(--open); } }
+.swatch:focus-visible, .wheel-canvas:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+/* The colour wheel (account.js colourWheel): its button is a small wheel, the panel opens under the row. */
+.swatch-wheel {
+  background: radial-gradient(circle closest-side, #ffffff, rgba(255, 255, 255, 0) 100%),
+    conic-gradient(from 90deg, #ff0000, #ff00ff, #0000ff, #00ffff, #00ff00, #ffff00, #ff0000);
+}
+.swatch-wheel[aria-expanded="true"]:not([aria-pressed="true"]) { box-shadow: 0 0 0 2px var(--bg), 0 0 0 4px var(--line); }
+.wheel-panel { margin-top: 12px; max-width: 220px; }
+.wheel-panel[hidden] { display: none; }
+.wheel-canvas { display: block; width: 220px; height: 220px; border-radius: 50%; touch-action: none; cursor: crosshair; box-shadow: 0 0 0 1px var(--line); }
+.wheel-bright-row { display: flex; align-items: center; gap: 10px; margin-top: 14px; }
+.wheel-bright {
+  flex: 1; min-width: 0; height: 18px; margin: 0; border: 1px solid var(--line); border-radius: 9px;
+  background: var(--wheel-track, linear-gradient(to right, #ffffff, #000000)); -webkit-appearance: none; appearance: none; cursor: pointer;
+}
+.wheel-bright::-webkit-slider-thumb {
+  -webkit-appearance: none; width: 22px; height: 22px; border: 1px solid rgba(0, 0, 0, 0.3); border-radius: 50%;
+  background: #ffffff; box-shadow: 0 1px 3px rgba(0, 0, 0, 0.35);
+}
+.wheel-bright::-moz-range-thumb { width: 22px; height: 22px; border: 1px solid rgba(0, 0, 0, 0.3); border-radius: 50%; background: #ffffff; box-shadow: 0 1px 3px rgba(0, 0, 0, 0.35); }
+.wheel-bright:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+.wheel-hex { font-size: 0.8rem; font-variant-numeric: tabular-nums; min-width: 4.5em; }
+/* Street cred's unlocks in Profile: "None", the metals, and locked rows greyed with "Level N". */
+.unlock-head { margin: 18px 0 2px; font-size: 0.95rem; }
+.swatch-none {
+  height: 30px; padding: 0 10px; border: 1px dashed var(--line); border-radius: 15px; background: var(--card);
+  color: var(--text); font: inherit; font-size: 0.82rem; cursor: pointer;
+}
+.swatch-none[aria-pressed="true"] { border-style: solid; box-shadow: 0 0 0 2px var(--bg), 0 0 0 4px var(--accent); font-weight: 650; }
+.lock-note { text-transform: none; letter-spacing: normal; margin-left: 8px; padding: 1px 7px; border-radius: 999px; background: var(--chip-bg); color: var(--muted); font-size: 0.75rem; font-weight: 650; }
+.colour-field.locked .swatch { opacity: 0.35; filter: grayscale(0.6); cursor: not-allowed; }
+.colour-field.locked > .label { color: var(--muted); }
+.colour-field.under-metal .swatches { opacity: 0.5; }
+.swatch:disabled, .swatch-none:disabled { cursor: not-allowed; }
+.swatch-none:disabled { opacity: 0.45; }
+.metal-choices { display: flex; flex-wrap: wrap; gap: 8px; }
+.metal-choice {
+  display: inline-flex; align-items: center; gap: 8px; padding: 5px 12px 5px 5px; border: 1px solid var(--line);
+  border-radius: 999px; background: var(--card); color: var(--text); font: inherit; font-size: 0.9rem; cursor: pointer;
+}
+.metal-choice[aria-pressed="true"] { border-color: var(--accent); box-shadow: 0 0 0 1px var(--accent); font-weight: 650; }
+.metal-choice.locked .bubble { filter: grayscale(0.7); opacity: 0.45; }
+.metal-choice.locked { color: var(--muted); }
+.metal-choice:disabled { cursor: not-allowed; }
+.metal-choice .lock-note { margin-left: 0; }
+.metal-choice:focus-visible, .swatch-none:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+@media (prefers-color-scheme: dark) {
+  .swatch-none[aria-pressed="true"] { box-shadow: 0 0 0 2px var(--bg), 0 0 0 4px var(--open); }
+  .metal-choice[aria-pressed="true"] { border-color: var(--open); box-shadow: 0 0 0 1px var(--open); }
+}
+.contrast-note { color: var(--busy); font-size: 0.85rem; }
+.contrast-note:empty, .form-error:empty { display: none; }
+.form-error { color: var(--busy); font-size: 0.9rem; }
+.privacy-line { font-size: 0.88rem; }
+.account-form .done-btn:disabled { opacity: 0.5; cursor: default; }
+.detail-action.danger { color: var(--busy); border-color: color-mix(in srgb, var(--busy) 45%, var(--line)); }
+.detail-action:disabled { opacity: 0.6; cursor: default; }
+
+/* A question in the middle of the screen (account.js askConfirm). */
+.confirm-dialog { width: min(420px, calc(100vw - 32px)); padding: 0; border: 0; border-radius: 16px; background: var(--card); color: var(--text); box-shadow: 0 12px 40px rgba(0, 0, 0, 0.3); }
+.confirm-dialog::backdrop { background: rgba(0, 0, 0, 0.45); }
+.confirm-form { display: grid; gap: 12px; padding: 18px; }
+.confirm-form h2 { display: block; font-size: 1.15rem; }
+.confirm-form p { margin: 0; font-size: 0.92rem; }
+.confirm-form .field { display: grid; font-size: 0.9rem; }
+.confirm-form input { height: 40px; padding: 0 10px; border: 1px solid var(--line); border-radius: 9px; background: var(--bg); color: var(--text); font: inherit; font-size: 16px; }
+.confirm-buttons { display: flex; justify-content: flex-end; gap: 8px; margin-top: 4px; }
+.confirm-buttons button { padding: 9px 18px; border-radius: 10px; font: inherit; font-weight: 650; cursor: pointer; }
+.confirm-no { border: 1px solid var(--line); background: var(--card); color: var(--text); }
+.confirm-yes { border: 0; background: var(--accent); color: #fff; }
+.confirm-yes.danger { background: #b3261e; }
+.confirm-yes:disabled { opacity: 0.45; cursor: default; }
+.colour-field { margin-top: 8px; }
+
+/* --- Friends (static/friends.js) --- */
+#feedback-person[hidden] { display: none; }
+.friends-search { position: sticky; top: 0; z-index: 2; padding: 0 0 8px; background: var(--bg); }
+.friends-search input {
+  width: 100%; height: 42px; padding: 0 12px; border: 1px solid var(--line); border-radius: 10px;
+  background: var(--card); color: var(--text); font: inherit; font-size: 16px;
+}
+.friends-search input:focus { border-color: var(--accent); outline: none; }
+.friends-results { display: grid; gap: 12px; padding-bottom: 16px; }
+.friends-results .message, .friends-results p { margin: 0; }
+.friends-group h3 .count { font-weight: normal; }
+.people-list { list-style: none; margin: 0; padding: 0; display: grid; gap: 6px; }
+.person {
+  display: grid; grid-template-columns: auto minmax(0, 1fr) auto; align-items: center; gap: 4px 10px;
+  padding: 8px 10px; border: 1px solid var(--line); border-radius: 12px; background: var(--card);
+}
+.person.incoming { border-color: color-mix(in srgb, var(--dot) 45%, var(--line)); }
+.person-actions { display: flex; gap: 6px; align-items: center; }
+.person-menu { grid-column: 1 / -1; display: flex; flex-wrap: wrap; gap: 6px; padding-top: 6px; border-top: 1px solid var(--line); }
+.pill {
+  padding: 6px 12px; border: 1px solid var(--line); border-radius: 999px; background: var(--card); color: var(--text);
+  font: inherit; font-size: 0.85rem; font-weight: 650; white-space: nowrap; cursor: pointer;
+}
+.pill:hover { background: var(--chip-bg); }
+.pill:focus-visible { outline: 2px solid var(--accent); outline-offset: 1px; }
+.pill.primary { border-color: var(--accent); background: var(--accent); color: #fff; }
+.pill.primary:hover { background: color-mix(in srgb, var(--accent) 88%, #fff); }
+.pill.danger { color: var(--busy); }
+.pill.done { border-color: transparent; background: var(--chip-bg); color: var(--muted); cursor: default; }
+.more-pill { width: 34px; padding: 6px 0; font-size: 1rem; line-height: 1; }
+.share-link p { margin: 0 0 6px; }
+.link-text { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 0.85rem; overflow-wrap: anywhere; }
+.share-link .invite-box .invite { border: 1px solid var(--line); border-radius: 999px; background: var(--card); padding: 7px 12px; font-size: 0.88rem; }
+.add-person .person { border-color: var(--accent); }
+
+/* --- Checking in (static/checkin.js) --- */
+/* Phones: round, bottom right, 16 px above the tabs (decision 12; tried on a phone before it's final). Hidden while
+   search or a place's view is open (the view has "Check in here"). While a check-in runs it's Check out. */
+.checkin-btn {
+  position: fixed; right: 16px; bottom: calc(56px + env(safe-area-inset-bottom, 0px) + 16px); z-index: 35;
+  display: grid; place-items: center; width: 56px; height: 56px; padding: 0; border: 0; border-radius: 50%;
+  background: var(--accent); color: #fff; box-shadow: 0 4px 14px rgba(0, 0, 0, 0.3); cursor: pointer;
+}
+.checkin-btn svg { width: 28px; height: 28px; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+.checkin-btn[hidden] { display: none; }
+.checkin-btn.offline { opacity: 0.5; }
+.checkin-btn:focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; }
+body:has(#sheet.searching) .checkin-btn { display: none; }
+@media (max-width: 999px) { body:has(#sheet.detail-open) .checkin-btn { display: none; } }
+/* Wide windows: in the top bar, beside the account button. */
+@media (min-width: 1000px) {
+  .checkin-btn { position: static; flex: none; width: 40px; height: 40px; box-shadow: none; }
+  .checkin-btn svg { width: 22px; height: 22px; }
+}
+@media (prefers-color-scheme: dark) { .checkin-btn { background: #3a3aa8; } }
+/* Checked in: the same button checks out, red as the other check-out buttons. */
+.checkin-btn.out { background: #c62828; }
+.checkin-btn.out:focus-visible { outline-color: #c62828; }
+@media (prefers-color-scheme: dark) { .checkin-btn.out { background: #b3261e; } }
+
+.checkin-places { display: grid; gap: 12px; padding-bottom: 16px; }
+.checkin-places p { margin: 0; }
+.checkin-building h3 { display: block; }
+.checkin-building h4 { margin: 10px 0 6px; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.06em; color: var(--muted); }
+.checkin-row {
+  display: grid; grid-template-columns: minmax(0, 1fr) auto; align-items: center; gap: 10px;
+  padding: 6px 6px 6px 12px; border: 1px solid var(--line); border-radius: 12px; background: var(--card);
+}
+.check-btn {
+  display: grid; place-items: center; width: 40px; height: 40px; padding: 0; border: 1.5px solid var(--accent); border-radius: 50%;
+  background: var(--card); color: var(--accent); cursor: pointer;
+}
+@media (prefers-color-scheme: dark) { .check-btn { border-color: var(--open); color: var(--open); } }
+.check-btn svg, .checkin-action svg, .checkout-btn svg, .checked-in .tick svg { width: 22px; height: 22px; fill: none !important; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+.check-btn:hover { background: color-mix(in srgb, var(--accent) 10%, var(--card)); }
+.check-btn.on { background: var(--free); border-color: var(--free); color: #fff; }
+.check-btn:disabled { opacity: 0.5; cursor: default; }
+.checkin-action svg { width: 17px; height: 17px; }
+.detail-action.checkin-action.on { border-color: var(--free); color: var(--free); }
+/* Check out beside Checked in in a place's view: round-ended and red like the You tab's. */
+.detail-action.checkout-action { padding: 6px 0; border-color: #c62828; color: #c62828; }
+.detail-action.checkout-action svg { width: 19px; height: 19px; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+.detail-action.checkout-action:hover { background: color-mix(in srgb, #c62828 10%, var(--card)); }
+@media (prefers-color-scheme: dark) { .detail-action.checkout-action { border-color: #ef7a7a; color: #ef7a7a; } }
+/* Narrow phones: "Checked in" keeps to one line without its tick. */
+@media (max-width: 379px) { .detail-action.checkin-action.on svg { display: none; } }
+
+/* "Checked in!" and the end time. */
+.checkin-box { display: grid; gap: 12px; padding: 18px; }
+.checkin-box p { margin: 0; }
+.checkin-box h2 { display: block; font-size: 1.2rem; }
+.checked-in { display: flex; align-items: center; gap: 10px; }
+.checked-in .tick { display: grid; place-items: center; width: 40px; height: 40px; border-radius: 50%; background: var(--free); color: #fff; }
+.checkin-place { font-weight: 650; font-size: 1.05rem; }
+.checkin-box .field { display: grid; gap: 6px; }
+.until-row { display: flex; flex-wrap: wrap; gap: 6px; align-items: center; }
+.until-row .time-btn { height: 36px; }
+.checkin-box .until-wheel { margin: 0; }
+.checkin-box .until-wheel[hidden] { display: none; }
+.checkin-box .invite-box .invite { border: 1px solid var(--line); border-radius: 999px; background: var(--card); padding: 7px 12px; font-size: 0.9rem; }
+.checkin-box .done-btn { justify-self: end; }
+/* Done at the right; from a place's view, Check out at the left. */
+.checkin-buttons { display: flex; align-items: center; justify-content: flex-end; gap: 12px; }
+.checkin-buttons .checkout-link { margin-right: auto; }
+.checkout-link {
+  display: inline-flex; align-items: center; gap: 6px; padding: 7px 14px 7px 10px; border: 1.5px solid #c62828; border-radius: 9px;
+  background: var(--card); color: #c62828; font: inherit; font-weight: 650; cursor: pointer;
+}
+.checkout-link svg { width: 18px; height: 18px; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+.checkout-link:hover { background: color-mix(in srgb, #c62828 10%, var(--card)); }
+@media (prefers-color-scheme: dark) { .checkout-link { border-color: #ef7a7a; color: #ef7a7a; } }
+
+/* The You tab: your check-in, your friends'. */
+#you-account { display: grid; gap: 16px; }
+#you-account:empty { display: none; }
+#you { display: grid; gap: 16px; }
+#you[hidden] { display: none; }
+.room.my-checkin { display: grid; grid-template-columns: minmax(0, 1fr) auto; grid-template-areas: "open out" "times out"; align-items: center; border-left-color: var(--free); padding-right: 8px; }
+.my-checkin .checkin-open { grid-area: open; padding-bottom: 0; }
+.my-checkin .checkin-open .name { font-weight: 650; }
+.checkin-times {
+  grid-area: times; justify-self: start; margin: 0 0 8px 12px; padding: 2px 0; border: 0; background: none; color: var(--muted);
+  font: inherit; font-size: 0.88rem; text-decoration: underline dotted; text-underline-offset: 3px; cursor: pointer;
+}
+.checkout-btn {
+  grid-area: out; display: grid; place-items: center; width: 42px; height: 42px; padding: 0; border: 1.5px solid #c62828; border-radius: 50%;
+  background: var(--card); color: #c62828; cursor: pointer;
+}
+@media (prefers-color-scheme: dark) { .checkout-btn { border-color: #ef7a7a; color: #ef7a7a; } }
+.checkout-btn:hover { background: color-mix(in srgb, #c62828 10%, var(--card)); }
+.you-signin { margin: 0; font-size: 0.92rem; }
+.you-signin a { color: var(--accent); font-weight: 650; }
+@media (prefers-color-scheme: dark) { .you-signin a { color: var(--open); } }
+
+/* --- Friends' check-ins (static/friends.js): the map's bubbles, the campus counts, the You tab --- */
+.map-friends { position: absolute; inset: 0; pointer-events: none; z-index: 3; }
+.map-friends:empty { display: none; }
+.friend-bubble {
+  position: absolute; left: 0; top: 0; padding: 0; border: 0; border-radius: 50%; background: none; cursor: pointer;
+  pointer-events: auto; touch-action: none; transition: transform 0.12s ease-out;
+}
+.map-view.flying .friend-bubble, body[data-dragging] .friend-bubble { transition: none; }
+@media (prefers-reduced-motion: reduce) { .friend-bubble { transition: none; } }
+.friend-bubble .bubble { width: 32px; height: 32px; border: 2px solid var(--card); box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3); font-size: 0.72rem; }
+.friend-bubble.me .bubble { box-shadow: 0 0 0 2px var(--card), 0 0 0 4.5px var(--free), 0 2px 6px rgba(0, 0, 0, 0.3); }
+.friend-bubble:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+.fb-count {
+  position: absolute; top: -5px; right: -8px; min-width: 19px; height: 19px; padding: 0 5px; border-radius: 10px;
+  background: var(--text); color: var(--bg); border: 1.5px solid var(--card);
+  font: 700 0.7rem/16px system-ui, sans-serif; text-align: center;
+}
+.map-friends-box[hidden] { display: none; }
+.map-tools button.map-friends-btn { display: grid; place-items: center; color: var(--muted); }
+.map-friends-btn .map-ic { width: 20px; height: 20px; fill: none; stroke: currentColor; stroke-width: 1.4; stroke-linecap: round; opacity: 0.55; }
+.map-friends-btn[aria-pressed="true"] { color: var(--free); background: color-mix(in srgb, var(--free) 12%, var(--card)); }
+.map-friends-btn[aria-pressed="true"] .map-ic { opacity: 1; }
+.friends-count { display: inline-flex; align-items: center; gap: 2px; margin-left: 6px; padding: 0 6px 0 4px; border-radius: 999px; background: color-mix(in srgb, var(--free) 14%, var(--card)); color: var(--free); font-size: 0.75rem; font-weight: 700; vertical-align: 1px; }
+.friends-count .map-ic { width: 13px; height: 13px; fill: none; stroke: currentColor; stroke-width: 1.5; stroke-linecap: round; }
+
+.friends-here ul { list-style: none; margin: 8px 0 0; padding: 0; display: grid; gap: 6px; }
+.friends-here p { margin: 6px 0 0; }
+.friends-here .chips { margin-top: 8px; }
+.room.friend-checkin { border-left-color: var(--free); }
+.friend-open { display: flex !important; align-items: center; gap: 12px; }
+.friend-place { font-weight: 600; font-size: 0.92rem; }
+.person-short { font-weight: normal; font-size: 0.85rem; }
+.room.friend-checkin.mine .bubble { box-shadow: 0 0 0 2px var(--card), 0 0 0 4px var(--free); }
+.friends-here-link { display: inline-flex; align-items: center; gap: 2px; justify-self: start; }
+.friends-here-link .map-ic { width: 16px; height: 16px; fill: none; stroke: currentColor; stroke-width: 1.5; stroke-linecap: round; }
+.map-friends.small .friend-bubble .bubble { width: 26px; height: 26px; font-size: 0.62rem; border-width: 1.5px; }
+.map-friends.small .fb-count { top: -6px; right: -9px; min-width: 17px; height: 17px; line-height: 14px; font-size: 0.65rem; }
+/* Wide windows: the top bar has the wordmark, the campus, Check in and the account on its first row, the search below. */
+@media (min-width: 1000px) {
+  .topbar { flex-wrap: wrap; row-gap: 10px; }
+  .topbar .wordmark { margin-right: auto; }
+  .topbar .search-open { order: 5; flex: 1 1 100%; }
+}
+/* Phones: the list's end can scroll clear of the round check-in button. */
+@media (max-width: 999px) { body:has(#checkin-btn:not([hidden])) .sheet:not(.detail-open) .sheet-body { padding-bottom: 88px; } }
+/* People in the page's search (friends.js peopleSearchGroup). */
+.search-hit.person-hit { grid-template-columns: auto minmax(0, 1fr); align-items: center; gap: 10px; }
+.person-hit .person-text { display: grid; }
+
+/* --- The tutorial (static/tutorial.js, plans/PLAN_TUTORIAL.md): a fog over the page with a hole on the element a step
+   explains, and its card. #tour is a manual popover in the top layer (above open dialogs); it lets clicks through
+   except on the fog itself and the card. --- */
+:root {
+  /* Light enough to recognise the page around the step; the blue ring pulls the eye to what it's about. */
+  --tour-fog: rgb(255 255 255 / 0.62);
+  --tour-fog-strong: rgb(255 255 255 / 0.9);
+  --tour-text: #010057; /* on the light fog: navy */
+  --tour-ring: #2563eb;
+  --tour-ring-glow: rgb(37 99 235 / 0.35);
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --tour-fog: rgb(10 20 45 / 0.68);
+    --tour-fog-strong: rgb(10 20 45 / 0.9);
+    --tour-text: #ffffff;
+    --tour-ring: #7ea6ff;
+    --tour-ring-glow: rgb(126 166 255 / 0.4);
+  }
+}
+.tour {
+  position: fixed; inset: 0; width: 100vw; height: 100dvh; max-width: none; max-height: none; margin: 0; padding: 0;
+  border: 0; background: transparent; color: var(--text); overflow: visible; pointer-events: none;
+}
+.tour:not(:popover-open):not(.shown) { display: none; }
+.tour-fog, .tour-blur { position: absolute; inset: 0; width: 100%; height: 100%; }
+/* The shade has a hole for the step's context and target; a clear path over everything but the target takes the
+   clicks beside it; the ring marks the target. */
+.tour-fog .tour-shade { fill: var(--tour-fog); pointer-events: none; transition: fill 200ms; }
+.tour.strong .tour-fog .tour-shade { fill: var(--tour-fog-strong); }
+.tour-fog .tour-catch { fill: transparent; pointer-events: fill; }
+.tour-fog .tour-ring { fill: none; stroke: var(--tour-ring); stroke-width: 3; pointer-events: none; filter: drop-shadow(0 0 6px var(--tour-ring-glow)); animation: tour-ring 1.6s ease-in-out infinite; }
+@keyframes tour-ring { 50% { stroke-width: 4.5; } }
+.tour-blur { backdrop-filter: blur(1.5px); -webkit-backdrop-filter: blur(1.5px); pointer-events: none; }
+/* The tutorial's example friend on the map (tutorial.js tourDemoBubble): not a button, nothing to click. */
+/* A map step (tutorial.js tourNoPageZoom): a pinch starting on the fog or the card doesn't zoom the page. */
+.tour.map-step .tour-catch { touch-action: none; }
+.tour.map-step .tour-card { touch-action: pan-y; }
+.friend-bubble.tour-demo { pointer-events: none; }
+.friend-bubble.tour-demo[hidden] { display: none; }
+.tour-card {
+  position: absolute; left: 16px; top: 16px; width: min(360px, calc(100vw - 32px)); padding: 14px 16px 10px;
+  border-radius: 12px; background: var(--card); color: var(--text); box-shadow: 0 8px 28px rgba(0, 0, 0, 0.28);
+  pointer-events: auto; transition: left 250ms ease-out, top 250ms ease-out;
+}
+.tour-card:focus, .tour-card:focus-visible { outline: none; }
+.tour-card.nudge { animation: tour-nudge 300ms ease-in-out; }
+@keyframes tour-nudge { 25% { transform: translateX(-4px); } 75% { transform: translateX(4px); } }
+.tour-progress { margin: 0 0 4px; color: var(--muted); font-size: 0.8rem; font-weight: 650; }
+.tour-title { display: block; margin: 0 0 4px; font-size: 1.05rem; }
+.tour-body { margin: 0 0 10px; }
+.tour-buttons { display: flex; flex-wrap: wrap; align-items: center; justify-content: flex-end; gap: 8px; margin-top: 6px; }
+.tour-buttons button { padding: 8px 16px; border-radius: 10px; font: inherit; font-weight: 650; cursor: pointer; }
+.tour-primary { border: 0; background: var(--accent); color: #fff; }
+.tour-secondary { border: 1px solid var(--line); background: var(--card); color: var(--text); }
+.tour-hint { padding: 8px 4px; color: var(--accent); font-weight: 650; }
+.tour-exit { display: block; margin: 8px 0 0; padding: 4px 0; border: 0; background: none; color: var(--muted); font: inherit; font-size: 0.85rem; text-decoration: underline; cursor: pointer; }
+@media (prefers-color-scheme: dark) { .tour-hint { color: var(--open); } }
+/* The welcome screen: on the stronger fog, without a card (its text reads at 4.5:1 or more on the fog itself). */
+.tour-welcome {
+  position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); width: min(408px, calc(100vw - 24px)); padding: 4px;
+  display: grid; gap: 12px; text-align: center; color: var(--tour-text); pointer-events: auto;
+}
+.tour-welcome[hidden] { display: none; }
+.tour-welcome:focus { outline: none; }
+.tour-welcome-title { display: block; font-size: 1.5rem; font-weight: 750; }
+.tour-welcome-title .wordmark { font-size: 1.12em; color: var(--tour-text); }
+.tour-question { margin: 0 0 6px; font-size: 1.1rem; font-weight: 600; }
+.tour-journeys { display: grid; gap: 8px; }
+.tour-journey {
+  display: flex; align-items: center; justify-content: space-between; gap: 10px; padding: 13px 16px; border: 1px solid var(--line);
+  border-radius: 12px; background: var(--card); color: var(--text); font: inherit; font-weight: 650; text-align: left;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08); cursor: pointer;
+}
+.tour-journey:hover { border-color: var(--accent); }
+.tour-tick { color: var(--free); font-weight: 800; }
+.tour-later { justify-self: center; padding: 8px 12px; border: 0; background: none; color: var(--tour-text); font: inherit; font-weight: 600; text-decoration: underline; cursor: pointer; }
+/* The keyboard's focus on the card's and the welcome screen's buttons: navy, the lighter navy in the dark. */
+.tour button:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+@media (prefers-color-scheme: dark) { .tour button:focus-visible { outline-color: var(--open); } }
+/* Short windows (a laptop at 200 % zoom is 720 × 450): a smaller card, and both scroll rather than run off. */
+.tour-card, .tour-welcome { max-height: calc(100dvh - 24px); overflow-y: auto; }
+@media (max-height: 560px) {
+  .tour-card { padding: 10px 14px 6px; }
+  .tour-progress { margin: 0 0 2px; }
+  .tour-body { margin: 0 0 4px; }
+  .tour-buttons { margin-top: 2px; }
+  .tour-buttons button { padding: 6px 14px; }
+  .tour-exit { margin: 2px 0 0; }
+  .tour-welcome { gap: 8px; }
+  .tour-journey { padding: 9px 14px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .tour-card { transition: none; }
+  .tour-card.nudge { animation: none; }
+  .tour-fog path { transition: none; }
+  .tour-fog .tour-ring { animation: none; }
+}
+/* What a guarded action says while the tour runs (app.js inviteControl), and the sign-in view's way into the tour. */
+.invite-tour-note { margin: 6px 4px 2px; color: var(--muted); font-size: 0.85rem; }
+.signin-tour { margin: 14px 0 0; color: var(--muted); }
+.signin-tour .sheet-link { font-size: inherit; }
+/* The first-visit window (app.js showTourOffer): "Take the tour" on the left, Skip (the main button) on the right. */
+.tour-offer .confirm-form h2 .wordmark { display: inline; margin: 0; font-size: 1.1em; text-shadow: none; }
+.tour-offer-buttons { justify-content: space-between; }
+/* After Skip (app.js tourOfferPoint): the tutorial's fog and ring on the account menu's Tutorial, and a tag beside it.
+   The whole layer takes the next click. */
+.tour.tour-point { pointer-events: auto; cursor: pointer; }
+.tour-tag {
+  position: absolute; left: 0; top: 0; padding: 8px 12px; border-radius: 10px; background: var(--tour-ring); color: #fff;
+  font-size: 0.92rem; font-weight: 650; line-height: 1.3; box-shadow: 0 6px 20px rgba(0, 0, 0, 0.22);
+}
+.tour-tag::after { content: ""; position: absolute; border: 7px solid transparent; }
+.tour-tag[data-side="left"]::after { left: 100%; top: 50%; margin-top: -7px; border-left-color: var(--tour-ring); }
+.tour-tag[data-side="below"]::after { bottom: 100%; right: 22px; border-bottom-color: var(--tour-ring); }
+.tour-tag[data-side="above"]::after { top: 100%; right: 22px; border-top-color: var(--tour-ring); }
+@media (prefers-color-scheme: dark) { .tour-tag { color: #0b1530; } }
+
+/* The round red ✕ that removes something of yours (app.js removeButton): your report, your rating. */
+.remove-btn {
+  display: inline-grid; place-items: center; flex: none; width: 32px; height: 32px; padding: 0;
+  border: 1.5px solid #c62828; border-radius: 50%; background: var(--card); color: #c62828; cursor: pointer;
+}
+.remove-btn svg { width: 16px; height: 16px; fill: none; stroke: currentColor; stroke-width: 2.2; stroke-linecap: round; }
+.remove-btn:hover { background: color-mix(in srgb, #c62828 10%, var(--card)); }
+.remove-btn:focus-visible { outline: 2px solid #c62828; outline-offset: 2px; }
+.remove-btn:disabled { opacity: 0.5; cursor: default; }
+/* Your report's line and its ✕. */
+.report-mine { display: flex; align-items: center; justify-content: space-between; gap: 10px; }
+.report-mine .report-msg { margin: 0; }
+.confirm-buttons .remove-btn { margin-right: auto; align-self: center; }
+/* The check-in window's report step (checkin.js checkinReportStep): the place view's controls, "All reports" left, Skip right. */
+.checkin-report { margin: 4px 0 12px; }
+.checkin-buttons .checkin-reports-link { margin-right: auto; }
+.done-btn.checkin-skip { border: 1px solid var(--line); background: var(--card); color: var(--text); }

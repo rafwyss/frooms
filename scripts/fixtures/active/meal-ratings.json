@@ -1,0 +1,7 @@
+{
+  "made_up": true,
+  "dishes": {
+    "nippon burger": { "taste": 3.5, "portion": -1, "value": 2, "n": 12, "nTaste": 12, "nPortion": 9, "nValue": 11, "mine": { "taste": 4, "portion": -1.5, "value": null } },
+    "lemon scaloppine": { "taste": -2.5, "portion": -3, "value": -4, "n": 7, "nTaste": 7, "nPortion": 6, "nValue": 7 }
+  }
+}

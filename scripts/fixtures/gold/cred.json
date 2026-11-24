@@ -1,0 +1,14 @@
+{
+  "total": 1180,
+  "recent": 240,
+  "level": 6,
+  "levelStart": 1000,
+  "nextLevelAt": 1350,
+  "nextUnlock": null,
+  "board": true,
+  "likes": 23,
+  "trusted": true,
+  "latest": [
+    { "id": 901, "at": "@now-3h", "action": "meal_rating", "points": 3, "label": "Rated Zürcher Geschnetzeltes" }
+  ]
+}

@@ -1,0 +1,207 @@
+{
+  "_comment": "Input for scripts/make_map.py. ETH buildings are found in OpenStreetMap by their 'ETH <code>' tag; 'fetch' is the box queried (south, west, north, east), the map shows the labelled buildings plus a margin. UZH campuses (UZ, UI, UO): buildings found by OSM's 'UZH-<code>' tag, or named here (buildings: osm ids, or contains: a point inside the outline; ETH campuses take osm ids too, for our own buildings such as SPHH); not_on_map: needed buildings OSM has no outline for, with the reason (written as label only: shown where static/map/pins.json places them). splits: an outline OSM draws for two buildings, cut in two along a line (the building, into, two points of the line and a point on into's side). carve: a building of our own cut out of another's outline along a convex polygon (lat, lon), the other keeping the rest as one outline (SPHZ out of ML). extra_margin_m: [x, y] metres added to the margin, for a campus spread out in one direction.",
+  "Z": {
+    "name": "Zentrum",
+    "fetch": [
+      47.3695,
+      8.5375,
+      47.3865,
+      8.5585
+    ],
+    "names": {
+      "HG": "Hauptgebäude",
+      "MM": "Polyterrasse",
+      "SPHZ": "Student Project House Zentrum"
+    },
+    "label_offsets": {
+      "HG": [
+        0,
+        -38
+      ]
+    },
+    "landmarks": [
+      {
+        "type": "dome",
+        "lat": 47.376437,
+        "lon": 8.548046,
+        "r": 14,
+        "_source": "Centre of HG's dome, from the roof faces in swisstopo/BFE's solar roof layer (ch.bfe.solarenergie-eignung-daecher)"
+      }
+    ],
+    "carve": {
+      "SPHZ": {
+        "from": "ML",
+        "polygon": [
+          [
+            47.3782483,
+            8.547121
+          ],
+          [
+            47.3778444,
+            8.5473122
+          ],
+          [
+            47.3777683,
+            8.5469396
+          ],
+          [
+            47.3782483,
+            8.5469396
+          ]
+        ],
+        "_why": "The Student Project House Zentrum is the north-west end of ML's outline (FHK, the old district-heating plant, Clausiusstrasse 16): Raffaele's sketch, 18 November 2026, its east side through ML's corner at the courtyard",
+        "simplify_m": 1.0
+      }
+    }
+  },
+  "H": {
+    "name": "Hönggerberg",
+    "fetch": [
+      47.4025,
+      8.4985,
+      47.415,
+      8.5175
+    ],
+    "names": {
+      "SPHH": "Student Project House Hönggerberg"
+    },
+    "label_offsets": {},
+    "landmarks": [],
+    "buildings": {
+      "SPHH": {
+        "osm": [
+          "way/20455968"
+        ],
+        "_why": "The Student Project House Hönggerberg (data/overrides.json extra_spaces) is in HPZ (John-von-Neumann-Weg 9), drawn as a building of its own"
+      }
+    }
+  },
+  "UZ": {
+    "name": "UZH Zentrum",
+    "fetch": [
+      47.368,
+      8.5443,
+      47.379,
+      8.5595
+    ],
+    "names": {
+      "KOL": "Hauptgebäude"
+    },
+    "label_offsets": {},
+    "landmarks": [],
+    "buildings": {
+      "KOL": {
+        "osm": [
+          "relation/123300"
+        ],
+        "_why": "UZH's main building (1914) at Rämistrasse 71, untagged; OSM's outline also has KO2 (Karl-Schmid-Strasse 4, cut off by `splits`) and KOH (one connected complex per UniAbility, data/uzh.json map_buildings)"
+      },
+      "PLG": {
+        "osm": [
+          "way/123543855"
+        ],
+        "_why": "Plattenstrasse 43, the UB's address for its library in PLG"
+      },
+      "KUM": {
+        "osm": [
+          "way/104474356"
+        ],
+        "_why": "Künstlergasse 15a (UniAbility's address for KUM), OSM's 'Gartenpavillon im Stockargut' (1740)"
+      }
+    },
+    "not_on_map": {},
+    "splits": {
+      "KOL": {
+        "into": "KO2",
+        "line": [
+          [
+            47.3747281,
+            8.5480599
+          ],
+          [
+            47.3748584,
+            8.5485029
+          ]
+        ],
+        "side": [
+          47.374947,
+          8.5480532
+        ],
+        "_why": "OSM's one outline for KOL and KO2 (relation/123300); KO2 is the north-west wing with the courtyard, cut where Raffaele drew the line on 17 November 2026; its courtyard is drawn as part of it (Raffaele)",
+        "solid": true
+      }
+    }
+  },
+  "UI": {
+    "name": "UZH Irchel",
+    "fetch": [
+      47.3925,
+      8.5435,
+      47.4039,
+      8.5556
+    ],
+    "names": {},
+    "label_offsets": {},
+    "landmarks": [],
+    "buildings": {
+      "Y63": {
+        "osm": [
+          "way/80909770",
+          "way/80909773"
+        ],
+        "_why": "Strickhofstrasse 37 and 35, untagged in OSM, next to Y63's tagged outline (Strickhofstrasse 39): the UB Study Center Irchel West takes up all three"
+      }
+    },
+    "not_on_map": {
+      "Y03": "untagged in OSM (UniAbility: part of Y01, which isn't tagged either); its rooms are still listed",
+      "Y04": "untagged in OSM (UniAbility: part of Y01, which isn't tagged either); its rooms are still listed",
+      "Y16": "untagged in OSM (UniAbility: part of Y01, which isn't tagged either); its rooms are still listed",
+      "Y05": "Cafeteria Atrium's building (in its basement), untagged in OSM (Campus Irchel plan 2022)"
+    }
+  },
+  "UO": {
+    "name": "UZH Oerlikon",
+    "fetch": [
+      47.4048,
+      8.5362,
+      47.4204,
+      8.5536
+    ],
+    "names": {},
+    "label_offsets": {},
+    "landmarks": [],
+    "buildings": {
+      "AFL": {
+        "osm": [
+          "way/1236885456"
+        ],
+        "_why": "Affolternstrasse 56 (Cityport), the UB's address for its libraries in AFL"
+      },
+      "AND": {
+        "osm": [
+          "way/45263040"
+        ],
+        "_why": "Andreasstrasse 15, the UB's address for its libraries in AND"
+      },
+      "BIN": {
+        "contains": [
+          47.4143948,
+          8.5496239
+        ],
+        "_why": "around OSM's point 'Universität Zürich, Oerlikon (BIN)' (UZH-BIN, Binzmühlestrasse 14)"
+      },
+      "BIM": {
+        "contains": [
+          47.4138301,
+          8.5489386
+        ],
+        "_why": "around OSM's address point Binzmühlestrasse 11, the UB's address for its library in BIM"
+      }
+    },
+    "not_on_map": {},
+    "extra_margin_m": [
+      0,
+      330
+    ]
+  }
+}

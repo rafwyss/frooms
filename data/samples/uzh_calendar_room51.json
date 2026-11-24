@@ -1,0 +1,622 @@
+{
+ "RessourceList": [
+  {
+   "Id": 51,
+   "Title": "HAH-E-10 (35 Plätze)",
+   "BlockList": [
+    {
+     "Id": 3175308,
+     "EntryPart": "complete",
+     "Titel": "belegt",
+     "Vorlauf": "2026-11-04T10:15:00Z",
+     "BeginnEffective": "2026-11-04T10:15:00Z",
+     "EndeEffective": "2026-11-04T12:00:00Z",
+     "Nachlauf": "2026-11-04T12:00:00Z",
+     "StatusFarbe": "#D777AABE"
+    },
+    {
+     "Id": 3175309,
+     "EntryPart": "complete",
+     "Titel": "belegt",
+     "Vorlauf": "2026-11-18T10:15:00Z",
+     "BeginnEffective": "2026-11-18T10:15:00Z",
+     "EndeEffective": "2026-11-18T12:00:00Z",
+     "Nachlauf": "2026-11-18T12:00:00Z",
+     "StatusFarbe": "#D777AABE"
+    },
+    {
+     "Id": 3176009,
+     "EntryPart": "complete",
+     "Titel": "belegt",
+     "Vorlauf": "2026-11-05T12:15:00Z",
+     "BeginnEffective": "2026-11-05T12:15:00Z",
+     "EndeEffective": "2026-11-05T13:45:00Z",
+     "Nachlauf": "2026-11-05T13:45:00Z",
+     "StatusFarbe": "#D777AABE"
+    },
+    {
+     "Id": 3176010,
+     "EntryPart": "complete",
+     "Titel": "belegt",
+     "Vorlauf": "2026-11-19T12:15:00Z",
+     "BeginnEffective": "2026-11-19T12:15:00Z",
+     "EndeEffective": "2026-11-19T13:45:00Z",
+     "Nachlauf": "2026-11-19T13:45:00Z",
+     "StatusFarbe": "#D777AABE"
+    },
+    {
+     "Id": 3191942,
+     "EntryPart": "complete",
+     "Titel": "belegt",
+     "Vorlauf": "2026-11-02T14:00:00Z",
+     "BeginnEffective": "2026-11-02T14:00:00Z",
+     "EndeEffective": "2026-11-02T18:00:00Z",
+     "Nachlauf": "2026-11-02T18:00:00Z",
+     "StatusFarbe": "#D777AABE"
+    },
+    {
+     "Id": 3191943,
+     "EntryPart": "complete",
+     "Titel": "belegt",
+     "Vorlauf": "2026-11-16T14:00:00Z",
+     "BeginnEffective": "2026-11-16T14:00:00Z",
+     "EndeEffective": "2026-11-16T18:00:00Z",
+     "Nachlauf": "2026-11-16T18:00:00Z",
+     "StatusFarbe": "#D777AABE"
+    },
+    {
+     "Id": 3191944,
+     "EntryPart": "complete",
+     "Titel": "belegt",
+     "Vorlauf": "2026-11-30T14:00:00Z",
+     "BeginnEffective": "2026-11-30T14:00:00Z",
+     "EndeEffective": "2026-11-30T18:00:00Z",
+     "Nachlauf": "2026-11-30T18:00:00Z",
+     "StatusFarbe": "#D777AABE"
+    },
+    {
+     "Id": 3203344,
+     "EntryPart": "complete",
+     "Titel": "belegt",
+     "Vorlauf": "2026-11-03T10:15:00Z",
+     "BeginnEffective": "2026-11-03T10:15:00Z",
+     "EndeEffective": "2026-11-03T12:00:00Z",
+     "Nachlauf": "2026-11-03T12:00:00Z",
+     "StatusFarbe": "#D777AABE"
+    },
+    {
+     "Id": 3203345,
+     "EntryPart": "complete",
+     "Titel": "belegt",
+     "Vorlauf": "2026-11-10T10:15:00Z",
+     "BeginnEffective": "2026-11-10T10:15:00Z",
+     "EndeEffective": "2026-11-10T12:00:00Z",
+     "Nachlauf": "2026-11-10T12:00:00Z",
+     "StatusFarbe": "#D777AABE"
+    },
+    {
+     "Id": 3203346,
+     "EntryPart": "complete",
+     "Titel": "belegt",
+     "Vorlauf": "2026-11-17T10:15:00Z",
+     "BeginnEffective": "2026-11-17T10:15:00Z",
+     "EndeEffective": "2026-11-17T12:00:00Z",
+     "Nachlauf": "2026-11-17T12:00:00Z",
+     "StatusFarbe": "#D777AABE"
+    },
+    {
+     "Id": 3203347,
+     "EntryPart": "complete",
+     "Titel": "belegt",
+     "Vorlauf": "2026-11-24T10:15:00Z",
+     "BeginnEffective": "2026-11-24T10:15:00Z",
+     "EndeEffective": "2026-11-24T12:00:00Z",
+     "Nachlauf": "2026-11-24T12:00:00Z",
+     "StatusFarbe": "#D777AABE"
+    },
+    {
+     "Id": 3203348,
+     "EntryPart": "complete",
+     "Titel": "belegt",
+     "Vorlauf": "2026-12-01T10:15:00Z",
+     "BeginnEffective": "2026-12-01T10:15:00Z",
+     "EndeEffective": "2026-12-01T12:00:00Z",
+     "Nachlauf": "2026-12-01T12:00:00Z",
+     "StatusFarbe": "#D777AABE"
+    },
+    {
+     "Id": 3232495,
+     "EntryPart": "complete",
+     "Titel": "belegt",
+     "Vorlauf": "2026-11-04T12:15:00Z",
+     "BeginnEffective": "2026-11-04T12:15:00Z",
+     "EndeEffective": "2026-11-04T13:45:00Z",
+     "Nachlauf": "2026-11-04T13:45:00Z",
+     "StatusFarbe": "#D777AABE"
+    },
+    {
+     "Id": 3232496,
+     "EntryPart": "complete",
+     "Titel": "belegt",
+     "Vorlauf": "2026-11-18T12:15:00Z",
+     "BeginnEffective": "2026-11-18T12:15:00Z",
+     "EndeEffective": "2026-11-18T13:45:00Z",
+     "Nachlauf": "2026-11-18T13:45:00Z",
+     "StatusFarbe": "#D777AABE"
+    },
+    {
+     "Id": 3233913,
+     "EntryPart": "complete",
+     "Titel": "belegt",
+     "Vorlauf": "2026-11-05T10:15:00Z",
+     "BeginnEffective": "2026-11-05T10:15:00Z",
+     "EndeEffective": "2026-11-05T12:00:00Z",
+     "Nachlauf": "2026-11-05T12:00:00Z",
+     "StatusFarbe": "#D777AABE"
+    },
+    {
+     "Id": 3233914,
+     "EntryPart": "complete",
+     "Titel": "belegt",
+     "Vorlauf": "2026-11-12T10:15:00Z",
+     "BeginnEffective": "2026-11-12T10:15:00Z",
+     "EndeEffective": "2026-11-12T12:00:00Z",
+     "Nachlauf": "2026-11-12T12:00:00Z",
+     "StatusFarbe": "#D777AABE"
+    },
+    {
+     "Id": 3233915,
+     "EntryPart": "complete",
+     "Titel": "belegt",
+     "Vorlauf": "2026-11-19T10:15:00Z",
+     "BeginnEffective": "2026-11-19T10:15:00Z",
+     "EndeEffective": "2026-11-19T12:00:00Z",
+     "Nachlauf": "2026-11-19T12:00:00Z",
+     "StatusFarbe": "#D777AABE"
+    },
+    {
+     "Id": 3233916,
+     "EntryPart": "complete",
+     "Titel": "belegt",
+     "Vorlauf": "2026-11-26T10:15:00Z",
+     "BeginnEffective": "2026-11-26T10:15:00Z",
+     "EndeEffective": "2026-11-26T12:00:00Z",
+     "Nachlauf": "2026-11-26T12:00:00Z",
+     "StatusFarbe": "#D777AABE"
+    },
+    {
+     "Id": 3233917,
+     "EntryPart": "complete",
+     "Titel": "belegt",
+     "Vorlauf": "2026-12-03T10:15:00Z",
+     "BeginnEffective": "2026-12-03T10:15:00Z",
+     "EndeEffective": "2026-12-03T12:00:00Z",
+     "Nachlauf": "2026-12-03T12:00:00Z",
+     "StatusFarbe": "#D777AABE"
+    },
+    {
+     "Id": 3235244,
+     "EntryPart": "complete",
+     "Titel": "belegt",
+     "Vorlauf": "2026-11-05T16:00:00Z",
+     "BeginnEffective": "2026-11-05T16:15:00Z",
+     "EndeEffective": "2026-11-05T17:15:00Z",
+     "Nachlauf": "2026-11-05T17:15:00Z",
+     "StatusFarbe": "#71B6A2BE"
+    },
+    {
+     "Id": 3235245,
+     "EntryPart": "complete",
+     "Titel": "belegt",
+     "Vorlauf": "2026-11-12T16:00:00Z",
+     "BeginnEffective": "2026-11-12T16:15:00Z",
+     "EndeEffective": "2026-11-12T17:15:00Z",
+     "Nachlauf": "2026-11-12T17:15:00Z",
+     "StatusFarbe": "#71B6A2BE"
+    },
+    {
+     "Id": 3235246,
+     "EntryPart": "complete",
+     "Titel": "belegt",
+     "Vorlauf": "2026-11-19T16:00:00Z",
+     "BeginnEffective": "2026-11-19T16:15:00Z",
+     "EndeEffective": "2026-11-19T17:15:00Z",
+     "Nachlauf": "2026-11-19T17:15:00Z",
+     "StatusFarbe": "#71B6A2BE"
+    },
+    {
+     "Id": 3235247,
+     "EntryPart": "complete",
+     "Titel": "belegt",
+     "Vorlauf": "2026-11-26T16:00:00Z",
+     "BeginnEffective": "2026-11-26T16:15:00Z",
+     "EndeEffective": "2026-11-26T17:15:00Z",
+     "Nachlauf": "2026-11-26T17:15:00Z",
+     "StatusFarbe": "#71B6A2BE"
+    },
+    {
+     "Id": 3235248,
+     "EntryPart": "complete",
+     "Titel": "belegt",
+     "Vorlauf": "2026-12-03T16:00:00Z",
+     "BeginnEffective": "2026-12-03T16:15:00Z",
+     "EndeEffective": "2026-12-03T17:15:00Z",
+     "Nachlauf": "2026-12-03T17:15:00Z",
+     "StatusFarbe": "#71B6A2BE"
+    },
+    {
+     "Id": 3237646,
+     "EntryPart": "complete",
+     "Titel": "belegt",
+     "Vorlauf": "2026-11-04T16:15:00Z",
+     "BeginnEffective": "2026-11-04T16:15:00Z",
+     "EndeEffective": "2026-11-04T18:00:00Z",
+     "Nachlauf": "2026-11-04T18:00:00Z",
+     "StatusFarbe": "#D777AABE"
+    },
+    {
+     "Id": 3237647,
+     "EntryPart": "complete",
+     "Titel": "belegt",
+     "Vorlauf": "2026-11-18T16:15:00Z",
+     "BeginnEffective": "2026-11-18T16:15:00Z",
+     "EndeEffective": "2026-11-18T18:00:00Z",
+     "Nachlauf": "2026-11-18T18:00:00Z",
+     "StatusFarbe": "#D777AABE"
+    },
+    {
+     "Id": 3237994,
+     "EntryPart": "complete",
+     "Titel": "belegt",
+     "Vorlauf": "2026-11-05T14:00:00Z",
+     "BeginnEffective": "2026-11-05T14:00:00Z",
+     "EndeEffective": "2026-11-05T15:45:00Z",
+     "Nachlauf": "2026-11-05T15:45:00Z",
+     "StatusFarbe": "#D777AABE"
+    },
+    {
+     "Id": 3237995,
+     "EntryPart": "complete",
+     "Titel": "belegt",
+     "Vorlauf": "2026-11-12T14:00:00Z",
+     "BeginnEffective": "2026-11-12T14:00:00Z",
+     "EndeEffective": "2026-11-12T15:45:00Z",
+     "Nachlauf": "2026-11-12T15:45:00Z",
+     "StatusFarbe": "#D777AABE"
+    },
+    {
+     "Id": 3237997,
+     "EntryPart": "complete",
+     "Titel": "belegt",
+     "Vorlauf": "2026-11-19T14:00:00Z",
+     "BeginnEffective": "2026-11-19T14:00:00Z",
+     "EndeEffective": "2026-11-19T15:45:00Z",
+     "Nachlauf": "2026-11-19T15:45:00Z",
+     "StatusFarbe": "#D777AABE"
+    },
+    {
+     "Id": 3237998,
+     "EntryPart": "complete",
+     "Titel": "belegt",
+     "Vorlauf": "2026-11-26T14:00:00Z",
+     "BeginnEffective": "2026-11-26T14:00:00Z",
+     "EndeEffective": "2026-11-26T15:45:00Z",
+     "Nachlauf": "2026-11-26T15:45:00Z",
+     "StatusFarbe": "#D777AABE"
+    },
+    {
+     "Id": 3237999,
+     "EntryPart": "complete",
+     "Titel": "belegt",
+     "Vorlauf": "2026-12-03T14:00:00Z",
+     "BeginnEffective": "2026-12-03T14:00:00Z",
+     "EndeEffective": "2026-12-03T15:45:00Z",
+     "Nachlauf": "2026-12-03T15:45:00Z",
+     "StatusFarbe": "#D777AABE"
+    },
+    {
+     "Id": 3242402,
+     "EntryPart": "complete",
+     "Titel": "belegt",
+     "Vorlauf": "2026-11-13T10:15:00Z",
+     "BeginnEffective": "2026-11-13T10:15:00Z",
+     "EndeEffective": "2026-11-13T12:00:00Z",
+     "Nachlauf": "2026-11-13T12:00:00Z",
+     "StatusFarbe": "#D777AABE"
+    },
+    {
+     "Id": 3242403,
+     "EntryPart": "complete",
+     "Titel": "belegt",
+     "Vorlauf": "2026-11-20T10:15:00Z",
+     "BeginnEffective": "2026-11-20T10:15:00Z",
+     "EndeEffective": "2026-11-20T12:00:00Z",
+     "Nachlauf": "2026-11-20T12:00:00Z",
+     "StatusFarbe": "#D777AABE"
+    },
+    {
+     "Id": 3242404,
+     "EntryPart": "complete",
+     "Titel": "belegt",
+     "Vorlauf": "2026-11-06T10:15:00Z",
+     "BeginnEffective": "2026-11-06T10:15:00Z",
+     "EndeEffective": "2026-11-06T12:00:00Z",
+     "Nachlauf": "2026-11-06T12:00:00Z",
+     "StatusFarbe": "#D777AABE"
+    },
+    {
+     "Id": 3244040,
+     "EntryPart": "complete",
+     "Titel": "belegt",
+     "Vorlauf": "2026-11-25T10:15:00Z",
+     "BeginnEffective": "2026-11-25T10:15:00Z",
+     "EndeEffective": "2026-11-25T12:00:00Z",
+     "Nachlauf": "2026-11-25T12:00:00Z",
+     "StatusFarbe": "#D777AABE"
+    },
+    {
+     "Id": 3254851,
+     "EntryPart": "complete",
+     "Titel": "belegt",
+     "Vorlauf": "2026-11-30T10:15:00Z",
+     "BeginnEffective": "2026-11-30T10:15:00Z",
+     "EndeEffective": "2026-11-30T12:00:00Z",
+     "Nachlauf": "2026-11-30T12:00:00Z",
+     "StatusFarbe": "#D777AABE"
+    },
+    {
+     "Id": 3264799,
+     "EntryPart": "complete",
+     "Titel": "belegt",
+     "Vorlauf": "2026-11-03T14:00:00Z",
+     "BeginnEffective": "2026-11-03T14:00:00Z",
+     "EndeEffective": "2026-11-03T15:45:00Z",
+     "Nachlauf": "2026-11-03T15:45:00Z",
+     "StatusFarbe": "#71B6A2BE"
+    },
+    {
+     "Id": 3264801,
+     "EntryPart": "complete",
+     "Titel": "belegt",
+     "Vorlauf": "2026-11-17T14:00:00Z",
+     "BeginnEffective": "2026-11-17T14:00:00Z",
+     "EndeEffective": "2026-11-17T15:45:00Z",
+     "Nachlauf": "2026-11-17T15:45:00Z",
+     "StatusFarbe": "#71B6A2BE"
+    },
+    {
+     "Id": 3264802,
+     "EntryPart": "complete",
+     "Titel": "belegt",
+     "Vorlauf": "2026-11-24T14:00:00Z",
+     "BeginnEffective": "2026-11-24T14:00:00Z",
+     "EndeEffective": "2026-11-24T15:45:00Z",
+     "Nachlauf": "2026-11-24T15:45:00Z",
+     "StatusFarbe": "#71B6A2BE"
+    },
+    {
+     "Id": 3264803,
+     "EntryPart": "complete",
+     "Titel": "belegt",
+     "Vorlauf": "2026-12-01T14:00:00Z",
+     "BeginnEffective": "2026-12-01T14:00:00Z",
+     "EndeEffective": "2026-12-01T15:45:00Z",
+     "Nachlauf": "2026-12-01T15:45:00Z",
+     "StatusFarbe": "#71B6A2BE"
+    },
+    {
+     "Id": 3282148,
+     "EntryPart": "complete",
+     "Titel": "belegt",
+     "Vorlauf": "2026-11-21T08:00:00Z",
+     "BeginnEffective": "2026-11-21T09:00:00Z",
+     "EndeEffective": "2026-11-21T18:00:00Z",
+     "Nachlauf": "2026-11-21T19:00:00Z",
+     "StatusFarbe": "#46929FBE"
+    },
+    {
+     "Id": 283252,
+     "EntryPart": "complete",
+     "Titel": "",
+     "Vorlauf": null,
+     "BeginnEffective": "2026-11-02T01:00:00Z",
+     "EndeEffective": "2026-11-02T07:00:00Z",
+     "Nachlauf": null,
+     "StatusFarbe": null
+    },
+    {
+     "Id": 283252,
+     "EntryPart": "start",
+     "Titel": "",
+     "Vorlauf": null,
+     "BeginnEffective": "2026-11-02T20:00:00Z",
+     "EndeEffective": "2026-11-03T01:00:00Z",
+     "Nachlauf": null,
+     "StatusFarbe": null
+    },
+    {
+     "Id": 283252,
+     "EntryPart": "end",
+     "Titel": "",
+     "Vorlauf": null,
+     "BeginnEffective": "2026-11-02T20:00:00Z",
+     "EndeEffective": "2026-11-03T01:00:00Z",
+     "Nachlauf": null,
+     "StatusFarbe": null
+    },
+    {
+     "Id": 283352,
+     "EntryPart": "complete",
+     "Titel": "",
+     "Vorlauf": null,
+     "BeginnEffective": "2026-11-03T01:00:00Z",
+     "EndeEffective": "2026-11-03T07:00:00Z",
+     "Nachlauf": null,
+     "StatusFarbe": null
+    },
+    {
+     "Id": 283352,
+     "EntryPart": "start",
+     "Titel": "",
+     "Vorlauf": null,
+     "BeginnEffective": "2026-11-03T20:00:00Z",
+     "EndeEffective": "2026-11-04T01:00:00Z",
+     "Nachlauf": null,
+     "StatusFarbe": null
+    },
+    {
+     "Id": 283352,
+     "EntryPart": "end",
+     "Titel": "",
+     "Vorlauf": null,
+     "BeginnEffective": "2026-11-03T20:00:00Z",
+     "EndeEffective": "2026-11-04T01:00:00Z",
+     "Nachlauf": null,
+     "StatusFarbe": null
+    },
+    {
+     "Id": 283452,
+     "EntryPart": "complete",
+     "Titel": "",
+     "Vorlauf": null,
+     "BeginnEffective": "2026-11-04T01:00:00Z",
+     "EndeEffective": "2026-11-04T07:00:00Z",
+     "Nachlauf": null,
+     "StatusFarbe": null
+    },
+    {
+     "Id": 283452,
+     "EntryPart": "start",
+     "Titel": "",
+     "Vorlauf": null,
+     "BeginnEffective": "2026-11-04T20:00:00Z",
+     "EndeEffective": "2026-11-05T01:00:00Z",
+     "Nachlauf": null,
+     "StatusFarbe": null
+    },
+    {
+     "Id": 283452,
+     "EntryPart": "end",
+     "Titel": "",
+     "Vorlauf": null,
+     "BeginnEffective": "2026-11-04T20:00:00Z",
+     "EndeEffective": "2026-11-05T01:00:00Z",
+     "Nachlauf": null,
+     "StatusFarbe": null
+    },
+    {
+     "Id": 283552,
+     "EntryPart": "complete",
+     "Titel": "",
+     "Vorlauf": null,
+     "BeginnEffective": "2026-11-05T01:00:00Z",
+     "EndeEffective": "2026-11-05T07:00:00Z",
+     "Nachlauf": null,
+     "StatusFarbe": null
+    },
+    {
+     "Id": 283552,
+     "EntryPart": "start",
+     "Titel": "",
+     "Vorlauf": null,
+     "BeginnEffective": "2026-11-05T20:00:00Z",
+     "EndeEffective": "2026-11-06T01:00:00Z",
+     "Nachlauf": null,
+     "StatusFarbe": null
+    },
+    {
+     "Id": 283552,
+     "EntryPart": "end",
+     "Titel": "",
+     "Vorlauf": null,
+     "BeginnEffective": "2026-11-05T20:00:00Z",
+     "EndeEffective": "2026-11-06T01:00:00Z",
+     "Nachlauf": null,
+     "StatusFarbe": null
+    },
+    {
+     "Id": 283652,
+     "EntryPart": "complete",
+     "Titel": "",
+     "Vorlauf": null,
+     "BeginnEffective": "2026-11-06T01:00:00Z",
+     "EndeEffective": "2026-11-06T07:00:00Z",
+     "Nachlauf": null,
+     "StatusFarbe": null
+    },
+    {
+     "Id": 283652,
+     "EntryPart": "start",
+     "Titel": "",
+     "Vorlauf": null,
+     "BeginnEffective": "2026-11-06T20:00:00Z",
+     "EndeEffective": "2026-11-07T01:00:00Z",
+     "Nachlauf": null,
+     "StatusFarbe": null
+    },
+    {
+     "Id": 283652,
+     "EntryPart": "end",
+     "Titel": "",
+     "Vorlauf": null,
+     "BeginnEffective": "2026-11-06T20:00:00Z",
+     "EndeEffective": "2026-11-07T01:00:00Z",
+     "Nachlauf": null,
+     "StatusFarbe": null
+    },
+    {
+     "Id": 283751,
+     "EntryPart": "start",
+     "Titel": "",
+     "Vorlauf": null,
+     "BeginnEffective": "2026-11-07T01:00:00Z",
+     "EndeEffective": "2026-11-08T00:00:00Z",
+     "Nachlauf": null,
+     "StatusFarbe": null
+    },
+    {
+     "Id": 283751,
+     "EntryPart": "end",
+     "Titel": "",
+     "Vorlauf": null,
+     "BeginnEffective": "2026-11-07T01:00:00Z",
+     "EndeEffective": "2026-11-08T00:00:00Z",
+     "Nachlauf": null,
+     "StatusFarbe": null
+    },
+    {
+     "Id": 283851,
+     "EntryPart": "start",
+     "Titel": "",
+     "Vorlauf": null,
+     "BeginnEffective": "2026-11-08T01:00:00Z",
+     "EndeEffective": "2026-11-09T00:00:00Z",
+     "Nachlauf": null,
+     "StatusFarbe": null
+    },
+    {
+     "Id": 283851,
+     "EntryPart": "end",
+     "Titel": "",
+     "Vorlauf": null,
+     "BeginnEffective": "2026-11-08T01:00:00Z",
+     "EndeEffective": "2026-11-09T00:00:00Z",
+     "Nachlauf": null,
+     "StatusFarbe": null
+    }
+   ]
+  }
+ ],
+ "StandortList": [
+  {
+   "Id": "3",
+   "RessourceList": [
+    {
+     "Id": 51,
+     "Title": "HAH-E-10 (35 Plätze)",
+     "BlockList": []
+    }
+   ]
+  }
+ ]
+}

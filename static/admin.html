@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex">
+  <title>Usage · frooms</title>
+  <link rel="icon" href="/logo.svg?v=2" type="image/svg+xml">
+  <meta name="theme-color" content="#f6f7f8" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#121417" media="(prefers-color-scheme: dark)">
+  <link rel="stylesheet" href="/admin.css">
+  <script src="/admin.js" defer></script>
+</head>
+<body>
+<!-- The admin page (plans/PLAN_ADMIN_STATS.md, section 7.2): usage numbers from GET /api/admin/stats, for the accounts
+     in the secret ADMIN_IDS only. Not linked from anywhere, not cached by the service worker, not indexed. -->
+<main>
+  <div class="top">
+    <a class="home" href="/"><img src="/logo.svg?v=2" alt="">frooms</a>
+    <span class="tag">Usage</span>
+  </div>
+
+  <div id="state" class="state" role="status" aria-live="polite">
+    <p>Loading…</p>
+  </div>
+
+  <section id="stats" hidden>
+    <div class="head">
+      <div>
+        <h1 id="today">Today</h1>
+        <p id="asof" class="muted"></p>
+      </div>
+      <button id="refresh" type="button" class="button">Refresh</button>
+    </div>
+    <div id="banner" class="note" hidden></div>
+    <div id="cards" class="cards"></div>
+    <!-- Bug reports (worker/bugs.ts): pending ones with Reward and Decline, then the last 30 days' decisions. -->
+    <section id="bugs" class="card feedback" aria-labelledby="bugs-title" hidden>
+      <h2 id="bugs-title">Bug reports</h2>
+      <p id="bugs-intro" class="muted"></p>
+      <ol id="bugs-list" class="fb-list"></ol>
+    </section>
+    <section id="feedback" class="card feedback" aria-labelledby="feedback-title">
+      <h2 id="feedback-title">Feedback</h2>
+      <p id="feedback-intro" class="muted"></p>
+      <ol id="feedback-list" class="fb-list"></ol>
+      <button id="feedback-more" type="button" class="button" hidden>Show all</button>
+    </section>
+  </section>
+</main>
+</body>
+</html>

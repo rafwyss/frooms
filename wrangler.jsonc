@@ -1,0 +1,77 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "fruum",
+  "main": "worker/index.ts",
+  // Custom domain: needs frooms.ch on Cloudflare DNS; Cloudflare creates the DNS records and certificate on deploy.
+  "routes": [
+    { "pattern": "frooms.ch", "custom_domain": true }
+  ],
+  // `npx wrangler versions upload` gives each version its own *.workers.dev URL, to try a change before it goes live.
+  // Preview versions share the production D1 and KV, but the cron only runs on the deployed version.
+  "preview_urls": true,
+  "compatibility_date": "2026-10-01",
+  "assets": {
+    "directory": "./static",
+    "binding": "ASSETS",
+    "not_found_handling": "single-page-application",
+    "run_worker_first": ["/api/*", "/auth/*", "/share"]
+  },
+  // 30 requests per minute per IP on /api/free (one request per selected building) and on /auth/login and /auth/callback,
+  // and 3 per minute per IP on POST /api/feedback, 10 per minute per IP on POST /api/report
+  "ratelimits": [
+    { "name": "RATE_LIMITER", "namespace_id": "1001", "simple": { "limit": 30, "period": 60 } },
+    { "name": "FEEDBACK_LIMITER", "namespace_id": "1002", "simple": { "limit": 3, "period": 60 } },
+    { "name": "REPORT_LIMITER", "namespace_id": "1003", "simple": { "limit": 10, "period": 60 } },
+    // Accounts (worker/social.ts), per account rather than per IP: 60 a minute over all account endpoints, and 20 a
+    // minute for searching people and checking usernames (decision 8).
+    { "name": "ACCOUNT_LIMITER", "namespace_id": "1004", "simple": { "limit": 60, "period": 60 } },
+    { "name": "SEARCH_LIMITER", "namespace_id": "1005", "simple": { "limit": 20, "period": 60 } },
+    // The page's usage beacon (POST /api/stats, worker/stats.ts): 10 a minute per IP; over it, nothing is counted.
+    { "name": "STATS_LIMITER", "namespace_id": "1006", "simple": { "limit": 10, "period": 60 } }
+  ],
+  // The room catalogue (daily) and the list of study spaces (hourly), refreshed by the scheduled prefetch (worker/prefetch.ts),
+  // the rooms' equipment ("equipment", a few rooms per run at night, each monthly: worker/equipment.ts),
+  // and UZH's rooms and library list (daily, worker/uzhprefetch.ts).
+  "kv_namespaces": [{ "binding": "ROOMS", "id": "320d917ed0a347eb8d96bbaa5b83898d" }],
+  // Prefetched allocations per room and day, prefetch state, the experiment log, the study spaces' occupancy
+  // history, the menus, the feedback, the occupancy reports and "usually this full" (schema in migrations/). About 52k
+  // row writes a day for ETH (since 2026-11-21 lecture halls are refreshed too, and seminar rooms every 30 minutes) and 10k for UZH (its rooms' month after midnight, the seminar rooms' refreshes, the library
+  // sensors), at most 2k reports and about 1.4k for the daily rewrite of `usual`, within the free plan's 100k.
+  "d1_databases": [
+    { "binding": "DB", "database_name": "fruum", "database_id": "0d23dacc-dd35-4788-a508-054873eb128f", "migrations_dir": "migrations" },
+    // Accounts (plans/PLAN_ACCOUNTS.md, worker/auth.ts), both in the EU jurisdiction: frooms.ch uses ACCOUNTS, the fixed
+    // preview host (PREVIEW_AUTH_HOST) ACCOUNTS_DEV, so test accounts never reach production. Every other host has
+    // sign-in off. Migrations in migrations-accounts/, applied by hand (CLAUDE.md). Usage counters (`stats_days`,
+    // worker/stats.ts): one row write per beacon (a visit sends one or two) and one per counted account action, so
+    // under 3k writes a day at 1,000 visits, within the free 100k next to the roughly 65k `fruum` uses.
+    { "binding": "ACCOUNTS", "database_name": "fruum-accounts", "database_id": "0bd78855-fa5f-4693-875e-0664a5d90a3e", "migrations_dir": "migrations-accounts" },
+    { "binding": "ACCOUNTS_DEV", "database_name": "fruum-accounts-dev", "database_id": "927c746c-ef25-4145-a0de-60ed1506fdff", "migrations_dir": "migrations-accounts" }
+  ],
+  // Emails each feedback to the FEEDBACK_TO secret (`npx wrangler secret put FEEDBACK_TO`), which must be a verified
+  // destination address in Email Routing. It sends from notify.frooms.ch, which has Email Routing of its own: frooms.ch's
+  // mail stays at Infomaniak (see CLAUDE.md). Without the secret, feedback is only stored in D1.
+  "send_email": [{ "name": "FEEDBACK_EMAIL", "allowed_sender_addresses": ["feedback@notify.frooms.ch"] }],
+  // Every 2 minutes: the rooms and study spaces (even minutes), and the menus and then UZH's rooms and library sensors
+  // (odd minutes, worker/config.ts MENU_CRON); every 4 minutes UZH's menus (UZH_MENU_CRON, 3 pages a run: about 1k D1
+  // writes and 75k rows read a day). Each gets its own CPU budget. 3 of the Free plan's 5 Cron Triggers.
+  "triggers": { "crons": ["*/2 * * * *", "1-59/2 * * * *", "3-59/4 * * * *"] },
+  // Resizes today's and tomorrow's dish photos (/api/meal-image) to 640 px WebP: about 3k transformations a month, within the free 5k.
+  "images": { "binding": "IMAGES" },
+  "observability": { "enabled": true },
+  "vars": {
+    // Optional contact sent to ETH in the User-Agent; set FROOMS_DISABLED to "1" to pause the API.
+    "FROOMS_CONTACT": "info@frooms.ch",
+    "FROOMS_DISABLED": "",
+    // SWITCH edu-ID sign-in (worker/auth.ts). The secrets EDUID_CLIENT_SECRET and SESSION_KEY are set with
+    // `npx wrangler secret put`; previews read the same ones. The secret ADMIN_IDS (comma-separated users.id) opens
+    // /admin (worker/admin.ts); unset, nobody can.
+    "EDUID_ISSUER": "https://login.eduid.ch/",
+    "EDUID_CLIENT_ID": "frooms_ch_frooms",
+    "PREVIEW_AUTH_HOST": "accounts-preview-fruum.fruum.workers.dev",
+    // The admin page's visits from Cloudflare Web Analytics (GraphQL API, worker/admin.ts): this account and the site,
+    // whose tag is in the Web Analytics dashboard's URL (siteTag~in=...); it is not the token in static/index.html's
+    // beacon. The read-only token is the secret CF_ANALYTICS_TOKEN; unset, the page links to the Web Analytics dashboard.
+    "CF_ACCOUNT_ID": "16809ae8e49ba07862a09c7258bde7b1",
+    "CF_SITE_TAG": "02b3cb7ef9f74d4cb9ab24ad4ed2d5b7"
+  }
+}

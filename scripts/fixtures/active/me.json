@@ -1,0 +1,30 @@
+{
+  "username": "raffi",
+  "first_name": "Raffaele",
+  "last_name": "Wyss",
+  "name": "Raffaele W.",
+  "initials": "RW",
+  "bg": "#010057",
+  "fg": "#ffffff",
+  "bg2": "#215caf",
+  "fg2": null,
+  "metal": null,
+  "uni": "eth",
+  "profile_needed": false,
+  "checkin": {
+    "kind": "room",
+    "place": "HG E 41",
+    "area": "Z",
+    "building": "HG",
+    "name": "HG E 41",
+    "since": "@now-40m",
+    "until": "@now+80m"
+  },
+  "requests": 1,
+  "stars": [],
+  "cred": {
+    "total": 520,
+    "level": 4,
+    "trusted": false
+  }
+}

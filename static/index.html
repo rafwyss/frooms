@@ -1,0 +1,335 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, interactive-widget=resizes-content">
+  <title>frooms - Friends, free rooms &amp; more at ETH and UZH</title>
+  <link rel="icon" href="/logo.svg?v=2" type="image/svg+xml">
+  <link rel="manifest" href="/manifest.webmanifest">
+  <link rel="apple-touch-icon" href="/icons/apple-touch-icon.png?v=2">
+  <meta name="theme-color" content="#f6f7f8" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#121417" media="(prefers-color-scheme: dark)">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-title" content="frooms">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="description" content="Study spaces, free rooms and mensas at ETH and UZH, right now · frooms">
+  <!-- Preview card for shared links; the Worker fills in the room for /share invite links. -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="frooms">
+  <meta property="og:title" content="frooms - Friends, free rooms &amp; more at ETH and UZH">
+  <meta property="og:description" content="Study spaces, free rooms and mensas at ETH and UZH, right now · frooms">
+  <meta property="og:url" content="https://frooms.ch/">
+  <meta property="og:image" content="https://frooms.ch/og/0/_any.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <!-- The app frame (static/sheet.js, app.js): phones have the campus map filling the screen, a results sheet over its
+       lower half, the search and campus on top and four tabs at the bottom; wide windows have the same parts in a
+       left column, with the map on the right. -->
+  <div id="topbar" class="topbar">
+    <span class="wordmark" aria-hidden="true">frooms<span class="dot"></span></span>
+    <h1 class="visually-hidden">frooms</h1>
+    <button id="search-open" class="search-open" data-tour="search" type="button" aria-haspopup="dialog"><svg viewBox="0 0 16 16" class="search-ic" aria-hidden="true"><path d="M7 2.5a4.5 4.5 0 1 1 0 9 4.5 4.5 0 0 1 0-9zM10.3 10.3 14 14"/></svg><span>Search rooms and places</span></button>
+    <div class="campus-box">
+      <button id="campus" class="campus-btn" data-tour="campus" type="button" aria-haspopup="menu" aria-expanded="false" aria-controls="campus-menu"><span id="campus-name">Campus</span> <span aria-hidden="true">▾</span></button>
+      <div id="campus-menu" class="campus-menu" role="menu" aria-label="Location" hidden><div id="areas"></div></div>
+    </div>
+    <!-- Check in (static/checkin.js): round, bottom right above the tabs on phones, here in the top bar on wide windows. -->
+    <button id="checkin-btn" class="checkin-btn" data-tour="checkin-button" type="button" aria-label="Check in" title="Check in"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.5a6.5 6.5 0 0 1 6.5 6.5c0 4.6-6.5 12.5-6.5 12.5S5.5 13.6 5.5 9A6.5 6.5 0 0 1 12 2.5zM9 9.2l2.1 2.1L15.2 7"/></svg></button>
+    <!-- The account (static/account.js): a person icon signed out, the person's bubble signed in; either opens the menu. -->
+    <div class="account-box">
+      <button id="account" class="account-btn" data-tour="account" type="button" aria-haspopup="menu" aria-expanded="false" aria-controls="account-menu" aria-label="Menu and sign in"></button>
+      <div id="account-menu" class="campus-menu account-menu" role="menu" aria-label="Your account" hidden></div>
+    </div>
+  </div>
+
+
+  <nav id="tabs" class="tabs" data-tour="tabs" role="tablist" aria-label="What to look for">
+    <button type="button" role="tab" data-mode="study" data-tour="tab-study" aria-selected="false" aria-controls="sheet" aria-label="Libraries and study spaces"><svg class="mode-ic" viewBox="0 0 16 16" aria-hidden="true"><path d="M2 3.2C3.8 2.4 6 2.4 8 3.6v9.6C6 12 3.8 12 2 12.8zM14 3.2C12.2 2.4 10 2.4 8 3.6v9.6c2-1.2 4.2-1.2 6-.4z"/></svg><span>Study</span></button>
+    <button type="button" role="tab" data-mode="rooms" data-tour="tab-meet" aria-selected="false" aria-controls="sheet" aria-label="Seminar rooms and lecture halls"><svg class="mode-ic" viewBox="0 0 16 16" aria-hidden="true"><path d="M3.5 14V2.5h9V14M2 14h12M10 8.2v.1"/></svg><span>Meet</span></button>
+    <button type="button" role="tab" data-mode="mensa" data-tour="tab-eat" aria-selected="false" aria-controls="sheet" aria-label="Mensas and cafeterias"><svg class="mode-ic" viewBox="0 0 16 16" aria-hidden="true"><path d="M3.5 2v3.8a1.75 1.75 0 0 0 3.5 0V2M5.25 2v12M12 14V2c-1.6 1-2.3 3-2.3 5.6 0 .8.5 1.4 1.3 1.4h1"/></svg><span>Eat</span></button>
+    <button type="button" role="tab" data-mode="you" data-tour="tab-you" aria-selected="false" aria-controls="sheet" aria-label="Your starred places"><svg class="mode-ic" viewBox="0 0 16 16" aria-hidden="true"><path d="M8 1.8l1.9 3.9 4.3.6-3.1 3 .7 4.3L8 11.6l-3.8 2 .7-4.3-3.1-3 4.3-.6z"/></svg><span>You</span></button>
+  </nav>
+
+  <section id="sheet" class="sheet" data-tour="sheet" role="region" aria-label="Results">
+    <!-- Search (static/places.js): covers the sheet at full height, or the left column on wide windows. -->
+    <section id="search" class="search-view" data-tour="search-view" aria-label="Search" hidden>
+      <div class="search-bar">
+        <button id="search-back" class="sheet-back" data-tour="search-back" type="button" aria-label="Close search">←</button>
+        <input id="search-input" type="search" placeholder="Room, study space, mensa or building" aria-label="Search rooms, study spaces, mensas and buildings" autocomplete="off" autocapitalize="off" spellcheck="false" enterkeyhint="search">
+      </div>
+      <div id="search-results" class="search-results" aria-live="polite"></div>
+    </section>
+    <div id="sheet-head" class="sheet-head-bar">
+      <button id="sheet-grab" class="grabber" data-tour="sheet-handle" type="button" aria-label="Resize the list" aria-expanded="false" aria-controls="sheet-body"><span aria-hidden="true"></span></button>
+      <div class="sheet-bar">
+        <button id="sheet-back" class="sheet-back" type="button" aria-label="Back" hidden>←</button>
+        <h2 id="sheet-title" class="sheet-title" hidden></h2>
+        <button id="sheet-star" class="sheet-star" type="button" aria-pressed="false" aria-label="Star this place" hidden>☆</button>
+        <button id="filter-line" class="filter-line" type="button" aria-expanded="false" aria-controls="sheet-filters"><span id="filter-text">Now</span><svg viewBox="0 0 16 16" class="filter-ic" aria-hidden="true"><path d="M2 4h12M4.5 8h7M7 12h2"/></svg></button>
+      </div>
+    </div>
+    <div id="sheet-body" class="sheet-body">
+      <p id="tab-blurb" class="tab-blurb"></p>
+      <section id="sheet-filters" class="controls" aria-label="Filters" hidden>
+        <!-- Now, or a date and a time (app.js renderTimeField): a click on either opens its picker below (static/picker.js). -->
+        <div class="field" data-tour="time">
+          <span class="label">Time</span>
+          <div class="row">
+            <button id="now-toggle" class="chip on" type="button" aria-pressed="true">Now</button>
+            <button id="date-btn" class="time-btn" type="button" aria-expanded="false" aria-controls="date-picker"></button>
+            <button id="time-btn" class="time-btn" type="button" aria-expanded="false" aria-controls="time-picker"></button>
+          </div>
+          <div id="date-picker" class="picker" hidden></div>
+          <div id="time-picker" class="picker" hidden></div>
+        </div>
+
+        <!-- Meet: how long the room must stay free, and for how many people. -->
+        <div class="field" id="duration-field">
+          <span class="label">Free for at least</span>
+          <div id="durations" class="chips" role="group" aria-label="Free for at least"></div>
+        </div>
+        <label class="field" id="people-field">
+          <span class="label">People</span>
+          <input id="min-seats" type="number" min="0" step="5" inputmode="numeric" placeholder="any number">
+        </label>
+
+        <div class="field" id="buildings-field" data-tour="buildings">
+          <span class="label">Buildings <span id="buildings-hint"></span></span>
+          <div id="buildings" class="chips"></div>
+        </div>
+
+        <details class="field" id="filters" data-tour="more-filters">
+          <summary class="label">More filters <span id="filter-summary" class="muted"></span></summary>
+          <div id="types" class="chips"></div>
+          <div id="equipment" class="chips" role="group" aria-label="Equipment" hidden></div>
+          <div id="kinds" class="chips" hidden></div>
+        </details>
+        <button id="filters-done" class="done-btn" type="button">Done</button>
+      </section>
+
+      <p id="notice" class="message notice" role="status" hidden></p>
+      <!-- Buildings the list is filtered to, each with a way to its detail view. -->
+      <div id="picked-bar" class="picked-bar" hidden></div>
+
+      <p id="message" class="message" hidden></p>
+      <p id="warning" class="message warning" role="status" hidden></p>
+
+      <!-- Meet (app.js renderMeet): rooms free for the chosen duration by building, then the rest. -->
+      <section id="results" hidden>
+        <div class="group" id="g-long"><h2><span class="title">Free for 1 h or more</span> <span class="count"></span></h2><div class="bgroups"></div></div>
+        <details class="group" id="g-equip"><summary><h2>Equipment unknown <span class="count"></span></h2></summary><ul></ul></details>
+        <details class="group" id="g-short"><summary><h2>Free, but for less <span class="count"></span></h2></summary><ul></ul></details>
+        <details class="group" id="g-managed"><summary><h2>Booked by departments too <span class="count"></span></h2></summary><ul></ul></details>
+        <details class="group" id="g-soon"><summary><h2>Free soon <span class="count"></span></h2></summary><ul></ul></details>
+        <details class="group" id="g-busy"><summary><h2>Busy <span class="count"></span></h2></summary><ul></ul></details>
+        <details class="group" id="g-nodata"><summary><h2>Unavailable <span class="count"></span></h2></summary><ul></ul></details>
+      </section>
+
+      <section id="space-results" hidden>
+        <!-- Eat (app.js renderEat): the two buttons, then your mensas, the mensas (nearest first), the cafeterias and the microwaves. -->
+        <div class="eat-actions" id="s-eat" hidden>
+          <button id="compare-btn" class="eat-primary" data-tour="compare" type="button" aria-haspopup="dialog"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3h12v18H6zM9 7.5h6M9 11h6M9 14.5h6M9 18h3"/></svg><span>Compare menus</span><svg class="chev" viewBox="0 0 24 24" aria-hidden="true"><path d="m9 6 6 6-6 6"/></svg></button>
+          <button id="meal-search-btn" class="eat-secondary" data-tour="meal-search" type="button" aria-haspopup="dialog"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M10.5 4a6.5 6.5 0 1 1 0 13 6.5 6.5 0 0 1 0-13zM15.3 15.3 20 20"/></svg><span>Find your meal</span></button>
+        </div>
+        <div class="group" id="s-library"><h2>Libraries <span class="count"></span></h2><ul></ul></div>
+        <div class="group" id="s-open"><h2>Open study spaces <span class="count"></span></h2><ul></ul></div>
+        <div class="group" id="s-mensa-study"><h2>Mensas (study space now) <span class="count"></span></h2><ul></ul></div>
+        <!-- Study (app.js renderStudyRooms): computer rooms, seminar rooms and lecture halls free for an hour or more. -->
+        <div id="s-rooms" hidden></div>
+        <!-- Study: places to work on projects (data/overrides.json extra_spaces, category workspace): SPH, Fabrik, IPZ Hangar. -->
+        <div class="group" id="s-workspace"><h2>Workspaces <span class="count"></span></h2><ul></ul></div>
+        <div class="group" id="s-your"><h2>Your mensas <span class="count"></span></h2><ul></ul></div>
+        <div class="group" id="s-mensa"><h2><span class="title">Mensas</span> <span class="count"></span></h2><ul></ul></div>
+        <div class="group" id="s-cafe"><h2>Cafeterias &amp; bars <span class="count"></span></h2><ul></ul></div>
+        <div class="group" id="s-micro" data-tour="microwaves"><h2><span class="title">Microwaves</span> <span class="count"></span></h2><div class="bgroups"></div></div>
+        <details class="group" id="s-closed"><summary><h2>Closed <span class="count"></span></h2></summary><ul></ul></details>
+      </section>
+
+      <!-- When the data is from (and a chosen time, rooms still loading): at the bottom of the Study and Meet lists. -->
+      <p id="asof" class="muted"></p>
+
+      <!-- One place's detail view (static/places.js): a room, study space, mensa, building, or Near you. -->
+      <section id="detail" class="detail" aria-live="polite" hidden></section>
+
+      <!-- The You tab: starred places and the food preference (app.js renderYou), then About, feedback and contact. -->
+      <section id="you" hidden>
+        <!-- Your check-in and your friends' (checkin.js renderYouAccount), above your places. -->
+        <div id="you-account"></div>
+        <div id="you-places"></div>
+        <!-- The same as the account menu's last four (account.js): About and Contact open as views in the sheet. -->
+        <nav class="footer-links" aria-label="About frooms">
+          <button id="about-open" type="button">About frooms</button>
+          <button id="tutorial-open" type="button">Tutorial</button>
+          <button id="feedback-open" type="button" aria-haspopup="dialog" data-tour="feedback">Send feedback</button>
+          <button id="contact-open" type="button">Contact</button>
+          <a href="/privacy">Privacy</a>
+        </nav>
+        <!-- The About view's text (account.js accountViews.about), opened from the You tab and the account menu. -->
+        <template id="about-text">
+          <p class="about-lead">Find your friends, free rooms, places to study and mensas to eat on campus at ETH and UZH.</p>
+          <p class="about-tour">New here? The <a href="/?tutorial">tutorial</a> walks you through frooms, step by step.</p>
+          <section>
+            <h3>Who we are</h3>
+            <p>We are an independent project by ETH students, supported by the <a href="https://sph.ethz.ch" target="_blank" rel="noopener">Student Project House</a> at ETH. We're students, not professional developers, yet hope our project may be of some use to you in your study life. We are always very happy to get <a href="#feedback" class="about-feedback">feedback</a>, so please help us improve our service for you. Have fun using frooms!</p>
+            <!-- SPH's logo (static/sph/, cropped from assets/2026_SPH_Logo_basic_package): black on white, white on dark, as SPH's usage sheet says. -->
+            <a class="about-sph" href="https://sph.ethz.ch" target="_blank" rel="noopener">
+              <span>Supported by</span>
+              <picture>
+                <source srcset="/sph/sph-white.svg" media="(prefers-color-scheme: dark)">
+                <img src="/sph/sph-black.svg" alt="ETH Student Project House" width="150" height="61">
+              </picture>
+            </a>
+          </section>
+          <section>
+            <h3>Disclaimer and sources</h3>
+            <p>We are not affiliated with or endorsed by ETH Zurich or the University of Zurich. ETH's room data comes from ETH's public <a href="https://ethz.ch/staffnet/en/service/rooms-and-buildings/roominfo.html" target="_blank" rel="noopener">room information</a>, study spaces and occupancy from ETH's <a href="https://ethz.ch/students/en/campus/workspaces-for-students/occupancy-student-workspaces.html" target="_blank" rel="noopener">student workspaces</a> page; UZH's rooms from its public <a href="https://uzh.book.3vrooms.app/default/Anonymous/Calendar/PortalFind" target="_blank" rel="noopener">room calendar</a>, its libraries and seat sensors from the <a href="https://www.ub.uzh.ch/de/ub-besuchen/belegung-alle.html" target="_blank" rel="noopener">University Library</a>. All are refreshed every few minutes to hours. It can be incomplete or out of date, so check the official page (open a room and click ⓘ) before relying on a room.</p>
+            <p>Rooms shown as free and open may in reality be booked by departments or closed by the building management, even during building opening hours.</p>
+          </section>
+          <section>
+            <h3>What it shows</h3>
+            <p><strong>frooms</strong> (short for <em>friends &amp; free rooms</em>) shows you where to study or meet at ETH and the University of Zurich (UZH): libraries and open study spaces with occupancy estimates, computer rooms, seminar rooms and lecture halls that are unbooked right now (and until when), and the mensas of both, with their menus side by side and a search for a meal by price, protein or carbs, and where to find a microwave.</p>
+          </section>
+          <section>
+            <h3>Occupancy estimates source</h3>
+            <p>ETH's own estimate from people counting, shown in steps of 20 %, and at UZH the University Library's seat sensors. Only some spaces have it, and frooms shows it only while it's at most 15 minutes old. frooms keeps these readings to learn how full spaces usually are, and shows that as "usually this full". What frooms users report (free, crowded, full) shows on a place for 2 hours.</p>
+          </section>
+          <section>
+            <h3>Friends</h3>
+            <p>Optional, with an account: sign in with the edu-ID you use for ETH or UZH, add friends, and check in where you study: friends you accepted see the place you picked, since when and until when, never your position. A check-in ends by itself after 3 hours, or when you say.</p>
+          </section>
+          <section>
+            <h3>Street cred and ratings</h3>
+            <p>Signed in, what you do for others earns street cred: adding friends, checking in, reporting how full a place is, voting 👍 or 👎 on others' reports, rating a dish, sending invites and feedback. More street cred means a higher level, and levels unlock new looks for your bubble (gradients, then bronze, silver and gold). Your points log is yours alone; the leaderboards show only those who join them, and only to each other. Reports in the log stay anonymous: someone whose reports got 20 👍 is marked as a trusted reporter, never by name. Dishes show the average of everyone's ratings (taste, portion size and value for money, from −5 to 5) for that day.</p>
+          </section>
+          <section>
+            <h3>Your data</h3>
+            <p>An account is optional, and without one frooms sets no cookies. The site runs on Cloudflare, which sees visitors' IP addresses and counts visits anonymously. Your building and filter choices, your starred places and buildings and your food preference are stored in your browser; signed in, your stars are also kept with your account, so every device has them. If you let the map show where you are, your location stays on your device: it is never sent or stored. Feedback you send is stored with the tab and filters you had open, and with your email only if you give one. If you report how full a place is, frooms stores the report with the time and a random id of your browser (so one browser counts once); never your location or IP address. Street cred, ratings and votes are kept with your account, and so is a bug report you send signed in, until we've decided on its reward, for as long as the <a href="/privacy">privacy notice</a> says.</p>
+          </section>
+          <!-- <p><a href="https://github.com/rafwyss/frooms" target="_blank" rel="noopener">Source code on GitHub</a></p> -->
+        </template>
+      </section>
+    </div>
+  </section>
+
+
+  <!-- The campus map: behind the sheet on phones, next to the list on wide screens. -->
+  <section id="map" aria-label="Campus map">
+    <div id="map-view" class="map-view">
+      <svg id="map-svg" class="map-svg" aria-hidden="true"></svg>
+      <div id="map-labels" class="map-labels"></div>
+      <!-- Friends' check-ins (friends.js): one bubble per building, merged where they'd overlap. -->
+      <div id="map-friends" class="map-friends"></div>
+      <!-- The floor view's tags on the other buildings (map.js renderFloorTags), under the plan's labels. -->
+      <div id="map-floor-tags" class="map-floor-tags" hidden></div>
+      <!-- A building's floor plans (map.js, floor view): the rooms, study spaces and places on one level. -->
+      <div id="map-floor-labels" class="map-labels map-floor-labels" hidden></div>
+      <div id="map-me" class="map-me" aria-hidden="true" hidden></div>
+      <!-- Buttons to the neighbouring campuses (map.js renderLinks). -->
+      <div id="map-links" class="map-links" role="group" aria-label="Other campuses"></div>
+      <div class="map-top">
+        <button id="map-floor-close" class="map-close map-floor-close" type="button" hidden>← Campus</button>
+        <!-- The building and level; a click opens the campus's other buildings with plans (map.js floorMenu). -->
+        <div class="map-floor-box">
+          <button id="map-floor-title" class="map-floor-title" type="button" aria-haspopup="menu" aria-expanded="false" aria-controls="map-floor-menu" hidden></button>
+          <div id="map-floor-menu" class="campus-menu map-floor-menu" role="menu" aria-label="Floor plans of" hidden></div>
+        </div>
+      </div>
+      <!-- Wide layout: opens the floor plans of the list's building (map.js syncFloorButton). -->
+      <button id="map-floors-open" class="map-floors-open" type="button" hidden></button>
+      <div class="map-tools">
+        <div class="map-zoom" data-tour="map-zoom">
+          <button id="map-zoom-in" type="button" aria-label="Zoom in">+</button>
+          <button id="map-zoom-out" type="button" aria-label="Zoom out">−</button>
+          <button id="map-fit" data-tour="map-fit" type="button" aria-label="Show the whole campus">⤢</button>
+          <!-- Near you (map.js): the position stays on the device. -->
+          <button id="map-locate" class="map-locate" data-tour="locate" type="button" aria-label="Show where I am and what's free near me" aria-pressed="false"><svg viewBox="0 0 16 16" class="map-ic" aria-hidden="true"><path d="M8 1.5V4M8 12v2.5M1.5 8H4M12 8h2.5M8 3.75a4.25 4.25 0 1 1 0 8.5 4.25 4.25 0 1 1 0-8.5z"/><circle cx="8" cy="8" r="1.6" class="me"/></svg></button>
+        </div>
+        <!-- What the map shows: study spaces, rooms, mensas, cafeterias (map.js renderMapLayers). -->
+        <div class="map-layers-box" data-tour="map-layers">
+          <!-- Collapses the filters to their icons, or opens them with their names (a tap, or a drag sideways). -->
+          <button id="map-layers-toggle" class="map-layers-toggle" data-tour="map-layers-toggle" type="button" aria-controls="map-layers" aria-expanded="true" aria-label="Hide the filters' names"><span aria-hidden="true"></span></button>
+          <div id="map-layers" class="map-layers" role="group" aria-label="Show on the map"></div>
+        </div>
+        <!-- Friends on the map (friends.js), signed in only: its own layer, on by default. -->
+        <div class="map-zoom map-friends-box" hidden><button id="map-friends-btn" class="map-friends-btn" data-tour="layer-friends" type="button" aria-pressed="true" aria-label="Hide friends on the map"></button></div>
+      </div>
+      <p id="map-missing" class="map-missing" hidden></p>
+      <p id="map-note" class="map-note"></p>
+      <div class="map-attrib">© <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">OpenStreetMap</a></div>
+    </div>
+  </section>
+
+  <!-- The menu panel: a mensa's day or week, or the comparison of an area's mensas (static/app.js openMenu). -->
+  <dialog id="menu-panel" class="menu-panel" aria-labelledby="menu-title"></dialog>
+  <dialog id="photo-box" class="photo-box" data-tour="dish-box" aria-labelledby="photo-title"></dialog>
+  <dialog id="meal-rating" class="confirm-dialog meal-rating" aria-labelledby="meal-rating-title"></dialog>
+
+  <!-- A question in the middle of the screen: check out, remove a friend, delete the account (account.js askConfirm). -->
+  <dialog id="confirm" class="confirm-dialog" aria-labelledby="confirm-title"></dialog>
+  <!-- The first-visit window (app.js showTourOffer): "Take the tour" or "Skip", once per browser. -->
+  <dialog id="tour-offer" class="confirm-dialog tour-offer" aria-labelledby="tour-offer-title"></dialog>
+  <!-- "Checked in!" and the end time (checkin.js openUntilDialog). -->
+  <dialog id="checkin-dialog" class="confirm-dialog checkin-dialog" aria-labelledby="checkin-title"></dialog>
+
+  <dialog id="feedback" aria-labelledby="feedback-title">
+    <div class="feedback-head">
+      <h2 id="feedback-title">Send feedback</h2>
+      <button type="button" class="feedback-close" aria-label="Close">✕</button>
+    </div>
+    <form id="feedback-form" novalidate>
+      <!-- "Report a bug" only (bugs.js, app.js openFeedback): the element picked and the reward; categories hidden. -->
+      <div class="feedback-bug" hidden>
+        <div class="feedback-bug-el">
+          <span><span class="muted">Broken:</span> <span class="feedback-bug-what"></span></span>
+          <button type="button" class="feedback-bug-again">Pick again</button>
+        </div>
+        <p class="feedback-bug-reward"></p>
+      </div>
+      <fieldset class="feedback-cats">
+        <legend>What is it about?</legend>
+        <label><input type="radio" name="category" value="broken" required> Something's broken</label>
+        <label><input type="radio" name="category" value="wrong-info"> Wrong room info</label>
+        <label><input type="radio" name="category" value="idea"> Idea or improvement</label>
+        <label id="feedback-person" hidden><input type="radio" name="category" value="person"> Report a person</label>
+        <label><input type="radio" name="category" value="other"> Other</label>
+      </fieldset>
+      <label class="feedback-field">
+        <span>Tell us more</span>
+        <textarea name="message" rows="6" maxlength="4000" required placeholder="What happened, or what would you like to see?"></textarea>
+      </label>
+      <label class="feedback-field">
+        <span>Email <em>(optional, if you'd like a reply)</em></span>
+        <input type="email" name="email" maxlength="200" autocomplete="email">
+      </label>
+      <label class="feedback-trap" aria-hidden="true">Website <input type="text" name="website" tabindex="-1" autocomplete="off"></label>
+      <p class="feedback-note">Your current tab, filters and screen size are sent along, so we can see what you saw.</p>
+      <p class="feedback-error" role="alert" hidden></p>
+      <button type="submit" class="feedback-send">Send</button>
+    </form>
+    <div class="feedback-done" hidden>
+      <p class="feedback-done-text"><strong>Thanks!</strong> Your feedback is in.</p>
+      <button type="button" class="feedback-send feedback-close">Close</button>
+    </div>
+  </dialog>
+
+  <script src="/geo.js"></script>
+  <script src="/lib.js"></script>
+  <script src="/picker.js"></script>
+  <script src="/sheet.js"></script>
+  <script src="/map.js"></script>
+  <script src="/places.js"></script>
+  <script src="/account.js"></script>
+  <script src="/friends.js"></script>
+  <script src="/cred.js"></script>
+  <script src="/bugs.js"></script>
+  <script src="/checkin.js"></script>
+  <script src="/ratings.js"></script>
+  <script src="/app.js"></script>
+  <script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "47ed0398699445ba8b8c8d017c457498"}'></script>
+</body>
+</html>

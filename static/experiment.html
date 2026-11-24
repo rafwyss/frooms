@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>frooms - same-day booking changes</title>
+  <link rel="icon" href="/logo.svg?v=2" type="image/svg+xml">
+  <link rel="stylesheet" href="/style.css">
+  <link rel="stylesheet" href="/experiment.css">
+</head>
+<body>
+  <header>
+    <div class="brand">
+      <h1 class="wordmark"><a href="/">frooms</a><span class="dot" aria-hidden="true"></span></h1>
+      <p class="tagline">Experiment: how often do bookings change during the day?</p>
+    </div>
+  </header>
+
+  <main>
+    <section class="message intro">
+      <p>
+        frooms fetches every room once a night for the coming week, but during the day it only refreshes
+        seminar and meeting rooms. To see what that misses, each prefetch run also re-checks two of the other
+        rooms (lecture halls, labs, computer rooms, …) and compares today's and tomorrow's bookings with what
+        was stored. The regular refresh of seminar and meeting rooms is compared the same way, as a baseline.
+      </p>
+      <p class="muted">
+        A change is <strong>upcoming</strong> if the booking hadn't ended when it was noticed: until then frooms
+        would have shown the room as free while it was booked (new booking) or busy while it was free (dropped
+        booking).
+      </p>
+    </section>
+
+    <p id="state" class="muted">Loading…</p>
+
+    <section id="kpis" class="kpis" hidden></section>
+
+    <section class="block" id="check-block" hidden>
+      <h2>Rooms fetched once a night <span class="muted">(extra checks)</span></h2>
+      <div class="scroll"><table id="check-table"></table></div>
+    </section>
+
+    <section class="block" id="refresh-block" hidden>
+      <h2>Seminar and meeting rooms <span class="muted">(regular refresh, baseline)</span></h2>
+      <div class="scroll"><table id="refresh-table"></table></div>
+    </section>
+
+    <section class="block" id="days-block" hidden>
+      <h2>Per day</h2>
+      <div class="scroll"><table id="days-table"></table></div>
+    </section>
+
+    <section class="block" id="recent-block" hidden>
+      <h2>Latest changes <span class="muted">(up to 200)</span></h2>
+      <div class="scroll"><table id="recent-table"></table></div>
+    </section>
+  </main>
+
+  <script src="/experiment.js"></script>
+</body>
+</html>

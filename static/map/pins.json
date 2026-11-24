@@ -1,0 +1,19 @@
+{
+  "_about": "Where map labels go, by location: buildings by code, mensas and cafeterias by id (a study space's id or F<facility>), microwaves by their id in data/microwaves.json (`microwaves`, over that file's `at`), as [x, y] in the campus drawing's metres (static/map/<area>.json). A label without a pin sits on its building; null puts it back there. A building with no outline (\"outline\": false, data/map/campuses.json not_on_map) shows only if it has a pin here. Made with the map's pin mode: open the site with ?pins, drag labels (or place the ones without an outline), copy the pins.",
+  "Z": {
+    "buildings": { "GLC": [411.2, 50.4], "HG": [-21.9, 177.5], "MM": [-119.7, 153.9], "SPHZ": [-66, 4] },
+    "places": { "CLAD5": [-78.2, 81.3], "F1": [-89, 242.6], "F10": [7.9, 197.5], "F11": [-0.6, 62.4], "F12": [420.4, 58.9], "F13": [45.8, -107.4], "F2": [-1.8, 154.9], "F5": [-52.4, 190.7], "F8": [401.9, 78.2], "MMC81": [-103.1, 197.4], "MMB79": [-119.7, 159.9] },
+    "microwaves": { "MW-CHN-1": [44.7, -102.9], "MW-CAB-1": [91.2, -68.1], "MW-MM-1": [-91.4, 192.3], "MW-MM-2": [-102.7, 213.3], "MW-MM-3": [-113.5, 188.2] }
+  },
+  "H": {
+    "buildings": { "HPI": [4, 37.9], "HPR": [129.3, 90.6] },
+    "places": { "F14": [-55.6, 30.8], "F16": [3.1, 48.6], "F22": [41.8, -172.1], "HCIF5": [-22.3, 116.6], "HPRD70.2": [131.8, 117.5] }
+  },
+  "UI": {
+    "buildings": { "Y03": [-47.4, 104.4], "Y04": [-19.1, 112.9], "Y16": [53.2, 89.8], "Y05": [30.0, 118.0] },
+    "places": { "UM8": [4.0, 121.0], "UM11": [225.4, -249.3] }
+  },
+  "UZ": {
+    "buildings": { "KOL": [-250.1, -113.4] }
+  }
+}

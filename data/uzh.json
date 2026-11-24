@@ -1,0 +1,384 @@
+{
+  "_about": "UZH in frooms (worker/uzh.ts, worker/uzhspaces.ts, scripts/uzh_catalogue.py, scripts/make_map.py). campuses: our areas and the 3V-Rooms calendar filter of each. exclude: room titles (case-insensitive) that aren't teaching rooms. room_types: typecode by 3V resource id where the seat rule (lecture hall from lecture_hall_min_seats seats, else seminar room) is wrong. libraries_url: the University Library's location list (hours, buildings, seats, closures); library_campuses: its campus names -> our areas (other locations are left out). sensors: the library's seat sensors (occupancy_url?id=N) -> the location (bib id) they count, and a name where one location has several. map_buildings: buildings drawn as part of another on the map (one outline in OpenStreetMap), whose rooms and libraries count there. library_notes: the note for a location open by card only, where it isn't 'UZH members only' (the UB's page says who gets in). mensas: UZH's mensas, whose menus come from ZFV's food2050 pages (worker/uzhmenus.ts): id (ours, UM<n>), facility (a menu_days key far above Cookpit's ids), name, area, building (on that campus's map; MEN is the Mensa building at Künstlergasse 10), floor, site and outlet (food2050's slugs: app.food2050.ch/en/zfv/universitat-zurich,<site>/<outlet>), meals (food2050's slug of each meal, and its time from zfv.ch, else from famoser/Mensa), hours (Monday to Friday, from zfv.ch's regular semester hours; a day without dishes is closed). Between their meals (and before the first) an open UZH mensa is a study space, also Seerose and Insieme (CHOICES.md), so there is no cafe_outside_meals here. cafes: cafeterias and bars without menus on food2050: id (UC<n>), name, area, building, floor, hours (Monday to Friday, from zfv.ch, kept by hand) and url (their zfv.ch page). A building without an outline in OpenStreetMap (Y05) is label only (data/map/campuses.json not_on_map) and placed by static/map/pins.json.",
+  "campuses": {
+    "UZ": {
+      "filter": 24885,
+      "label": "UZH Zentrum"
+    },
+    "UI": {
+      "filter": 22059,
+      "label": "UZH Irchel"
+    },
+    "UO": {
+      "filter": 15325,
+      "label": "UZH Oerlikon"
+    }
+  },
+  "occupancy_url": "https://hbzwwws04.ub.uzh.ch/occusense/occusense_progressbar_150.php",
+  "exclude": [
+    "Apérofläche",
+    "Empfang",
+    "Lichthof",
+    "Mensa",
+    "Posterausstellung",
+    "Studienplätze",
+    "Foyer",
+    "Galerie"
+  ],
+  "lecture_hall_min_seats": 100,
+  "room_types": {},
+  "libraries_url": "https://hbzwwws04.uzh.ch/uzhbibsub/backend/web/bibapi/?expand=bibSchliessungen",
+  "library_campuses": {
+    "Campus Zentrum": "UZ",
+    "Campus Irchel": "UI",
+    "Campus Oerlikon Nord": "UO"
+  },
+  "sensors": {
+    "2": {
+      "bib": 4,
+      "name": "UB Study Center Irchel West"
+    },
+    "23": {
+      "bib": 4,
+      "name": "UB Study Center Irchel East/South"
+    },
+    "12": {
+      "bib": 1
+    },
+    "20": {
+      "bib": 59
+    },
+    "10": {
+      "bib": 104
+    },
+    "15": {
+      "bib": 96
+    },
+    "11": {
+      "bib": 3
+    },
+    "16": {
+      "bib": 105
+    },
+    "18": {
+      "bib": 70
+    },
+    "17": {
+      "bib": 20
+    },
+    "19": {
+      "bib": 106
+    }
+  },
+  "map_buildings": {
+    "KOH": "KOL",
+    "PLR": "PLM"
+  },
+  "library_notes": {
+    "4": "With a UZH or ETH card"
+  },
+  "mensas": [
+    {
+      "id": "UM1",
+      "facility": 100001,
+      "name": "Obere Mensa",
+      "area": "UZ",
+      "building": "MEN",
+      "floor": null,
+      "site": "campus-zentrum",
+      "outlet": "obere-mensa",
+      "meals": [
+        {
+          "meal": "lunch",
+          "slug": "lunch",
+          "from": "11:00",
+          "to": "14:30"
+        }
+      ],
+      "hours": [
+        "11:00",
+        "15:00"
+      ]
+    },
+    {
+      "id": "UM2",
+      "facility": 100002,
+      "name": "Untere Mensa",
+      "area": "UZ",
+      "building": "MEN",
+      "floor": null,
+      "site": "campus-zentrum",
+      "outlet": "untere-mensa",
+      "meals": [
+        {
+          "meal": "lunch",
+          "slug": "mittagsverpflegung",
+          "from": "11:00",
+          "to": "14:30"
+        },
+        {
+          "meal": "dinner",
+          "slug": "abendverpflegung",
+          "from": "17:00",
+          "to": "19:00"
+        }
+      ],
+      "hours": [
+        "10:00",
+        "19:30"
+      ]
+    },
+    {
+      "id": "UM3",
+      "facility": 100003,
+      "name": "Rämi 59",
+      "area": "UZ",
+      "building": "RAA",
+      "floor": null,
+      "site": "rami-59",
+      "outlet": "rami-59",
+      "meals": [
+        {
+          "meal": "lunch",
+          "slug": "mittagsverpflegung",
+          "from": "11:00",
+          "to": "14:00"
+        }
+      ],
+      "hours": [
+        "07:30",
+        "15:00"
+      ]
+    },
+    {
+      "id": "UM4",
+      "facility": 100004,
+      "name": "Platte 14",
+      "area": "UZ",
+      "building": "PLM",
+      "floor": null,
+      "site": "platte-14",
+      "outlet": "platte-14",
+      "meals": [
+        {
+          "meal": "lunch",
+          "slug": "mittagsverpflegung",
+          "from": "11:00",
+          "to": "13:30"
+        }
+      ],
+      "hours": [
+        "10:30",
+        "14:30"
+      ]
+    },
+    {
+      "id": "UM5",
+      "facility": 100005,
+      "name": "Insieme",
+      "area": "UZ",
+      "building": "RAI",
+      "floor": null,
+      "site": "platte-14",
+      "outlet": "insieme",
+      "meals": [
+        {
+          "meal": "lunch",
+          "slug": "mittagsverpflegung",
+          "from": "11:00",
+          "to": "14:30"
+        }
+      ],
+      "hours": [
+        "09:00",
+        "14:30"
+      ]
+    },
+    {
+      "id": "UM6",
+      "facility": 100006,
+      "name": "Mensa Irchel",
+      "area": "UI",
+      "building": "Y21",
+      "floor": null,
+      "site": "campus-irchel",
+      "outlet": "mensa",
+      "meals": [
+        {
+          "meal": "lunch",
+          "slug": "mittagsverpflegung",
+          "from": "11:00",
+          "to": "14:00"
+        }
+      ],
+      "hours": [
+        "11:00",
+        "14:00"
+      ]
+    },
+    {
+      "id": "UM7",
+      "facility": 100007,
+      "name": "Seerose",
+      "area": "UI",
+      "building": "Y21",
+      "floor": null,
+      "site": "campus-irchel",
+      "outlet": "seerose",
+      "meals": [
+        {
+          "meal": "lunch",
+          "slug": "mittag",
+          "from": "11:30",
+          "to": "13:00"
+        },
+        {
+          "meal": "dinner",
+          "slug": "abend",
+          "from": "17:00",
+          "to": "19:30"
+        }
+      ],
+      "hours": [
+        "07:30",
+        "19:30"
+      ]
+    },
+    {
+      "id": "UM8",
+      "facility": 100008,
+      "name": "Green Kitchen Lab",
+      "area": "UI",
+      "building": "Y24",
+      "floor": null,
+      "site": "campus-irchel",
+      "outlet": "green-kitchen-lab",
+      "meals": [
+        {
+          "meal": "lunch",
+          "slug": "mittagsverpflegung",
+          "from": "11:00",
+          "to": "14:00"
+        }
+      ],
+      "hours": [
+        "10:00",
+        "14:30"
+      ]
+    },
+    {
+      "id": "UM9",
+      "facility": 100009,
+      "name": "Mensa Binzmühle",
+      "area": "UO",
+      "building": "BIN",
+      "floor": null,
+      "site": "campus-oerlikon",
+      "outlet": "mensa-binzmuhle",
+      "meals": [
+        {
+          "meal": "lunch",
+          "slug": "mittagsverpflegung",
+          "from": "11:00",
+          "to": "14:30"
+        }
+      ],
+      "hours": [
+        "07:45",
+        "14:30"
+      ]
+    },
+    {
+      "id": "UM10",
+      "facility": 100010,
+      "name": "BIM11",
+      "area": "UO",
+      "building": "BIM",
+      "floor": null,
+      "site": "campus-oerlikon",
+      "outlet": "bim11",
+      "meals": [
+        {
+          "meal": "lunch",
+          "slug": "mittagsverpflegung",
+          "from": "11:00",
+          "to": "14:00"
+        }
+      ],
+      "hours": [
+        "07:00",
+        "15:00"
+      ]
+    },
+    {
+      "id": "UM11",
+      "facility": 100011,
+      "name": "Tierspital",
+      "area": "UI",
+      "building": "TFA",
+      "floor": null,
+      "site": "tierspital-1",
+      "outlet": "tierspital",
+      "meals": [
+        {
+          "meal": "lunch",
+          "slug": "mittagsverpflegung",
+          "from": "11:00",
+          "to": "13:30"
+        }
+      ],
+      "hours": [
+        "06:30",
+        "16:30"
+      ]
+    },
+    {
+      "id": "UM12",
+      "facility": 100012,
+      "name": "Atrium",
+      "area": "UI",
+      "building": "Y05",
+      "floor": null,
+      "site": "campus-irchel",
+      "outlet": "atrium",
+      "meals": [
+        {
+          "meal": "lunch",
+          "slug": "mittagsverpflegung",
+          "from": "11:00",
+          "to": "13:30"
+        }
+      ],
+      "hours": [
+        "11:00",
+        "14:00"
+      ]
+    }
+  ],
+  "cafes": [
+    {
+      "id": "UC1",
+      "name": "The Yard",
+      "area": "UI",
+      "building": "Y13",
+      "floor": "E",
+      "hours": [
+        "09:00",
+        "14:00"
+      ],
+      "url": "https://www.zfv.ch/de/essen-gehen/yard"
+    },
+    {
+      "id": "UC2",
+      "name": "Irchel Bar",
+      "area": "UI",
+      "building": "Y00",
+      "floor": null,
+      "hours": [
+        "11:00",
+        "23:00"
+      ],
+      "url": "https://www.zfv.ch/de/essen-gehen/irchel-bar"
+    }
+  ]
+}

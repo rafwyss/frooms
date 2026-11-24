@@ -1,0 +1,67 @@
+name: ci
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      # ETH's floor plans stay off main until ETH agrees (`scripts/floors.sh release` removes this step).
+      - name: No floor plans on main
+        if: (github.event_name == 'push' && github.ref == 'refs/heads/main') || (github.event_name == 'pull_request' && github.base_ref == 'main')
+        run: scripts/check_no_floors.sh
+      - uses: actions/setup-python@v7
+        with:
+          python-version: "3.12"
+      - run: pip install -r requirements.txt
+      - run: pytest
+      - uses: actions/setup-node@v7
+        with:
+          node-version: "24"
+          cache: npm
+      - run: npm ci
+      - run: npm run typecheck
+      - run: npm test
+
+  deploy:
+    # Deploys the Worker after the tests pass on main. Needs repo secrets
+    # CLOUDFLARE_API_TOKEN ("Edit Cloudflare Workers" template) and CLOUDFLARE_ACCOUNT_ID.
+    needs: test
+    if: github.ref == 'refs/heads/main' && github.event_name == 'push'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v7
+        with:
+          node-version: "24"
+          cache: npm
+      - uses: actions/setup-python@v7
+        with:
+          python-version: "3.12"
+      - run: npm ci
+      # The images we may not publish (mensa photos, UZH's share backgrounds) come from the private repo, read with a
+      # read-only deploy key (secret FROOMS_PRIV_DEPLOY_KEY); the deploy stops if any is missing.
+      - uses: actions/checkout@v7
+        with:
+          repository: rafwyss/frooms-priv
+          ssh-key: ${{ secrets.FROOMS_PRIV_DEPLOY_KEY }}
+          path: .private
+          sparse-checkout: private-assets
+          persist-credentials: false
+      - run: scripts/private_assets.sh .private
+      # static/og/ is gitignored, so it has to be generated here, like in `npm run deploy`. Without it the
+      # deploy would replace the live preview images with none.
+      - run: pip install -r requirements-dev.txt
+      - run: python3 scripts/make_share_images.py
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+      - run: npx wrangler deploy
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+      - run: scripts/check_live.sh

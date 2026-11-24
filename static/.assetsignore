@@ -1,0 +1,5 @@
+# Files in static/ that are not served (see .gitignore)
+icons/WhatsApp
+.DS_Store
+# The floor plans (ETH's plans, not approved for publishing yet; static/map.js FLOOR_PLANS is off)
+map/floors

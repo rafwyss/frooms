@@ -1,0 +1,12 @@
+{
+  "total": 0,
+  "recent": 0,
+  "level": 1,
+  "levelStart": 0,
+  "nextLevelAt": 100,
+  "nextUnlock": { "level": 2, "key": "gradient-bg", "label": "Gradient background" },
+  "board": false,
+  "likes": 0,
+  "trusted": false,
+  "latest": []
+}

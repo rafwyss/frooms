@@ -1,0 +1,62 @@
+{
+  "at": "2026-11-18T14:00",
+  "place_kind": "room",
+  "place": "HG E 41",
+  "reports": [
+    {
+      "id": 905,
+      "at": "@now-6m",
+      "kind": "level",
+      "value": 1,
+      "up": 0,
+      "down": 0,
+      "trusted": false
+    },
+    {
+      "id": 903,
+      "at": "@now-25m",
+      "kind": "level",
+      "value": 2,
+      "up": 4,
+      "down": 0,
+      "trusted": true
+    },
+    {
+      "id": 901,
+      "at": "@now-50m",
+      "kind": "level",
+      "value": 1,
+      "up": 1,
+      "down": 2,
+      "trusted": false
+    },
+    {
+      "id": 897,
+      "at": "@now-95m",
+      "kind": "level",
+      "value": 0,
+      "up": 0,
+      "down": 0,
+      "trusted": false
+    },
+    {
+      "id": 890,
+      "at": "@now-3h",
+      "kind": "level",
+      "value": 0,
+      "up": 2,
+      "down": 0,
+      "trusted": true
+    }
+  ],
+  "summary": {
+    "levels": [
+      1,
+      1,
+      1
+    ],
+    "pct": null,
+    "n_pct": 0,
+    "last": "@now-6m"
+  }
+}

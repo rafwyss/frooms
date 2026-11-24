@@ -1,0 +1,8 @@
+[
+  { "file": "Gemini_Generated_Image_ee5pcwee5pcwee5p.jpeg", "room": "#1d2a5b", "text": "#b4492f", "glow": [251, 243, 228] },
+  { "file": "Gemini_Generated_Image_g0bq7ug0bq7ug0bq.jpeg", "room": "#1d2a5b", "text": "#4f7a62", "glow": [251, 245, 234] },
+  { "file": "Gemini_Generated_Image_tgm84qtgm84qtgm8.jpeg", "room": "#b4492f", "text": "#1d2a5b", "glow": [252, 246, 236] },
+  { "file": "UZH_background_1.jpeg", "university": "UZH", "room": "#1d2a5b", "text": "#3a5fae", "glow": [251, 243, 228] },
+  { "file": "UZH_background_2.jpeg", "university": "UZH", "room": "#1d2a5b", "text": "#3a5fae", "glow": [251, 244, 232] },
+  { "file": "UZH_background_3.jpeg", "university": "UZH", "room": "#3a5fae", "text": "#1d2a5b", "glow": [252, 246, 236] }
+]

@@ -1,0 +1,1160 @@
+[
+ {
+  "id": 109,
+  "standort": 10,
+  "title": "Y-Lichthof (800 Personen)",
+  "area": "UI"
+ },
+ {
+  "id": 110,
+  "standort": 10,
+  "title": "Y-Lichthof Galerie H1 (99 Personen)",
+  "area": "UI"
+ },
+ {
+  "id": 111,
+  "standort": 10,
+  "title": "Y-Lichthof Galerie H2 (99 Personen)",
+  "area": "UI"
+ },
+ {
+  "id": 103,
+  "standort": 10,
+  "title": "Y03-G-85 (141 Plätze)",
+  "area": "UI"
+ },
+ {
+  "id": 104,
+  "standort": 10,
+  "title": "Y03-G-91 (90 Plätze)",
+  "area": "UI"
+ },
+ {
+  "id": 105,
+  "standort": 10,
+  "title": "Y03-G-95 (141 Plätze)",
+  "area": "UI"
+ },
+ {
+  "id": 112,
+  "standort": 10,
+  "title": "Y04-G-30 (577 Plätze)",
+  "area": "UI"
+ },
+ {
+  "id": 113,
+  "standort": 10,
+  "title": "Y10-G-03/04 EV (50 Plätze)",
+  "area": "UI"
+ },
+ {
+  "id": 115,
+  "standort": 10,
+  "title": "Y13-G-100 Kettelikunst (200 Personen)",
+  "area": "UI"
+ },
+ {
+  "id": 116,
+  "standort": 10,
+  "title": "Y13-L-11/13 (30 Plätze)",
+  "area": "UI"
+ },
+ {
+  "id": 118,
+  "standort": 10,
+  "title": "Y13-M-12 (44 Plätze)",
+  "area": "UI"
+ },
+ {
+  "id": 119,
+  "standort": 10,
+  "title": "Y13-M-Foyer Aquarium (44 Personen)",
+  "area": "UI"
+ },
+ {
+  "id": 125,
+  "standort": 10,
+  "title": "Y14-F-21 Labor-Praktikumsraum (148 Plätze)",
+  "area": "UI"
+ },
+ {
+  "id": 121,
+  "standort": 10,
+  "title": "Y14-F-41 Labor-Praktikumsraum (92 Plätze)",
+  "area": "UI"
+ },
+ {
+  "id": 122,
+  "standort": 10,
+  "title": "Y15-G-19 (175 Plätze)",
+  "area": "UI"
+ },
+ {
+  "id": 126,
+  "standort": 10,
+  "title": "Y15-G-20 (284 Plätze)",
+  "area": "UI"
+ },
+ {
+  "id": 127,
+  "standort": 10,
+  "title": "Y15-G-40 (284 Plätze)",
+  "area": "UI"
+ },
+ {
+  "id": 128,
+  "standort": 10,
+  "title": "Y15-G-60 (284 Plätze)",
+  "area": "UI"
+ },
+ {
+  "id": 129,
+  "standort": 10,
+  "title": "Y16-G-05 (98 Plätze)",
+  "area": "UI"
+ },
+ {
+  "id": 130,
+  "standort": 10,
+  "title": "Y16-G-15 (126 Plätze)",
+  "area": "UI"
+ },
+ {
+  "id": 132,
+  "standort": 10,
+  "title": "Y17-M-05 (103 Plätze)",
+  "area": "UI"
+ },
+ {
+  "id": 133,
+  "standort": 10,
+  "title": "Y21-D-68a (42 Plätze)",
+  "area": "UI"
+ },
+ {
+  "id": 134,
+  "standort": 10,
+  "title": "Y21-F-65 Theatersaal (150 Plätze)",
+  "area": "UI"
+ },
+ {
+  "id": 138,
+  "standort": 10,
+  "title": "Y21-F-70 (40 Plätze)",
+  "area": "UI"
+ },
+ {
+  "id": 140,
+  "standort": 10,
+  "title": "Y22-F-62 (40 Plätze)",
+  "area": "UI"
+ },
+ {
+  "id": 2293,
+  "standort": 10,
+  "title": "Y22-F-62/68 (80 Plätze)",
+  "area": "UI"
+ },
+ {
+  "id": 2291,
+  "standort": 10,
+  "title": "Y22-F-62/68/70 (120 Plätze)",
+  "area": "UI"
+ },
+ {
+  "id": 2292,
+  "standort": 10,
+  "title": "Y22-F-62/70 (80 Plätze)",
+  "area": "UI"
+ },
+ {
+  "id": 141,
+  "standort": 10,
+  "title": "Y22-F-68 (40 Plätze)",
+  "area": "UI"
+ },
+ {
+  "id": 145,
+  "standort": 10,
+  "title": "Y22-G-74 EV Workshopraum (24 Plätze)",
+  "area": "UI"
+ },
+ {
+  "id": 146,
+  "standort": 10,
+  "title": "Y23-G-04 (40 Plätze)",
+  "area": "UI"
+ },
+ {
+  "id": 149,
+  "standort": 10,
+  "title": "Y24-G-45 (446 Plätze)",
+  "area": "UI"
+ },
+ {
+  "id": 150,
+  "standort": 10,
+  "title": "Y24-G-55 Mikroskopierhörsaal (152 Plätze)",
+  "area": "UI"
+ },
+ {
+  "id": 151,
+  "standort": 10,
+  "title": "Y24-Medizinerhof (400 Personen)",
+  "area": "UI"
+ },
+ {
+  "id": 152,
+  "standort": 10,
+  "title": "Y27-H-35/36 Video Konferenzraum (36 Plätze)",
+  "area": "UI"
+ },
+ {
+  "id": 156,
+  "standort": 10,
+  "title": "Y35-F-08a (14 Plätze)",
+  "area": "UI"
+ },
+ {
+  "id": 157,
+  "standort": 10,
+  "title": "Y35-F-27a (8 Plätze)",
+  "area": "UI"
+ },
+ {
+  "id": 159,
+  "standort": 10,
+  "title": "Y35-F-32 (112 Plätze)",
+  "area": "UI"
+ },
+ {
+  "id": 160,
+  "standort": 10,
+  "title": "Y35-F-47 (21 Plätze)",
+  "area": "UI"
+ },
+ {
+  "id": 162,
+  "standort": 10,
+  "title": "Y35-F-51 Teleteaching (112 Plätze)",
+  "area": "UI"
+ },
+ {
+  "id": 164,
+  "standort": 10,
+  "title": "Y44-H-05 (40 Plätze)",
+  "area": "UI"
+ },
+ {
+  "id": 9,
+  "standort": 9,
+  "title": "AFL-E-009 (30 Plätze)",
+  "area": "UO"
+ },
+ {
+  "id": 10,
+  "standort": 9,
+  "title": "AFL-E-011 (36 Plätze)",
+  "area": "UO"
+ },
+ {
+  "id": 11,
+  "standort": 9,
+  "title": "AFL-E-015 FiWI (66 Plätze)",
+  "area": "UO"
+ },
+ {
+  "id": 12,
+  "standort": 9,
+  "title": "AFL-E-019 FiWI (34 Plätze)",
+  "area": "UO"
+ },
+ {
+  "id": 13,
+  "standort": 9,
+  "title": "AFL-E-020 (56 Plätze)",
+  "area": "UO"
+ },
+ {
+  "id": 14,
+  "standort": 9,
+  "title": "AFL-E-022 (36 Plätze)",
+  "area": "UO"
+ },
+ {
+  "id": 16,
+  "standort": 9,
+  "title": "AFL-E-070 Olivenhalle (150 Personen)",
+  "area": "UO"
+ },
+ {
+  "id": 15,
+  "standort": 9,
+  "title": "AFL-F-121 (142 Plätze)",
+  "area": "UO"
+ },
+ {
+  "id": 17,
+  "standort": 9,
+  "title": "AND-2-02 (32 Plätze)",
+  "area": "UO"
+ },
+ {
+  "id": 18,
+  "standort": 9,
+  "title": "AND-2-04 (32 Plätze)",
+  "area": "UO"
+ },
+ {
+  "id": 19,
+  "standort": 9,
+  "title": "AND-2-06 (32 Plätze)",
+  "area": "UO"
+ },
+ {
+  "id": 20,
+  "standort": 9,
+  "title": "AND-2-44 (32 Plätze)",
+  "area": "UO"
+ },
+ {
+  "id": 21,
+  "standort": 9,
+  "title": "AND-2-46 (32 Plätze)",
+  "area": "UO"
+ },
+ {
+  "id": 22,
+  "standort": 9,
+  "title": "AND-2-48 (32 Plätze)",
+  "area": "UO"
+ },
+ {
+  "id": 23,
+  "standort": 9,
+  "title": "AND-3-02 (40 Plätze)",
+  "area": "UO"
+ },
+ {
+  "id": 224,
+  "standort": 9,
+  "title": "AND-3-02/06 (88 Plätze)",
+  "area": "UO"
+ },
+ {
+  "id": 24,
+  "standort": 9,
+  "title": "AND-3-06 (48 Plätze)",
+  "area": "UO"
+ },
+ {
+  "id": 25,
+  "standort": 9,
+  "title": "AND-3-44 (32 Plätze)",
+  "area": "UO"
+ },
+ {
+  "id": 26,
+  "standort": 9,
+  "title": "AND-3-46 (32 Plätze)",
+  "area": "UO"
+ },
+ {
+  "id": 27,
+  "standort": 9,
+  "title": "AND-3-48 (30 Plätze)",
+  "area": "UO"
+ },
+ {
+  "id": 28,
+  "standort": 9,
+  "title": "AND-4-02 (32 Plätze)",
+  "area": "UO"
+ },
+ {
+  "id": 29,
+  "standort": 9,
+  "title": "AND-4-06 (56 Plätze)",
+  "area": "UO"
+ },
+ {
+  "id": 30,
+  "standort": 9,
+  "title": "AND-5-29/31 (28 Plätze)",
+  "area": "UO"
+ },
+ {
+  "id": 31,
+  "standort": 9,
+  "title": "BIN-0-B.11 (13 Plätze)",
+  "area": "UO"
+ },
+ {
+  "id": 32,
+  "standort": 9,
+  "title": "BIN-0-K.02 (148 Plätze)",
+  "area": "UO"
+ },
+ {
+  "id": 33,
+  "standort": 9,
+  "title": "BIN-0-K.11 (18 Plätze)",
+  "area": "UO"
+ },
+ {
+  "id": 226,
+  "standort": 9,
+  "title": "BIN-0-K.11/12 (36 Plätze)",
+  "area": "UO"
+ },
+ {
+  "id": 225,
+  "standort": 9,
+  "title": "BIN-0-K.11/12/13 (54 Plätze)",
+  "area": "UO"
+ },
+ {
+  "id": 35,
+  "standort": 9,
+  "title": "BIN-0-K.12 (18 Plätze)",
+  "area": "UO"
+ },
+ {
+  "id": 36,
+  "standort": 9,
+  "title": "BIN-0-K.13 (18 Plätze)",
+  "area": "UO"
+ },
+ {
+  "id": 38,
+  "standort": 9,
+  "title": "BIN-0-Mall (120 Personen)",
+  "area": "UO"
+ },
+ {
+  "id": 39,
+  "standort": 9,
+  "title": "BIN-1-B.01 (170 Plätze)",
+  "area": "UO"
+ },
+ {
+  "id": 41,
+  "standort": 9,
+  "title": "BIN-1-D.22 (24 Plätze)",
+  "area": "UO"
+ },
+ {
+  "id": 1,
+  "standort": 9,
+  "title": "BIN-1-D.25 (24 Plätze)",
+  "area": "UO"
+ },
+ {
+  "id": 42,
+  "standort": 9,
+  "title": "BIN-1-E.01 (16 Plätze)",
+  "area": "UO"
+ },
+ {
+  "id": 43,
+  "standort": 3,
+  "title": "FRE-D-14 (29 Plätze)",
+  "area": "UZ"
+ },
+ {
+  "id": 44,
+  "standort": 3,
+  "title": "FRE-D-15 (28 Plätze)",
+  "area": "UZ"
+ },
+ {
+  "id": 45,
+  "standort": 3,
+  "title": "GLT-A-01 (22 Plätze)",
+  "area": "UZ"
+ },
+ {
+  "id": 46,
+  "standort": 3,
+  "title": "GLT-A-02 (22 Plätze)",
+  "area": "UZ"
+ },
+ {
+  "id": 47,
+  "standort": 3,
+  "title": "GLT-A-03 (33 Plätze)",
+  "area": "UZ"
+ },
+ {
+  "id": 48,
+  "standort": 3,
+  "title": "GLT-A-04 (12 Plätze)",
+  "area": "UZ"
+ },
+ {
+  "id": 49,
+  "standort": 3,
+  "title": "GLT-B-01 (31 Plätze)",
+  "area": "UZ"
+ },
+ {
+  "id": 54,
+  "standort": 3,
+  "title": "HAH-E-03 (442 Plätze)",
+  "area": "UZ"
+ },
+ {
+  "id": 51,
+  "standort": 3,
+  "title": "HAH-E-10 (35 Plätze)",
+  "area": "UZ"
+ },
+ {
+  "id": 52,
+  "standort": 3,
+  "title": "HAH-E-11 (285 Plätze)",
+  "area": "UZ"
+ },
+ {
+  "id": 53,
+  "standort": 3,
+  "title": "HAH-E-12 Studienplätze (80 Stehplätze/ 60 Sitzplätze)",
+  "area": "UZ"
+ },
+ {
+  "id": 55,
+  "standort": 3,
+  "title": "HAH-E-6 (22 Plätze)",
+  "area": "UZ"
+ },
+ {
+  "id": 56,
+  "standort": 3,
+  "title": "HAH-F-1 (94 Plätze)",
+  "area": "UZ"
+ },
+ {
+  "id": 59,
+  "standort": 3,
+  "title": "KAB-E-03 (45 Plätze)",
+  "area": "UZ"
+ },
+ {
+  "id": 60,
+  "standort": 3,
+  "title": "KAB-E-05 (Stadt Zürich) (36 Plätze)",
+  "area": "UZ"
+ },
+ {
+  "id": 61,
+  "standort": 3,
+  "title": "KAB-G-01 (90 Plätze)",
+  "area": "UZ"
+ },
+ {
+  "id": 62,
+  "standort": 3,
+  "title": "KAB-G-01 Apérofläche (90 Plätze)",
+  "area": "UZ"
+ },
+ {
+  "id": 67,
+  "standort": 3,
+  "title": "KO2-D-54 (40 Plätze)",
+  "area": "UZ"
+ },
+ {
+  "id": 68,
+  "standort": 3,
+  "title": "KO2-F-150 (105 Plätze)",
+  "area": "UZ"
+ },
+ {
+  "id": 72,
+  "standort": 3,
+  "title": "KO2-F-151 EV (18 Plätze)",
+  "area": "UZ"
+ },
+ {
+  "id": 74,
+  "standort": 3,
+  "title": "KO2-F-152 EV (90 Plätze)",
+  "area": "UZ"
+ },
+ {
+  "id": 76,
+  "standort": 3,
+  "title": "KO2-F-153 (54 Plätze)",
+  "area": "UZ"
+ },
+ {
+  "id": 77,
+  "standort": 3,
+  "title": "KO2-F-155 (24 Plätze)",
+  "area": "UZ"
+ },
+ {
+  "id": 87,
+  "standort": 3,
+  "title": "KO2-F-172 (40 Plätze)",
+  "area": "UZ"
+ },
+ {
+  "id": 88,
+  "standort": 3,
+  "title": "KO2-F-173 EV (18 Plätze)",
+  "area": "UZ"
+ },
+ {
+  "id": 90,
+  "standort": 3,
+  "title": "KO2-F-174 (70 Plätze)",
+  "area": "UZ"
+ },
+ {
+  "id": 91,
+  "standort": 3,
+  "title": "KO2-F-175 (70 Plätze)",
+  "area": "UZ"
+ },
+ {
+  "id": 93,
+  "standort": 3,
+  "title": "KO2-F-180 (371 Plätze) **",
+  "area": "UZ"
+ },
+ {
+  "id": 3560,
+  "standort": 3,
+  "title": "KO2-G-275 (32 Plätze)",
+  "area": "UZ"
+ },
+ {
+  "id": 96,
+  "standort": 3,
+  "title": "KOH-B-10 (463 Plätze) **",
+  "area": "UZ"
+ },
+ {
+  "id": 117,
+  "standort": 3,
+  "title": "KOL-D-2 (8 Plätze)",
+  "area": "UZ"
+ },
+ {
+  "id": 71,
+  "standort": 3,
+  "title": "KOL-E-12",
+  "area": "UZ"
+ },
+ {
+  "id": 95,
+  "standort": 3,
+  "title": "KOL-E-13 EV Senatszimmer (40 Plätze)",
+  "area": "UZ"
+ },
+ {
+  "id": 120,
+  "standort": 3,
+  "title": "KOL-E-18 (94 Plätze) **",
+  "area": "UZ"
+ },
+ {
+  "id": 124,
+  "standort": 3,
+  "title": "KOL-E-21 (78 Plätze)",
+  "area": "UZ"
+ },
+ {
+  "id": 135,
+  "standort": 3,
+  "title": "KOL-E-21 Empfang (rechts)",
+  "area": "UZ"
+ },
+ {
+  "id": 136,
+  "standort": 3,
+  "title": "KOL-F-101 (209 Plätze) **",
+  "area": "UZ"
+ },
+ {
+  "id": 148,
+  "standort": 3,
+  "title": "KOL-F-103 (28 Plätze)",
+  "area": "UZ"
+ },
+ {
+  "id": 153,
+  "standort": 3,
+  "title": "KOL-F-104 (142 Plätze)",
+  "area": "UZ"
+ },
+ {
+  "id": 158,
+  "standort": 3,
+  "title": "KOL-F-109 (84 Plätze) **",
+  "area": "UZ"
+ },
+ {
+  "id": 161,
+  "standort": 3,
+  "title": "KOL-F-117 (129 Plätze) **",
+  "area": "UZ"
+ },
+ {
+  "id": 166,
+  "standort": 3,
+  "title": "KOL-F-118 (154 Plätze) **",
+  "area": "UZ"
+ },
+ {
+  "id": 169,
+  "standort": 3,
+  "title": "KOL-F-121 (142 Plätze)",
+  "area": "UZ"
+ },
+ {
+  "id": 170,
+  "standort": 3,
+  "title": "KOL-F-122 (10 Plätze)",
+  "area": "UZ"
+ },
+ {
+  "id": 173,
+  "standort": 3,
+  "title": "KOL-F-123 (48 Plätze)",
+  "area": "UZ"
+ },
+ {
+  "id": 40,
+  "standort": 3,
+  "title": "KOL-G-201 Aula (280 / mit Emporen 359 Plätze ) **",
+  "area": "UZ"
+ },
+ {
+  "id": 184,
+  "standort": 3,
+  "title": "KOL-G-203 (24 Plätze)",
+  "area": "UZ"
+ },
+ {
+  "id": 185,
+  "standort": 3,
+  "title": "KOL-G-204 (80 Plätze)",
+  "area": "UZ"
+ },
+ {
+  "id": 188,
+  "standort": 3,
+  "title": "KOL-G-209 (82 Plätze) **",
+  "area": "UZ"
+ },
+ {
+  "id": 189,
+  "standort": 3,
+  "title": "KOL-G-210 EV (16 Plätze)",
+  "area": "UZ"
+ },
+ {
+  "id": 190,
+  "standort": 3,
+  "title": "KOL-G-212 EV (46 Plätze)",
+  "area": "UZ"
+ },
+ {
+  "id": 2992,
+  "standort": 3,
+  "title": "KOL-G-216 (14 Plätze)",
+  "area": "UZ"
+ },
+ {
+  "id": 191,
+  "standort": 3,
+  "title": "KOL-G-217 EV (129 Plätze) **",
+  "area": "UZ"
+ },
+ {
+  "id": 193,
+  "standort": 3,
+  "title": "KOL-G-220 (30 Plätze)",
+  "area": "UZ"
+ },
+ {
+  "id": 194,
+  "standort": 3,
+  "title": "KOL-G-221 (82 Plätze)",
+  "area": "UZ"
+ },
+ {
+  "id": 197,
+  "standort": 3,
+  "title": "KOL-G-222 (28 Plätze)",
+  "area": "UZ"
+ },
+ {
+  "id": 201,
+  "standort": 3,
+  "title": "KOL-H-309 EV (32 Plätze) **",
+  "area": "UZ"
+ },
+ {
+  "id": 205,
+  "standort": 3,
+  "title": "KOL-H-312 (210 Plätze) **",
+  "area": "UZ"
+ },
+ {
+  "id": 207,
+  "standort": 3,
+  "title": "KOL-H-317 (94 Plätze) **",
+  "area": "UZ"
+ },
+ {
+  "id": 210,
+  "standort": 3,
+  "title": "KOL-H-320 (28 Plätze)",
+  "area": "UZ"
+ },
+ {
+  "id": 213,
+  "standort": 3,
+  "title": "KOL-H-321 (48 Plätze) **",
+  "area": "UZ"
+ },
+ {
+  "id": 215,
+  "standort": 3,
+  "title": "KOL-H-322 (26 Plätze) **",
+  "area": "UZ"
+ },
+ {
+  "id": 229,
+  "standort": 3,
+  "title": "KOL-K-Küche (100 Personen)",
+  "area": "UZ"
+ },
+ {
+  "id": 217,
+  "standort": 3,
+  "title": "KOL-N-1 (20 Plätze)",
+  "area": "UZ"
+ },
+ {
+  "id": 64,
+  "standort": 3,
+  "title": "KUM-E-1 (30 Sitzplätze - ohne Tische!)",
+  "area": "UZ"
+ },
+ {
+  "id": 2298,
+  "standort": 3,
+  "title": "KUM-E-1/2/3",
+  "area": "UZ"
+ },
+ {
+  "id": 65,
+  "standort": 3,
+  "title": "KUM-E-2 (10 Plätze)",
+  "area": "UZ"
+ },
+ {
+  "id": 66,
+  "standort": 3,
+  "title": "KUM-E-3 (10 Plätze)",
+  "area": "UZ"
+ },
+ {
+  "id": 219,
+  "standort": 3,
+  "title": "Lichthof Nord (450 Personen)",
+  "area": "UZ"
+ },
+ {
+  "id": 220,
+  "standort": 3,
+  "title": "Lichthof Süd (250 Personen)",
+  "area": "UZ"
+ },
+ {
+  "id": 221,
+  "standort": 3,
+  "title": "Lichthof West (Posterausstellung)",
+  "area": "UZ"
+ },
+ {
+  "id": 2925,
+  "standort": 3,
+  "title": "Mensa oben, zfv, inkl. Terrasse (min. 60 / max. 200 Plätze)",
+  "area": "UZ"
+ },
+ {
+  "id": 228,
+  "standort": 3,
+  "title": "PLD-E-04 (30 Plätze)",
+  "area": "UZ"
+ },
+ {
+  "id": 3694,
+  "standort": 3,
+  "title": "RAA-Apéro-Aussenfläche (100 Plätze)",
+  "area": "UZ"
+ },
+ {
+  "id": 3548,
+  "standort": 3,
+  "title": "RAA-E-05, Aufenthaltsraum (neben Cafeteria), max. 50 Personen",
+  "area": "UZ"
+ },
+ {
+  "id": 79,
+  "standort": 3,
+  "title": "RAA-E-08 (40 Plätze)",
+  "area": "UZ"
+ },
+ {
+  "id": 80,
+  "standort": 3,
+  "title": "RAA-E-12 (30 Plätze)",
+  "area": "UZ"
+ },
+ {
+  "id": 81,
+  "standort": 3,
+  "title": "RAA-E-21 (30 Plätze)",
+  "area": "UZ"
+ },
+ {
+  "id": 82,
+  "standort": 3,
+  "title": "RAA-E-27 (40 Plätze)",
+  "area": "UZ"
+ },
+ {
+  "id": 84,
+  "standort": 3,
+  "title": "RAA-E-29 (40 Plätze)",
+  "area": "UZ"
+ },
+ {
+  "id": 86,
+  "standort": 3,
+  "title": "RAA-E-30 EV Workshopraum/Spezialraum (48 Plätze)",
+  "area": "UZ"
+ },
+ {
+  "id": 89,
+  "standort": 3,
+  "title": "RAA-G-01 Aula klein (100 Plätze)",
+  "area": "UZ"
+ },
+ {
+  "id": 92,
+  "standort": 3,
+  "title": "RAA-G-15 (100 Plätze)",
+  "area": "UZ"
+ },
+ {
+  "id": 94,
+  "standort": 3,
+  "title": "RAA-Lichthof Apérofläche (100 Plätze)",
+  "area": "UZ"
+ },
+ {
+  "id": 139,
+  "standort": 3,
+  "title": "RAI-F-041 (78 Plätze)",
+  "area": "UZ"
+ },
+ {
+  "id": 142,
+  "standort": 3,
+  "title": "RAI-F-041 Apérofläche (78 Plätze)",
+  "area": "UZ"
+ },
+ {
+  "id": 143,
+  "standort": 3,
+  "title": "RAI-G-041 (164 Plätze)",
+  "area": "UZ"
+ },
+ {
+  "id": 144,
+  "standort": 3,
+  "title": "RAI-G-041 Apérofläche (164 Plätze)",
+  "area": "UZ"
+ },
+ {
+  "id": 165,
+  "standort": 3,
+  "title": "RAI-H-041 (164 Plätze)",
+  "area": "UZ"
+ },
+ {
+  "id": 167,
+  "standort": 3,
+  "title": "RAI-H-041 Apérofläche (164 Plätze)",
+  "area": "UZ"
+ },
+ {
+  "id": 171,
+  "standort": 3,
+  "title": "RAI-J-031 (66 Plätze)",
+  "area": "UZ"
+ },
+ {
+  "id": 172,
+  "standort": 3,
+  "title": "RAI-J-031 Apérofläche (68 Plätze)",
+  "area": "UZ"
+ },
+ {
+  "id": 174,
+  "standort": 3,
+  "title": "RAK-E-6 (42 Plätze)",
+  "area": "UZ"
+ },
+ {
+  "id": 175,
+  "standort": 3,
+  "title": "RAK-E-7 (22 Plätze)",
+  "area": "UZ"
+ },
+ {
+  "id": 177,
+  "standort": 3,
+  "title": "RAK-E-8 (95 Plätze)",
+  "area": "UZ"
+ },
+ {
+  "id": 1352,
+  "standort": 3,
+  "title": "SOC-F-101 (40 Plätze)",
+  "area": "UZ"
+ },
+ {
+  "id": 178,
+  "standort": 3,
+  "title": "SOC-F-106 (164 Plätze)",
+  "area": "UZ"
+ },
+ {
+  "id": 2236,
+  "standort": 3,
+  "title": "SOC-F-106 Apérofläche (164 Plätze)",
+  "area": "UZ"
+ },
+ {
+  "id": 187,
+  "standort": 3,
+  "title": "SOD-1-101 (61 Plätze)",
+  "area": "UZ"
+ },
+ {
+  "id": 222,
+  "standort": 3,
+  "title": "SOD-1-102 (256 Plätze)",
+  "area": "UZ"
+ },
+ {
+  "id": 223,
+  "standort": 3,
+  "title": "SOD-1-104 (80 Plätze)",
+  "area": "UZ"
+ },
+ {
+  "id": 179,
+  "standort": 3,
+  "title": "SOE-E-1 (48 Plätze)",
+  "area": "UZ"
+ },
+ {
+  "id": 180,
+  "standort": 3,
+  "title": "SOE-E-2 (48 Plätze)",
+  "area": "UZ"
+ },
+ {
+  "id": 183,
+  "standort": 3,
+  "title": "SOE-E-7 (48 Plätze)",
+  "area": "UZ"
+ },
+ {
+  "id": 186,
+  "standort": 3,
+  "title": "SOE-E-8 (48 Plätze)",
+  "area": "UZ"
+ },
+ {
+  "id": 196,
+  "standort": 3,
+  "title": "SOE-F-1 (24 Plätze)",
+  "area": "UZ"
+ },
+ {
+  "id": 198,
+  "standort": 3,
+  "title": "SOE-F-11 (18 Plätze)",
+  "area": "UZ"
+ },
+ {
+  "id": 200,
+  "standort": 3,
+  "title": "SOE-F-12 (18 Plätze)",
+  "area": "UZ"
+ },
+ {
+  "id": 202,
+  "standort": 3,
+  "title": "SOE-F-2 (48 Plätze)",
+  "area": "UZ"
+ },
+ {
+  "id": 203,
+  "standort": 3,
+  "title": "SOE-F-7 (48 Plätze)",
+  "area": "UZ"
+ },
+ {
+  "id": 204,
+  "standort": 3,
+  "title": "SOE-F-8 (24 Plätze)",
+  "area": "UZ"
+ },
+ {
+  "id": 206,
+  "standort": 3,
+  "title": "SOE-F-9 (18 Plätze)",
+  "area": "UZ"
+ },
+ {
+  "id": 208,
+  "standort": 3,
+  "title": "SOF-E-05 (24 Plätze)",
+  "area": "UZ"
+ },
+ {
+  "id": 211,
+  "standort": 3,
+  "title": "SOF-E-07 (24 Plätze)",
+  "area": "UZ"
+ },
+ {
+  "id": 212,
+  "standort": 3,
+  "title": "SOF-E-13 (24 Plätze)",
+  "area": "UZ"
+ },
+ {
+  "id": 214,
+  "standort": 3,
+  "title": "SOF-E-15 (24 Plätze)",
+  "area": "UZ"
+ },
+ {
+  "id": 216,
+  "standort": 3,
+  "title": "SOF-E-17 (42 Plätze)",
+  "area": "UZ"
+ }
+]

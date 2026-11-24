@@ -1,0 +1,1114 @@
+{
+ "data": [
+  {
+   "type": "room_availability",
+   "id": "BSSD65.3",
+   "attributes": {
+    "roomGlobalIdentifier": "BSSD65.3",
+    "floor": "D",
+    "status": "unknown"
+   }
+  },
+  {
+   "type": "room_availability",
+   "id": "BSSE12",
+   "attributes": {
+    "roomGlobalIdentifier": "BSSE12",
+    "floor": "E",
+    "status": "unknown"
+   }
+  },
+  {
+   "type": "room_availability",
+   "id": "BSSK10.0016",
+   "attributes": {
+    "roomGlobalIdentifier": "BSSK10.0016",
+    "floor": "K",
+    "status": "unknown"
+   }
+  },
+  {
+   "type": "room_availability",
+   "id": "BSSK14",
+   "attributes": {
+    "roomGlobalIdentifier": "BSSK14",
+    "floor": "K",
+    "status": "unknown"
+   }
+  },
+  {
+   "type": "room_availability",
+   "id": "CABF31",
+   "attributes": {
+    "roomGlobalIdentifier": "CABF31",
+    "floor": "F",
+    "occupancy": 4,
+    "maxPeople": 24,
+    "occupancyPercentage": 20,
+    "timestamp": "2026-11-01T15:40:20.16219+01:00",
+    "elionaAssetId": 4690,
+    "status": "green",
+    "trend": "steady",
+    "activeFlag": true
+   }
+  },
+  {
+   "type": "room_availability",
+   "id": "CABG52",
+   "attributes": {
+    "roomGlobalIdentifier": "CABG52",
+    "floor": "G",
+    "status": "unknown"
+   }
+  },
+  {
+   "type": "room_availability",
+   "id": "CABG56",
+   "attributes": {
+    "roomGlobalIdentifier": "CABG56",
+    "floor": "G",
+    "status": "unknown"
+   }
+  },
+  {
+   "type": "room_availability",
+   "id": "CABH41",
+   "attributes": {
+    "roomGlobalIdentifier": "CABH41",
+    "floor": "H",
+    "occupancy": 1,
+    "maxPeople": 200,
+    "occupancyPercentage": 0,
+    "timestamp": "2026-11-01T15:40:20.752094+01:00",
+    "elionaAssetId": 6556,
+    "status": "green",
+    "trend": "steady",
+    "activeFlag": true
+   }
+  },
+  {
+   "type": "room_availability",
+   "id": "CHND29",
+   "attributes": {
+    "roomGlobalIdentifier": "CHND29",
+    "floor": "D",
+    "status": "unknown"
+   }
+  },
+  {
+   "type": "room_availability",
+   "id": "CHND46",
+   "attributes": {
+    "roomGlobalIdentifier": "CHND46",
+    "floor": "D",
+    "status": "unknown"
+   }
+  },
+  {
+   "type": "room_availability",
+   "id": "CHND8",
+   "attributes": {
+    "roomGlobalIdentifier": "CHND8",
+    "floor": "D",
+    "status": "unknown"
+   }
+  },
+  {
+   "type": "room_availability",
+   "id": "CHNE10.0039",
+   "attributes": {
+    "roomGlobalIdentifier": "CHNE10.0039",
+    "floor": "E",
+    "status": "unknown"
+   }
+  },
+  {
+   "type": "room_availability",
+   "id": "CHNE46",
+   "attributes": {
+    "roomGlobalIdentifier": "CHNE46",
+    "floor": "E",
+    "status": "unknown"
+   }
+  },
+  {
+   "type": "room_availability",
+   "id": "CHNF10.0039",
+   "attributes": {
+    "roomGlobalIdentifier": "CHNF10.0039",
+    "floor": "F",
+    "status": "unknown"
+   }
+  },
+  {
+   "type": "room_availability",
+   "id": "CHNF46",
+   "attributes": {
+    "roomGlobalIdentifier": "CHNF46",
+    "floor": "F",
+    "occupancy": 1,
+    "maxPeople": 60,
+    "occupancyPercentage": 0,
+    "timestamp": "2026-11-01T15:40:20.229489+01:00",
+    "elionaAssetId": 5835,
+    "status": "green",
+    "trend": "steady",
+    "activeFlag": true
+   }
+  },
+  {
+   "type": "room_availability",
+   "id": "CHNG10.0039",
+   "attributes": {
+    "roomGlobalIdentifier": "CHNG10.0039",
+    "floor": "G",
+    "status": "unknown"
+   }
+  },
+  {
+   "type": "room_availability",
+   "id": "CHNG46",
+   "attributes": {
+    "roomGlobalIdentifier": "CHNG46",
+    "floor": "G",
+    "status": "unknown"
+   }
+  },
+  {
+   "type": "room_availability",
+   "id": "CHNH43",
+   "attributes": {
+    "roomGlobalIdentifier": "CHNH43",
+    "floor": "H",
+    "occupancy": 0,
+    "maxPeople": 106,
+    "occupancyPercentage": 0,
+    "timestamp": "2026-11-01T15:40:20.258927+01:00",
+    "elionaAssetId": 4691,
+    "status": "green",
+    "trend": "steady",
+    "activeFlag": true
+   }
+  },
+  {
+   "type": "room_availability",
+   "id": "CLAD1.1",
+   "attributes": {
+    "roomGlobalIdentifier": "CLAD1.1",
+    "floor": "D",
+    "status": "unknown"
+   }
+  },
+  {
+   "type": "room_availability",
+   "id": "CLAD5",
+   "attributes": {
+    "roomGlobalIdentifier": "CLAD5",
+    "floor": "D",
+    "status": "unknown"
+   }
+  },
+  {
+   "type": "room_availability",
+   "id": "ETFB8.0019",
+   "attributes": {
+    "roomGlobalIdentifier": "ETFB8.0019",
+    "floor": "B",
+    "status": "unknown"
+   }
+  },
+  {
+   "type": "room_availability",
+   "id": "ETFD8.0019",
+   "attributes": {
+    "roomGlobalIdentifier": "ETFD8.0019",
+    "floor": "D",
+    "status": "unknown"
+   }
+  },
+  {
+   "type": "room_availability",
+   "id": "ETZE90.2",
+   "attributes": {
+    "roomGlobalIdentifier": "ETZE90.2",
+    "floor": "E",
+    "status": "unknown"
+   }
+  },
+  {
+   "type": "room_availability",
+   "id": "ETZH91",
+   "attributes": {
+    "roomGlobalIdentifier": "ETZH91",
+    "floor": "H",
+    "status": "unknown"
+   }
+  },
+  {
+   "type": "room_availability",
+   "id": "ETZJ91",
+   "attributes": {
+    "roomGlobalIdentifier": "ETZJ91",
+    "floor": "J",
+    "status": "unknown"
+   }
+  },
+  {
+   "type": "room_availability",
+   "id": "ETZK91",
+   "attributes": {
+    "roomGlobalIdentifier": "ETZK91",
+    "floor": "K",
+    "status": "unknown"
+   }
+  },
+  {
+   "type": "room_availability",
+   "id": "GLCE31",
+   "attributes": {
+    "roomGlobalIdentifier": "GLCE31",
+    "floor": "E",
+    "occupancy": 23,
+    "maxPeople": 110,
+    "occupancyPercentage": 20,
+    "timestamp": "2026-11-01T15:40:20.434265+01:00",
+    "elionaAssetId": 4688,
+    "status": "green",
+    "trend": "steady",
+    "activeFlag": true
+   }
+  },
+  {
+   "type": "room_availability",
+   "id": "HCIE2",
+   "attributes": {
+    "roomGlobalIdentifier": "HCIE2",
+    "floor": "E",
+    "status": "unknown"
+   }
+  },
+  {
+   "type": "room_availability",
+   "id": "HCIE8",
+   "attributes": {
+    "roomGlobalIdentifier": "HCIE8",
+    "floor": "E",
+    "status": "unknown"
+   }
+  },
+  {
+   "type": "room_availability",
+   "id": "HCIF2",
+   "attributes": {
+    "roomGlobalIdentifier": "HCIF2",
+    "floor": "F",
+    "status": "unknown"
+   }
+  },
+  {
+   "type": "room_availability",
+   "id": "HCIF30.0017",
+   "attributes": {
+    "roomGlobalIdentifier": "HCIF30.0017",
+    "floor": "F",
+    "status": "unknown"
+   }
+  },
+  {
+   "type": "room_availability",
+   "id": "HCIF5",
+   "attributes": {
+    "roomGlobalIdentifier": "HCIF5",
+    "floor": "F",
+    "status": "unknown"
+   }
+  },
+  {
+   "type": "room_availability",
+   "id": "HCIF8",
+   "attributes": {
+    "roomGlobalIdentifier": "HCIF8",
+    "floor": "F",
+    "status": "unknown"
+   }
+  },
+  {
+   "type": "room_availability",
+   "id": "HCIG5.1",
+   "attributes": {
+    "roomGlobalIdentifier": "HCIG5.1",
+    "floor": "G",
+    "timestamp": "2026-10-15T08:37:40.960194+02:00",
+    "elionaAssetId": 7371,
+    "status": "unknown",
+    "trend": "steady",
+    "activeFlag": true
+   }
+  },
+  {
+   "type": "room_availability",
+   "id": "HCIJ30.0017",
+   "attributes": {
+    "roomGlobalIdentifier": "HCIJ30.0017",
+    "floor": "J",
+    "status": "unknown"
+   }
+  },
+  {
+   "type": "room_availability",
+   "id": "HCIJ8",
+   "attributes": {
+    "roomGlobalIdentifier": "HCIJ8",
+    "floor": "J",
+    "status": "unknown"
+   }
+  },
+  {
+   "type": "room_availability",
+   "id": "HCPE40.0021",
+   "attributes": {
+    "roomGlobalIdentifier": "HCPE40.0021",
+    "floor": "E",
+    "status": "unknown"
+   }
+  },
+  {
+   "type": "room_availability",
+   "id": "HCPE44.1",
+   "attributes": {
+    "roomGlobalIdentifier": "HCPE44.1",
+    "floor": "E",
+    "status": "unknown"
+   }
+  },
+  {
+   "type": "room_availability",
+   "id": "HCPE47.1",
+   "attributes": {
+    "roomGlobalIdentifier": "HCPE47.1",
+    "floor": "E",
+    "status": "unknown"
+   }
+  },
+  {
+   "type": "room_availability",
+   "id": "HCPE47.2",
+   "attributes": {
+    "roomGlobalIdentifier": "HCPE47.2",
+    "floor": "E",
+    "status": "unknown"
+   }
+  },
+  {
+   "type": "room_availability",
+   "id": "HCPE47.3",
+   "attributes": {
+    "roomGlobalIdentifier": "HCPE47.3",
+    "floor": "E",
+    "status": "unknown"
+   }
+  },
+  {
+   "type": "room_availability",
+   "id": "HCPE47.4",
+   "attributes": {
+    "roomGlobalIdentifier": "HCPE47.4",
+    "floor": "E",
+    "status": "unknown"
+   }
+  },
+  {
+   "type": "room_availability",
+   "id": "HGD11",
+   "attributes": {
+    "roomGlobalIdentifier": "HGD11",
+    "floor": "D",
+    "status": "unknown"
+   }
+  },
+  {
+   "type": "room_availability",
+   "id": "HGD12",
+   "attributes": {
+    "roomGlobalIdentifier": "HGD12",
+    "floor": "D",
+    "status": "unknown"
+   }
+  },
+  {
+   "type": "room_availability",
+   "id": "HGE19",
+   "attributes": {
+    "roomGlobalIdentifier": "HGE19",
+    "floor": "E",
+    "status": "unknown"
+   }
+  },
+  {
+   "type": "room_availability",
+   "id": "HGE20.0029",
+   "attributes": {
+    "roomGlobalIdentifier": "HGE20.0029",
+    "floor": "E",
+    "status": "unknown"
+   }
+  },
+  {
+   "type": "room_availability",
+   "id": "HGE27",
+   "attributes": {
+    "roomGlobalIdentifier": "HGE27",
+    "floor": "E",
+    "status": "unknown"
+   }
+  },
+  {
+   "type": "room_availability",
+   "id": "HGE30.7",
+   "attributes": {
+    "roomGlobalIdentifier": "HGE30.7",
+    "floor": "E",
+    "status": "unknown"
+   }
+  },
+  {
+   "type": "room_availability",
+   "id": "HGE40.0029",
+   "attributes": {
+    "roomGlobalIdentifier": "HGE40.0029",
+    "floor": "E",
+    "status": "unknown"
+   }
+  },
+  {
+   "type": "room_availability",
+   "id": "HGEO27.1",
+   "attributes": {
+    "roomGlobalIdentifier": "HGEO27.1",
+    "floor": "EO",
+    "status": "unknown"
+   }
+  },
+  {
+   "type": "room_availability",
+   "id": "HGF20.0029",
+   "attributes": {
+    "roomGlobalIdentifier": "HGF20.0029",
+    "floor": "F",
+    "status": "unknown"
+   }
+  },
+  {
+   "type": "room_availability",
+   "id": "HGF30.0066",
+   "attributes": {
+    "roomGlobalIdentifier": "HGF30.0066",
+    "floor": "F",
+    "status": "unknown"
+   }
+  },
+  {
+   "type": "room_availability",
+   "id": "HGF30.0076",
+   "attributes": {
+    "roomGlobalIdentifier": "HGF30.0076",
+    "floor": "F",
+    "status": "unknown"
+   }
+  },
+  {
+   "type": "room_availability",
+   "id": "HGF30.1",
+   "attributes": {
+    "roomGlobalIdentifier": "HGF30.1",
+    "floor": "F",
+    "status": "unknown"
+   }
+  },
+  {
+   "type": "room_availability",
+   "id": "HGF40.0029",
+   "attributes": {
+    "roomGlobalIdentifier": "HGF40.0029",
+    "floor": "F",
+    "status": "unknown"
+   }
+  },
+  {
+   "type": "room_availability",
+   "id": "HGG20.0029",
+   "attributes": {
+    "roomGlobalIdentifier": "HGG20.0029",
+    "floor": "G",
+    "status": "unknown"
+   }
+  },
+  {
+   "type": "room_availability",
+   "id": "HGG40.0029",
+   "attributes": {
+    "roomGlobalIdentifier": "HGG40.0029",
+    "floor": "G",
+    "status": "unknown"
+   }
+  },
+  {
+   "type": "room_availability",
+   "id": "HGH30.0059",
+   "attributes": {
+    "roomGlobalIdentifier": "HGH30.0059",
+    "floor": "H",
+    "status": "unknown"
+   }
+  },
+  {
+   "type": "room_availability",
+   "id": "HGH30.0079",
+   "attributes": {
+    "roomGlobalIdentifier": "HGH30.0079",
+    "floor": "H",
+    "status": "unknown"
+   }
+  },
+  {
+   "type": "room_availability",
+   "id": "HGH30.1",
+   "attributes": {
+    "roomGlobalIdentifier": "HGH30.1",
+    "floor": "H",
+    "occupancy": 98,
+    "maxPeople": 150,
+    "occupancyPercentage": 60,
+    "timestamp": "2026-11-01T15:40:20.469851+01:00",
+    "elionaAssetId": 4689,
+    "status": "yellow",
+    "trend": "steady",
+    "activeFlag": true
+   }
+  },
+  {
+   "type": "room_availability",
+   "id": "HGH60.0029",
+   "attributes": {
+    "roomGlobalIdentifier": "HGH60.0029",
+    "floor": "H",
+    "status": "unknown"
+   }
+  },
+  {
+   "type": "room_availability",
+   "id": "HGJ60.0039",
+   "attributes": {
+    "roomGlobalIdentifier": "HGJ60.0039",
+    "floor": "J",
+    "status": "unknown"
+   }
+  },
+  {
+   "type": "room_availability",
+   "id": "HGJ60.0049",
+   "attributes": {
+    "roomGlobalIdentifier": "HGJ60.0049",
+    "floor": "J",
+    "status": "unknown"
+   }
+  },
+  {
+   "type": "room_availability",
+   "id": "HILB21",
+   "attributes": {
+    "roomGlobalIdentifier": "HILB21",
+    "floor": "B",
+    "occupancy": 0,
+    "maxPeople": 40,
+    "occupancyPercentage": 0,
+    "timestamp": "2026-11-01T15:40:20.549484+01:00",
+    "elionaAssetId": 5833,
+    "status": "green",
+    "trend": "steady",
+    "activeFlag": true
+   }
+  },
+  {
+   "type": "room_availability",
+   "id": "HILE19.1",
+   "attributes": {
+    "roomGlobalIdentifier": "HILE19.1",
+    "floor": "E",
+    "status": "unknown"
+   }
+  },
+  {
+   "type": "room_availability",
+   "id": "HILE2.1",
+   "attributes": {
+    "roomGlobalIdentifier": "HILE2.1",
+    "floor": "E",
+    "occupancy": 0,
+    "maxPeople": 114,
+    "occupancyPercentage": 0,
+    "timestamp": "2026-11-01T15:40:20.8324+01:00",
+    "elionaAssetId": 6559,
+    "status": "green",
+    "trend": "steady",
+    "activeFlag": true
+   }
+  },
+  {
+   "type": "room_availability",
+   "id": "HILE29.3",
+   "attributes": {
+    "roomGlobalIdentifier": "HILE29.3",
+    "floor": "E",
+    "status": "unknown"
+   }
+  },
+  {
+   "type": "room_availability",
+   "id": "HILE58",
+   "attributes": {
+    "roomGlobalIdentifier": "HILE58",
+    "floor": "E",
+    "status": "unknown"
+   }
+  },
+  {
+   "type": "room_availability",
+   "id": "HILF10.3",
+   "attributes": {
+    "roomGlobalIdentifier": "HILF10.3",
+    "floor": "F",
+    "status": "unknown"
+   }
+  },
+  {
+   "type": "room_availability",
+   "id": "HILF15.2",
+   "attributes": {
+    "roomGlobalIdentifier": "HILF15.2",
+    "floor": "F",
+    "status": "unknown"
+   }
+  },
+  {
+   "type": "room_availability",
+   "id": "HILG15",
+   "attributes": {
+    "roomGlobalIdentifier": "HILG15",
+    "floor": "G",
+    "occupancy": 0,
+    "maxPeople": 185,
+    "occupancyPercentage": 0,
+    "timestamp": "2026-11-01T15:40:20.610359+01:00",
+    "elionaAssetId": 4693,
+    "status": "green",
+    "trend": "steady",
+    "activeFlag": true
+   }
+  },
+  {
+   "type": "room_availability",
+   "id": "HITE12.1",
+   "attributes": {
+    "roomGlobalIdentifier": "HITE12.1",
+    "floor": "E",
+    "status": "unknown"
+   }
+  },
+  {
+   "type": "room_availability",
+   "id": "HITE23",
+   "attributes": {
+    "roomGlobalIdentifier": "HITE23",
+    "floor": "E",
+    "status": "unknown"
+   }
+  },
+  {
+   "type": "room_availability",
+   "id": "HITF12",
+   "attributes": {
+    "roomGlobalIdentifier": "HITF12",
+    "floor": "F",
+    "status": "unknown"
+   }
+  },
+  {
+   "type": "room_availability",
+   "id": "HITF13",
+   "attributes": {
+    "roomGlobalIdentifier": "HITF13",
+    "floor": "F",
+    "status": "unknown"
+   }
+  },
+  {
+   "type": "room_availability",
+   "id": "HITF31.1",
+   "attributes": {
+    "roomGlobalIdentifier": "HITF31.1",
+    "floor": "F",
+    "status": "unknown"
+   }
+  },
+  {
+   "type": "room_availability",
+   "id": "HITF31.2",
+   "attributes": {
+    "roomGlobalIdentifier": "HITF31.2",
+    "floor": "F",
+    "status": "unknown"
+   }
+  },
+  {
+   "type": "room_availability",
+   "id": "HITJ51",
+   "attributes": {
+    "roomGlobalIdentifier": "HITJ51",
+    "floor": "J",
+    "status": "unknown"
+   }
+  },
+  {
+   "type": "room_availability",
+   "id": "HITJ52",
+   "attributes": {
+    "roomGlobalIdentifier": "HITJ52",
+    "floor": "J",
+    "status": "unknown"
+   }
+  },
+  {
+   "type": "room_availability",
+   "id": "HITK52",
+   "attributes": {
+    "roomGlobalIdentifier": "HITK52",
+    "floor": "K",
+    "status": "unknown"
+   }
+  },
+  {
+   "type": "room_availability",
+   "id": "HPHG10.0029",
+   "attributes": {
+    "roomGlobalIdentifier": "HPHG10.0029",
+    "floor": "G",
+    "occupancy": 16,
+    "maxPeople": 42,
+    "occupancyPercentage": 40,
+    "timestamp": "2026-11-01T15:40:20.654016+01:00",
+    "elionaAssetId": 4692,
+    "status": "green",
+    "trend": "steady",
+    "activeFlag": true
+   }
+  },
+  {
+   "type": "room_availability",
+   "id": "HPRD70.2",
+   "attributes": {
+    "roomGlobalIdentifier": "HPRD70.2",
+    "floor": "D",
+    "status": "unknown"
+   }
+  },
+  {
+   "type": "room_availability",
+   "id": "HPTC103",
+   "attributes": {
+    "roomGlobalIdentifier": "HPTC103",
+    "floor": "C",
+    "status": "unknown"
+   }
+  },
+  {
+   "type": "room_availability",
+   "id": "HWCE11",
+   "attributes": {
+    "roomGlobalIdentifier": "HWCE11",
+    "floor": "E",
+    "occupancy": 27,
+    "maxPeople": 66,
+    "occupancyPercentage": 40,
+    "timestamp": "2026-11-01T15:40:20.948111+01:00",
+    "elionaAssetId": 7530,
+    "status": "green",
+    "trend": "steady",
+    "activeFlag": true
+   }
+  },
+  {
+   "type": "room_availability",
+   "id": "IFWA34",
+   "attributes": {
+    "roomGlobalIdentifier": "IFWA34",
+    "floor": "A",
+    "status": "unknown"
+   }
+  },
+  {
+   "type": "room_availability",
+   "id": "IFWB30.0015",
+   "attributes": {
+    "roomGlobalIdentifier": "IFWB30.0015",
+    "floor": "B",
+    "status": "unknown"
+   }
+  },
+  {
+   "type": "room_availability",
+   "id": "IFWB35.1",
+   "attributes": {
+    "roomGlobalIdentifier": "IFWB35.1",
+    "floor": "B",
+    "status": "unknown"
+   }
+  },
+  {
+   "type": "room_availability",
+   "id": "IFWC30.0015",
+   "attributes": {
+    "roomGlobalIdentifier": "IFWC30.0015",
+    "floor": "C",
+    "status": "unknown"
+   }
+  },
+  {
+   "type": "room_availability",
+   "id": "IFWC31",
+   "attributes": {
+    "roomGlobalIdentifier": "IFWC31",
+    "floor": "C",
+    "status": "unknown"
+   }
+  },
+  {
+   "type": "room_availability",
+   "id": "IFWC33",
+   "attributes": {
+    "roomGlobalIdentifier": "IFWC33",
+    "floor": "C",
+    "status": "unknown"
+   }
+  },
+  {
+   "type": "room_availability",
+   "id": "IFWD30.0015",
+   "attributes": {
+    "roomGlobalIdentifier": "IFWD30.0015",
+    "floor": "D",
+    "status": "unknown"
+   }
+  },
+  {
+   "type": "room_availability",
+   "id": "IFWE30.0015",
+   "attributes": {
+    "roomGlobalIdentifier": "IFWE30.0015",
+    "floor": "E",
+    "status": "unknown"
+   }
+  },
+  {
+   "type": "room_availability",
+   "id": "LEEC108",
+   "attributes": {
+    "roomGlobalIdentifier": "LEEC108",
+    "floor": "C",
+    "status": "unknown"
+   }
+  },
+  {
+   "type": "room_availability",
+   "id": "LEED101",
+   "attributes": {
+    "roomGlobalIdentifier": "LEED101",
+    "floor": "D",
+    "status": "unknown"
+   }
+  },
+  {
+   "type": "room_availability",
+   "id": "LEED105",
+   "attributes": {
+    "roomGlobalIdentifier": "LEED105",
+    "floor": "D",
+    "status": "unknown"
+   }
+  },
+  {
+   "type": "room_availability",
+   "id": "LEED131",
+   "attributes": {
+    "roomGlobalIdentifier": "LEED131",
+    "floor": "D",
+    "status": "unknown"
+   }
+  },
+  {
+   "type": "room_availability",
+   "id": "LEEE200.0023",
+   "attributes": {
+    "roomGlobalIdentifier": "LEEE200.0023",
+    "floor": "E",
+    "status": "unknown"
+   }
+  },
+  {
+   "type": "room_availability",
+   "id": "LEEF200.005",
+   "attributes": {
+    "roomGlobalIdentifier": "LEEF200.005",
+    "floor": "F",
+    "status": "unknown"
+   }
+  },
+  {
+   "type": "room_availability",
+   "id": "LFWC1",
+   "attributes": {
+    "roomGlobalIdentifier": "LFWC1",
+    "floor": "C",
+    "status": "unknown"
+   }
+  },
+  {
+   "type": "room_availability",
+   "id": "LFWC10.0019",
+   "attributes": {
+    "roomGlobalIdentifier": "LFWC10.0019",
+    "floor": "C",
+    "status": "unknown"
+   }
+  },
+  {
+   "type": "room_availability",
+   "id": "LFWC41",
+   "attributes": {
+    "roomGlobalIdentifier": "LFWC41",
+    "floor": "C",
+    "status": "unknown"
+   }
+  },
+  {
+   "type": "room_availability",
+   "id": "LFWD10.0016",
+   "attributes": {
+    "roomGlobalIdentifier": "LFWD10.0016",
+    "floor": "D",
+    "status": "unknown"
+   }
+  },
+  {
+   "type": "room_availability",
+   "id": "LFWE13",
+   "attributes": {
+    "roomGlobalIdentifier": "LFWE13",
+    "floor": "E",
+    "status": "unknown"
+   }
+  },
+  {
+   "type": "room_availability",
+   "id": "MLD10.0019",
+   "attributes": {
+    "roomGlobalIdentifier": "MLD10.0019",
+    "floor": "D",
+    "status": "unknown"
+   }
+  },
+  {
+   "type": "room_availability",
+   "id": "MLH34.3",
+   "attributes": {
+    "roomGlobalIdentifier": "MLH34.3",
+    "floor": "H",
+    "status": "unknown"
+   }
+  },
+  {
+   "type": "room_availability",
+   "id": "MLH37.1",
+   "attributes": {
+    "roomGlobalIdentifier": "MLH37.1",
+    "floor": "H",
+    "occupancy": 2,
+    "maxPeople": 68,
+    "occupancyPercentage": 0,
+    "timestamp": "2026-11-01T15:40:20.715269+01:00",
+    "elionaAssetId": 5834,
+    "status": "green",
+    "trend": "steady",
+    "activeFlag": true
+   }
+  },
+  {
+   "type": "room_availability",
+   "id": "MLH41.1",
+   "attributes": {
+    "roomGlobalIdentifier": "MLH41.1",
+    "floor": "H",
+    "status": "unknown"
+   }
+  },
+  {
+   "type": "room_availability",
+   "id": "MLH43",
+   "attributes": {
+    "roomGlobalIdentifier": "MLH43",
+    "floor": "H",
+    "status": "unknown"
+   }
+  },
+  {
+   "type": "room_availability",
+   "id": "MMB79",
+   "attributes": {
+    "roomGlobalIdentifier": "MMB79",
+    "floor": "B",
+    "occupancy": 1,
+    "maxPeople": 650,
+    "occupancyPercentage": 0,
+    "timestamp": "2026-11-01T15:40:20.911405+01:00",
+    "elionaAssetId": 6323,
+    "status": "green",
+    "trend": "steady",
+    "activeFlag": true
+   }
+  },
+  {
+   "type": "room_availability",
+   "id": "MMC81",
+   "attributes": {
+    "roomGlobalIdentifier": "MMC81",
+    "floor": "C",
+    "status": "unknown"
+   }
+  },
+  {
+   "type": "room_availability",
+   "id": "NOE39",
+   "attributes": {
+    "roomGlobalIdentifier": "NOE39",
+    "floor": "E",
+    "status": "unknown"
+   }
+  },
+  {
+   "type": "room_availability",
+   "id": "NOE50.0029",
+   "attributes": {
+    "roomGlobalIdentifier": "NOE50.0029",
+    "floor": "E",
+    "status": "unknown"
+   }
+  }
+ ],
+ "meta": {
+  "resultsTotal": 112,
+  "resultsOnPage": 112,
+  "pageSize": 10,
+  "page": 1,
+  "pagesTotal": 12
+ }
+}

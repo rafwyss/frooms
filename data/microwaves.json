@@ -1,0 +1,21 @@
+{
+  "_about": "Microwaves students may use, by hand (Raffaele). count: how many; place: the study space or place they belong to (its card links here); floor: the level of the building's floor plans they're on (null: not on a plan); at: where they are, [x, y] in the campus drawing's metres (static/map/<area>.json, the frame the floor plans use too), null: on the building; check: a provisional spot, to fix in the map's pin mode (?pins), which also overrides `at` through static/map/pins.json `microwaves`. Served by /api/spaces as `microwaves` (worker/index.ts); both Zentrum campuses see Zentrum's.",
+  "microwaves": [
+    { "id": "MW-MM-1", "area": "Z", "building": "MM", "name": "Einstein", "count": 3, "place": "MMC81", "floor": "C", "at": [-115.4, 189.5] },
+    { "id": "MW-MM-2", "area": "Z", "building": "MM", "name": "Zweistein", "count": 3, "place": "MMC81", "floor": "C", "at": [-109.8, 207.9] },
+    { "id": "MW-MM-3", "area": "Z", "building": "MM", "name": "Corridor", "count": 3, "place": null, "floor": "C", "at": [-112.6, 198.7], "check": true },
+    { "id": "MW-CHN-1", "area": "Z", "building": "CHN", "name": "Zwei Grad Bistro", "count": 3, "place": "F13", "floor": "D", "at": [50.1, -114.5] },
+    { "id": "MW-CAB-1", "area": "Z", "building": "CAB", "name": "VSETH", "count": 5, "place": null, "floor": null, "at": [59.7, -38.5], "check": true },
+    { "id": "MW-ETZ-1", "area": "Z", "building": "ETZ", "name": "ETZ E Foyer", "count": 2, "place": null, "floor": null, "at": [354.9, 61.2] },
+    { "id": "MW-GLC-1", "area": "Z", "building": "GLC", "name": "GLC E 27", "count": 2, "place": null, "floor": null, "at": [412.9, 40.4] },
+    { "id": "MW-HIL-1", "area": "H", "building": "HIL", "name": "HIL E 58", "count": 2, "place": null, "floor": null, "at": [-84.7, 22.2] },
+    { "id": "MW-HPR-1", "area": "H", "building": "HPR", "name": "food market Microwaves", "count": 4, "place": null, "floor": null, "at": [134.6, 108.8] },
+    { "id": "MW-KOL-1", "area": "UZ", "building": "KOL", "name": "Uniturm KOL K1-4", "count": 3, "place": null, "floor": null, "at": [-271.6, -142.8] },
+    { "id": "MW-C1R-1", "area": "UZ", "building": "C1R", "name": "Careum Cafeteria Microwaves", "count": 8, "place": null, "floor": null, "at": [104.4, -196] },
+    { "id": "MW-BIN-1", "area": "UO", "building": "BIN", "name": "BIN Microwaves", "count": 2, "place": null, "floor": null, "at": [344.2, -209.1] },
+    { "id": "MW-Y21-1", "area": "UI", "building": "Y21", "name": "Y21 Microwaves", "count": 6, "place": null, "floor": null, "at": [-86.7, 120.5] },
+    { "id": "MW-Y23-1", "area": "UI", "building": "Y23", "name": "Y23 Microwaves", "count": 6, "place": null, "floor": null, "at": [-46.4, 135.1] },
+    { "id": "MW-Y63-1", "area": "UI", "building": "Y63", "name": "Strickhof Microwaves", "count": 3, "place": null, "floor": null, "at": [24.7, 293.7] },
+    { "id": "MW-TFA-1", "area": "UI", "building": "TFA", "name": "Tierspital Microwaves", "count": 2, "place": null, "floor": null, "at": [110.5, -215.5] }
+  ]
+}

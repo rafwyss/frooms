@@ -1,0 +1,61 @@
+{
+  "checkins": [
+    {
+      "person": {
+        "username": "anna.m",
+        "name": "Anna M.",
+        "initials": "AM",
+        "bg": "#1b5e20",
+        "fg": "#ffffff",
+        "bg2": "#2e7d32",
+        "fg2": "#fff4d6",
+        "metal": null
+      },
+      "kind": "space",
+      "place": "GLCE31",
+      "area": "Z",
+      "building": "GLC",
+      "name": "GLC Atrium",
+      "since": "@now-25m",
+      "until": "@now+95m"
+    },
+    {
+      "person": {
+        "username": "noah",
+        "name": "Noah F.",
+        "initials": "NF",
+        "bg": "#e3f2fd",
+        "fg": "#0d47a1",
+        "bg2": null,
+        "fg2": null,
+        "metal": "silver"
+      },
+      "kind": "room",
+      "place": "CAB G 11",
+      "area": "Z",
+      "building": "CAB",
+      "name": "CAB G 11",
+      "since": "@now-50m",
+      "until": "@now+40m"
+    },
+    {
+      "person": {
+        "username": "lea",
+        "name": "Lea S.",
+        "initials": "LS",
+        "bg": "#8b1a1a",
+        "fg": "#ffffff",
+        "bg2": null,
+        "fg2": null,
+        "metal": "bronze"
+      },
+      "kind": "room",
+      "place": "ML E 12",
+      "area": "Z",
+      "building": "ML",
+      "name": "ML E 12",
+      "since": "@now-10m",
+      "until": "@now+110m"
+    }
+  ]
+}

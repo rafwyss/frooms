@@ -1,0 +1,36 @@
+{
+  "checkins": [
+    {
+      "person": {
+        "username": "anna.m",
+        "name": "Anna M.",
+        "initials": "AM",
+        "bg": "#1b5e20",
+        "fg": "#ffffff"
+      },
+      "kind": "space",
+      "place": "GLCE31",
+      "area": "Z",
+      "building": "GLC",
+      "name": "GLC Atrium",
+      "since": "@now-25m",
+      "until": "@now+95m"
+    },
+    {
+      "person": {
+        "username": "luca",
+        "name": "Luca B.",
+        "initials": "LB",
+        "bg": "#ffd54f",
+        "fg": "#010057"
+      },
+      "kind": "room",
+      "place": "HG E 33.1",
+      "area": "Z",
+      "building": "HG",
+      "name": "HG E 33.1",
+      "since": "@now-70m",
+      "until": "@now+50m"
+    }
+  ]
+}

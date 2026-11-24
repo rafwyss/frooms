@@ -1,0 +1,4 @@
+# Only for scripts/make_floors.py (floor plans from ETH's plan PDFs), run by hand; not in CI.
+pymupdf==1.26.4
+opencv-python-headless==5.0.0.93
+numpy==2.5.4

@@ -1,0 +1,14 @@
+# Response headers for Workers Static Assets (ignored by the local FastAPI app).
+/*
+  Content-Security-Policy: default-src 'self'; script-src 'self' https://static.cloudflareinsights.com; connect-src 'self' https://cloudflareinsights.com; img-src 'self' data:; object-src 'none'; base-uri 'self'; form-action 'none'; frame-ancestors 'none'
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: strict-origin-when-cross-origin
+  Permissions-Policy: camera=(), microphone=(), geolocation=(self), interest-cohort=()
+
+# The admin page (plans/PLAN_ADMIN_STATS.md): never indexed. Its numbers come from /api/admin/stats (no-store).
+/admin*
+  X-Robots-Tag: noindex
+
+# Browsers must pick up a new service worker promptly after a deploy.
+/sw.js
+  Cache-Control: no-cache
