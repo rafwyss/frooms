@@ -281,9 +281,9 @@ describe("prefetch", () => {
     expect(first).toMatchObject({ requests: 10, fetched: 2, failed: 0, sensors: UZH_SENSORS.length });
     expect(kv.json("uzh_catalogue").areas).toEqual({ UZ: TUE });
     expect(kv.json("uzh_libraries").raw.length).toBe(LIBRARIES_SNAPSHOT.length);
-    const paths = db.rows("SELECT path, full_from FROM fetches");
+    const paths = Object.entries(JSON.parse(db.rows("SELECT value FROM fetch_state WHERE source = 'uzh'")[0].value));
     expect(paths).toHaveLength(2);
-    expect(paths.every((p) => /^[A-Z0-9]{3}-/.test(p.path) && p.full_from === "2026-11-10")).toBe(true);
+    expect(paths.every(([path, [fullFrom]]: [string, any]) => /^[A-Z0-9]{3}-/.test(path) && fullFrom === "2026-11-10")).toBe(true);
     expect(db.rows("SELECT COUNT(*) AS n FROM allocations")[0].n).toBe(2 * 33);
     expect(db.rows("SELECT COUNT(*) AS n FROM occupancy")[0].n).toBe(UZH_SENSORS.length);
     const state = JSON.parse(db.rows("SELECT value FROM meta WHERE key = 'uzh'")[0].value);

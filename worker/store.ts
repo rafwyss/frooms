@@ -3,7 +3,8 @@
 //
 // D1 (`DB`, schema in migrations/):
 //   allocations - one row per room and day, from HISTORY_DAYS ago to PREFETCH_DAYS_AHEAD days ahead
-//   fetches     - per room: the first day of its last full fetch, and when it was last fetched
+//   fetch_state - per source (ETH, UZH), one JSON row: each room's first day of its last full fetch, and when it was
+//                 last fetched (`fetches`, one row per room, is its predecessor, read only until both rows exist)
 //   meta        - "updated", "backoff_until", "minmax", "cleaned" (the day old rows were last deleted),
 //                 "occupancy_at" (last occupancy fetch) and "spaces_live" (its readings, see SpacesLive)
 //   occupancy   - every occupancy reading of the study spaces, as a history
@@ -144,15 +145,33 @@ export const putDay = (db: D1Database, row: DayRow) =>
 export const deleteDaysBefore = (db: D1Database, day: IsoDate) =>
   db.prepare("DELETE FROM allocations WHERE day < ?").bind(day);
 
+export type FetchSource = "eth" | "uzh";
+
+/**
+ * Every room's FetchState, ETH's and UZH's: one JSON row per source in `fetch_state`, two rows read. While a source has
+ * no row yet (before its first run since migration 0007), the old per-room table `fetches` fills in for it.
+ */
 export async function readFetches(db: D1Database): Promise<Record<string, FetchState>> {
-  const { results } = await db
-    .prepare("SELECT path, full_from, at FROM fetches")
-    .all<{ path: string; full_from: string; at: number }>();
-  return Object.fromEntries(results.map((r) => [r.path, { fullFrom: r.full_from, at: r.at }]));
+  const { results } = await db.prepare("SELECT source, value FROM fetch_state").all<{ source: string; value: string }>();
+  const out: Record<string, FetchState> = {};
+  if (results.length < 2) {
+    const old = await db.prepare("SELECT path, full_from, at FROM fetches").all<{ path: string; full_from: string; at: number }>();
+    for (const r of old.results) out[r.path] = { fullFrom: r.full_from, at: r.at };
+  }
+  for (const r of results) {
+    for (const [path, [fullFrom, at]] of Object.entries(JSON.parse(r.value) as Record<string, [IsoDate, number]>)) {
+      out[path] = { fullFrom, at };
+    }
+  }
+  return out;
 }
 
-export const putFetch = (db: D1Database, path: string, s: FetchState) =>
-  db.prepare("INSERT OR REPLACE INTO fetches (path, full_from, at) VALUES (?, ?, ?)").bind(path, s.fullFrom, s.at);
+/** One source's FetchState of its `targets` (rooms no longer in its catalogue drop out), as one row. */
+export function putFetches(db: D1Database, source: FetchSource, fetches: Record<string, FetchState>, targets: string[]) {
+  const value: Record<string, [IsoDate, number]> = {};
+  for (const path of targets) if (fetches[path]) value[path] = [fetches[path].fullFrom, fetches[path].at];
+  return db.prepare("INSERT OR REPLACE INTO fetch_state (source, value) VALUES (?, ?)").bind(source, JSON.stringify(value));
+}
 
 export const putOccupancy = (db: D1Database, space: string, at: number, r: Reading) =>
   db

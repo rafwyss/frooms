@@ -5,7 +5,7 @@ import { clearMemoryCache, EthClient } from "../worker/eth";
 import { EATERY_OVERRIDES } from "../worker/overrides";
 import { ownCampuses } from "../worker/spaces";
 import { acceptSpaces, isQuiet, pickRooms, prefetchTargets, refreshedTargets, refreshesPerRun, runMenuPrefetch, runPrefetch } from "../worker/prefetch";
-import { clearStoreMemory, type FetchState, readCatalogue, readFetches } from "../worker/store";
+import { clearStoreMemory, type FetchState, putFetches, readCatalogue, readFetches } from "../worker/store";
 import { FakeD1, FakeKV, fakeEth, readData } from "./helpers";
 
 let kv: FakeKV;
@@ -123,6 +123,27 @@ it("fetches a room's whole month first, one row per day, in a single D1 batch", 
   expect(JSON.parse(days[4].raw)).toEqual([]); // fetched, but beyond the sample's week
   expect(Object.values(await readFetches(db.asD1())).every((f) => f.fullFrom === "2026-10-29")).toBe(true);
   expect(result.fetched).toBe(PREFETCH_ROOMS_PER_RUN);
+});
+
+it("keeps the rooms' fetch state as one row per source, and reads the old table until both have one", async () => {
+  db.db.prepare("INSERT INTO fetches (path, full_from, at) VALUES (?, ?, ?)").run("HG E 1", "2026-10-28", 1);
+  db.db.prepare("INSERT INTO fetches (path, full_from, at) VALUES (?, ?, ?)").run("BIN-0-K-02", "2026-10-28", 2);
+  const f = await readFetches(db.asD1());
+  expect(f).toEqual({ "HG E 1": { fullFrom: "2026-10-28", at: 1 }, "BIN-0-K-02": { fullFrom: "2026-10-28", at: 2 } });
+
+  // ETH's run stores its own rooms only; a room that left the catalogue ("HG X 9") drops out.
+  f["HG E 1"] = { fullFrom: "2026-10-29", at: 3 };
+  f["HG X 9"] = { fullFrom: "2026-10-29", at: 4 };
+  await putFetches(db.asD1(), "eth", f, ["HG E 1", "HG F 2"]).run();
+  expect(JSON.parse(db.rows("SELECT value FROM fetch_state WHERE source = 'eth'")[0].value)).toEqual({ "HG E 1": ["2026-10-29", 3] });
+  // UZH has no row yet: its rooms still come from the old table, ETH's row wins over it.
+  expect(await readFetches(db.asD1())).toEqual({ "HG E 1": { fullFrom: "2026-10-29", at: 3 }, "BIN-0-K-02": { fullFrom: "2026-10-28", at: 2 } });
+
+  // Both rows there: the old table isn't read any more.
+  await putFetches(db.asD1(), "uzh", f, ["BIN-0-K-02"]).run();
+  db.db.prepare("DELETE FROM fetches").run();
+  db.db.prepare("INSERT INTO fetches (path, full_from, at) VALUES (?, ?, ?)").run("OLD", "2026-10-01", 0);
+  expect(Object.keys(await readFetches(db.asD1())).sort()).toEqual(["BIN-0-K-02", "HG E 1"]);
 });
 
 it("moves on to the next rooms on the following run, without refetching catalogue or dates", async () => {

@@ -47,7 +47,7 @@ import {
   type PackedAllocation,
   putDay,
   putBackoff,
-  putFetch,
+  putFetches,
   putMenuDay,
   putMenuFetch,
   putMeta,
@@ -278,6 +278,7 @@ export async function runPrefetch(
     meta.cleaned = today;
   }
   let checked = 0;
+  let roomsFetched = false;
   for (const path of [...picked, ...checks]) {
     const full = fetches[path]?.fullFrom !== today;
     const to = full ? addDays(today, PREFETCH_DAYS_AHEAD + 1) : tomorrow;
@@ -287,7 +288,7 @@ export async function runPrefetch(
     const days = splitDays(raw, today, to);
     for (const d of days) statements.push(putDay(env.DB, { path, at, ...d }));
     fetches[path] = { fullFrom: full ? today : fetches[path].fullFrom, at };
-    statements.push(putFetch(env.DB, path, fetches[path]));
+    roomsFetched = true;
 
     const prev = before.get(path);
     if (prev && !full) {
@@ -299,6 +300,7 @@ export async function runPrefetch(
       );
     }
   }
+  if (roomsFetched) statements.push(putFetches(env.DB, "eth", fetches, targets));
 
   // Equipment: in the quiet hours, after the rooms, the details of a few rooms per run (worker/equipment.ts).
   let equipment = 0;
